@@ -1,0 +1,283 @@
+{
+  "title": "MYP Mathematics",
+  "subtitle": "Learning Map",
+  "overview": {
+    "title": "MYP Mathematics Overview",
+    "description": "Select a phase from the diagram to explore, or click the centre circle to return to this overview.",
+    "sections": [
+      {
+        "title": "Programme Model",
+        "quote": "The MYP is flexible enough to accommodate the demands of most national or local curriculums.",
+        "text": "The programme is structured around concepts, global contexts and approaches to learning (ATL). Learning is inquiry-based and connected to real-world contexts."
+      },
+      {
+        "title": "Nature of Mathematics",
+        "quote": "Neglect of mathematics works injury to all knowledge, since he who is ignorant of it cannot know the other sciences or the things of this world. — Roger Bacon (1214–1294)",
+        "text": "The study of mathematics is a fundamental part of a balanced education. It promotes a powerful universal language, analytical reasoning and problem-solving skills that contribute to the development of logical, abstract and critical thinking. Mathematics can help make sense of the world and allows phenomena to be described in precise terms. It also promotes careful analysis and the search for patterns and relationships, skills necessary for success both inside and outside the classroom."
+      },
+      {
+        "title": "Mathematics as Inquiry",
+        "text": "Studying mathematics should be more than simply learning formulae or rules. Students should be active participants in the search for concepts and relationships — mathematics becomes a subject alive with the thrill of exploration and the rewards of discovery. MYP mathematics promotes both inquiry and application, helping students to develop problem-solving techniques that transcend the discipline and are useful in the world outside school.",
+        "progression_table": {
+          "headers": ["MYP Year 1", "MYP Year 3", "MYP Year 5"],
+          "rows": [
+            ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"],
+            ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"],
+            ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"]
+          ]
+        }
+      },
+      {
+        "title": "Key and Related Concepts",
+        "text": "PLACEHOLDER — to be filled from the mathematics guide.",
+        "concepts": {
+          "key": ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"],
+          "related": [
+            {
+              "label": "Mathematics",
+              "items": ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assessment_overview": {
+    "intro": "Each criterion has eight possible achievement levels (1–8), divided into four bands representing performance that is: limited (1–2), adequate (3–4), substantial (5–6), and excellent (7–8). Each band has its own unique descriptor used to make best-fit judgments.",
+    "requirement": "Subject groups must assess all strands of all four assessment criteria at least twice in each year of the MYP."
+  },
+  "phases": [
+    {
+      "id": "ku",
+      "label": "PLACEHOLDER\nPhase A",
+      "criterion": "Criterion A",
+      "color": "#4A90C4",
+      "light": "#cde3f5",
+      "description": "PLACEHOLDER — Criterion A description from mathematics guide.",
+      "nodes": [
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand i",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand ii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iv",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        }
+      ],
+      "levels": {
+        "y1": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y3": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y5": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ]
+      }
+    },
+    {
+      "id": "ip",
+      "label": "PLACEHOLDER\nPhase B",
+      "criterion": "Criterion B",
+      "color": "#E8A44A",
+      "light": "#fae3bc",
+      "description": "PLACEHOLDER — Criterion B description from mathematics guide.",
+      "nodes": [
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand i",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand ii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iv",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        }
+      ],
+      "levels": {
+        "y1": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y3": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y5": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ]
+      }
+    },
+    {
+      "id": "cm",
+      "label": "PLACEHOLDER\nPhase C",
+      "criterion": "Criterion C",
+      "color": "#6AAF6A",
+      "light": "#c8e8c8",
+      "description": "PLACEHOLDER — Criterion C description from mathematics guide.",
+      "nodes": [
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand i",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand ii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iv",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        }
+      ],
+      "levels": {
+        "y1": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y3": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y5": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ]
+      }
+    },
+    {
+      "id": "ap",
+      "label": "PLACEHOLDER\nPhase D",
+      "criterion": "Criterion D",
+      "color": "#C96060",
+      "light": "#f5c8c8",
+      "description": "PLACEHOLDER — Criterion D description from mathematics guide.",
+      "nodes": [
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand i",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand ii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iii",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        },
+        {
+          "label": "PLACEHOLDER",
+          "detail": "strand iv",
+          "strand_full": "PLACEHOLDER — full IB strand wording.",
+          "description": "PLACEHOLDER — strand description.",
+          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+        }
+      ],
+      "levels": {
+        "y1": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y3": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ],
+        "y5": [
+          { "band": "1–2", "text": "PLACEHOLDER" },
+          { "band": "3–4", "text": "PLACEHOLDER" },
+          { "band": "5–6", "text": "PLACEHOLDER" },
+          { "band": "7–8", "text": "PLACEHOLDER" }
+        ]
+      }
+    }
+  ]
+}
