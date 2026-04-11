@@ -56,69 +56,213 @@
             {
               "label": "Biology",
               "items": [
-                "Balance",
-                "Consequences",
-                "Energy",
-                "Environment",
-                "Evidence",
-                "Form",
-                "Function",
-                "Interaction",
-                "Models",
-                "Movement",
-                "Patterns",
-                "Transformation"
+                {
+                  "name": "Balance",
+                  "definition": ""
+                },
+                {
+                  "name": "Consequences",
+                  "definition": ""
+                },
+                {
+                  "name": "Energy",
+                  "definition": ""
+                },
+                {
+                  "name": "Environment",
+                  "definition": ""
+                },
+                {
+                  "name": "Evidence",
+                  "definition": ""
+                },
+                {
+                  "name": "Form",
+                  "definition": ""
+                },
+                {
+                  "name": "Function",
+                  "definition": ""
+                },
+                {
+                  "name": "Interaction",
+                  "definition": ""
+                },
+                {
+                  "name": "Models",
+                  "definition": ""
+                },
+                {
+                  "name": "Movement",
+                  "definition": ""
+                },
+                {
+                  "name": "Patterns",
+                  "definition": ""
+                },
+                {
+                  "name": "Transformation",
+                  "definition": ""
+                }
               ]
             },
             {
               "label": "Chemistry",
               "items": [
-                "Balance",
-                "Conditions",
-                "Consequences",
-                "Energy",
-                "Evidence",
-                "Form",
-                "Function",
-                "Interaction",
-                "Models",
-                "Movement",
-                "Patterns",
-                "Transfer"
+                {
+                  "name": "Balance",
+                  "definition": ""
+                },
+                {
+                  "name": "Conditions",
+                  "definition": ""
+                },
+                {
+                  "name": "Consequences",
+                  "definition": ""
+                },
+                {
+                  "name": "Energy",
+                  "definition": ""
+                },
+                {
+                  "name": "Evidence",
+                  "definition": ""
+                },
+                {
+                  "name": "Form",
+                  "definition": ""
+                },
+                {
+                  "name": "Function",
+                  "definition": ""
+                },
+                {
+                  "name": "Interaction",
+                  "definition": ""
+                },
+                {
+                  "name": "Models",
+                  "definition": ""
+                },
+                {
+                  "name": "Movement",
+                  "definition": ""
+                },
+                {
+                  "name": "Patterns",
+                  "definition": ""
+                },
+                {
+                  "name": "Transfer",
+                  "definition": ""
+                }
               ]
             },
             {
               "label": "Physics",
               "items": [
-                "Consequences",
-                "Development",
-                "Energy",
-                "Environment",
-                "Evidence",
-                "Form",
-                "Function",
-                "Interaction",
-                "Models",
-                "Movement",
-                "Patterns",
-                "Transformation"
+                {
+                  "name": "Consequences",
+                  "definition": ""
+                },
+                {
+                  "name": "Development",
+                  "definition": ""
+                },
+                {
+                  "name": "Energy",
+                  "definition": ""
+                },
+                {
+                  "name": "Environment",
+                  "definition": ""
+                },
+                {
+                  "name": "Evidence",
+                  "definition": ""
+                },
+                {
+                  "name": "Form",
+                  "definition": ""
+                },
+                {
+                  "name": "Function",
+                  "definition": ""
+                },
+                {
+                  "name": "Interaction",
+                  "definition": ""
+                },
+                {
+                  "name": "Models",
+                  "definition": ""
+                },
+                {
+                  "name": "Movement",
+                  "definition": ""
+                },
+                {
+                  "name": "Patterns",
+                  "definition": ""
+                },
+                {
+                  "name": "Transformation",
+                  "definition": ""
+                }
               ]
             },
             {
               "label": "Integrated / Modular",
               "items": [
-                "Balance",
-                "Consequences",
-                "Energy",
-                "Environment",
-                "Evidence",
-                "Form",
-                "Function",
-                "Interaction",
-                "Models",
-                "Movement",
-                "Patterns",
-                "Transformation"
+                {
+                  "name": "Balance",
+                  "definition": ""
+                },
+                {
+                  "name": "Consequences",
+                  "definition": ""
+                },
+                {
+                  "name": "Energy",
+                  "definition": ""
+                },
+                {
+                  "name": "Environment",
+                  "definition": ""
+                },
+                {
+                  "name": "Evidence",
+                  "definition": ""
+                },
+                {
+                  "name": "Form",
+                  "definition": ""
+                },
+                {
+                  "name": "Function",
+                  "definition": ""
+                },
+                {
+                  "name": "Interaction",
+                  "definition": ""
+                },
+                {
+                  "name": "Models",
+                  "definition": ""
+                },
+                {
+                  "name": "Movement",
+                  "definition": ""
+                },
+                {
+                  "name": "Patterns",
+                  "definition": ""
+                },
+                {
+                  "name": "Transformation",
+                  "definition": ""
+                }
               ]
             }
           ]

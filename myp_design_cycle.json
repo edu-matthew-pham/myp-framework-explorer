@@ -62,18 +62,54 @@
             {
               "label": "Design",
               "items": [
-                "Adaptation",
-                "Collaboration",
-                "Ergonomics",
-                "Evaluation",
-                "Form",
-                "Function",
-                "Innovation",
-                "Invention",
-                "Markets and trends",
-                "Perspective",
-                "Resources",
-                "Sustainability"
+                {
+                  "name": "Adaptation",
+                  "definition": ""
+                },
+                {
+                  "name": "Collaboration",
+                  "definition": ""
+                },
+                {
+                  "name": "Ergonomics",
+                  "definition": ""
+                },
+                {
+                  "name": "Evaluation",
+                  "definition": ""
+                },
+                {
+                  "name": "Form",
+                  "definition": ""
+                },
+                {
+                  "name": "Function",
+                  "definition": ""
+                },
+                {
+                  "name": "Innovation",
+                  "definition": ""
+                },
+                {
+                  "name": "Invention",
+                  "definition": ""
+                },
+                {
+                  "name": "Markets and trends",
+                  "definition": ""
+                },
+                {
+                  "name": "Perspective",
+                  "definition": ""
+                },
+                {
+                  "name": "Resources",
+                  "definition": ""
+                },
+                {
+                  "name": "Sustainability",
+                  "definition": ""
+                }
               ]
             }
           ]

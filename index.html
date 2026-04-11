@@ -474,18 +474,34 @@ function build(data) {
     const wrap = document.createElement('div');
     wrap.style.cssText = 'display:flex;flex-direction:column;gap:10px;margin-top:6px;';
 
-    // Key concepts row
+    // Key concepts pills
     const keyRow = document.createElement('div');
     keyRow.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;';
-    concepts.key.forEach(k => {
+    concepts.key.forEach((k, ki) => {
+      const def = concepts.key_definitions && concepts.key_definitions[ki]
+                  ? concepts.key_definitions[ki].definition : '';
       const pill = document.createElement('span');
       pill.textContent = k;
-      pill.style.cssText = 'padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--text);letter-spacing:0.03em;';
+      const hasTooltip = def.length > 0;
+      pill.style.cssText = `padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--text);letter-spacing:0.03em;${hasTooltip ? 'cursor:help;' : ''}`;
+      if (hasTooltip) {
+        const tip = document.createElement('span');
+        tip.textContent = def;
+        tip.style.cssText = [
+          'display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%)',
+          'background:#2c2c30;border:1px solid rgba(255,255,255,0.12);border-radius:6px',
+          'padding:6px 10px;font-size:10.5px;line-height:1.5;color:#f0ede8',
+          'width:220px;text-align:left;pointer-events:none;z-index:100;white-space:normal;'
+        ].join(';');
+        pill.appendChild(tip);
+        pill.addEventListener('mouseenter', () => { tip.style.display = 'block'; });
+        pill.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+      }
       keyRow.appendChild(pill);
     });
     wrap.appendChild(keyRow);
 
-    // Related concept tables — one per group
+    // Related concept groups
     concepts.related.forEach(group => {
       const groupWrap = document.createElement('div');
       groupWrap.style.cssText = 'display:flex;flex-direction:column;gap:4px;';
@@ -498,9 +514,17 @@ function build(data) {
       const pills = document.createElement('div');
       pills.style.cssText = 'display:flex;gap:5px;flex-wrap:wrap;';
       group.items.forEach(item => {
+        // Support both {name, definition} and plain string
+        const name = typeof item === 'object' ? item.name : item;
+        const def  = typeof item === 'object' ? item.definition : '';
         const p = document.createElement('span');
-        p.textContent = item;
-        p.style.cssText = 'padding:2px 9px;border-radius:20px;font-size:10.5px;background:var(--surface);border:1px solid var(--border);color:var(--muted);';
+        p.textContent = name;
+        const hasTooltip = def && def.length > 0;
+        p.style.cssText = `padding:2px 9px;border-radius:20px;font-size:10.5px;background:var(--surface);border:1px solid var(--border);color:var(--muted);${hasTooltip ? 'cursor:help;' : ''}`;
+        if (hasTooltip) {
+          p.addEventListener('mouseenter', () => showTip(p, def));
+          p.addEventListener('mouseleave', hideTip);
+        }
         pills.appendChild(p);
       });
       groupWrap.appendChild(pills);
@@ -617,6 +641,32 @@ function build(data) {
   // Start on overview
   clearSel();
 }
+
+  // ── Shared tooltip ──
+  function showTip(el, text) {
+    const tip = document.getElementById('concept-tip');
+    tip.textContent = text;
+    tip.style.visibility = 'hidden';
+    tip.style.display = 'block';
+    requestAnimationFrame(() => {
+      const r  = el.getBoundingClientRect();
+      const tw = tip.offsetWidth;
+      const th = tip.offsetHeight;
+      let left = r.left + r.width/2 - tw/2;
+      left = Math.max(8, Math.min(left, window.innerWidth - tw - 8));
+      const top = r.top - th - 8;
+      tip.style.left = left + 'px';
+      tip.style.top  = (top < 8 ? r.bottom + 8 : top) + 'px';
+      tip.style.visibility = 'visible';
+    });
+  }
+  function hideTip() { document.getElementById('concept-tip').style.display = 'none'; }
 </script>
+<div id="concept-tip" style="
+  display:none; position:fixed; z-index:1000;
+  background:#2c2c30; border:1px solid rgba(255,255,255,0.12); border-radius:6px;
+  padding:7px 11px; font-size:10.5px; line-height:1.55; color:#f0ede8;
+  max-width:240px; pointer-events:none; white-space:normal;
+"></div>
 </body>
 </html>
