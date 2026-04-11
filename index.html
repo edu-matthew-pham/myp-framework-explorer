@@ -149,6 +149,34 @@
   }
   .year-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
   .year-btn.active { color: white; border-color: transparent; }
+
+  .node-prog {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.node-prog-row {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.node-prog-year {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.node-prog-text {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--muted);
+}
 </style>
 </head>
 <body>
@@ -392,7 +420,13 @@ function build(data) {
         <div class="node-card-label" style="color:${phase.light}">${node.label}</div>
         <div class="node-card-detail">${node.detail}</div>
         <div class="node-card-divider"></div>
-        <div class="node-card-desc">${node.description || ''}</div>`;
+        <div class="node-card-desc">${node.description || ''}</div>
+        <div class="node-card-divider"></div>
+        <div class="node-prog">
+            <div class="node-prog-row"><span class="node-prog-year">Y1</span><span class="node-prog-text">${node.progression?.y1 || ''}</span></div>
+            <div class="node-prog-row"><span class="node-prog-year">Y3</span><span class="node-prog-text">${node.progression?.y3 || ''}</span></div>
+            <div class="node-prog-row"><span class="node-prog-year">Y5</span><span class="node-prog-text">${node.progression?.y5 || ''}</span></div>
+        </div>`;
       grid.appendChild(card);
     });
   }
