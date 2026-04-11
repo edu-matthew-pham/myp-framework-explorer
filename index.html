@@ -167,6 +167,7 @@
     padding: 0 16px; flex-shrink: 0;
     border-bottom: 1px solid var(--border);
     background: var(--bg);
+    overflow-x: auto;
   }
   .tab-btn {
     padding: 9px 16px; font-size: 12px; font-weight: 500;
@@ -179,6 +180,12 @@
   .tab-btn:hover { color: var(--text); }
   .tab-btn.active { color: var(--text); border-bottom-color: var(--text); }
   .tab-btn.soon { opacity: 0.35; cursor: default; }
+
+  /* tab separator */
+  .tab-sep {
+    width: 1px; height: 18px; background: var(--border);
+    flex-shrink: 0; margin: 0 6px; align-self: center;
+  }
 </style>
 </head>
 <body>
@@ -187,15 +194,16 @@
   <h1>MYP Learning Maps</h1>
 </header>
 <div class="tab-bar" id="tab-bar">
-  <button class="tab-btn active" data-json="myp_design_cycle.json">Design</button>
+  <button class="tab-btn active" data-json="myp_principles_cycle.json">Principles of Practice</button>
+  <div class="tab-sep"></div>
+  <button class="tab-btn" data-json="myp_design_cycle.json">Design</button>
   <button class="tab-btn" data-json="myp_arts_cycle.json">Arts</button>
   <button class="tab-btn" data-json="myp_science_cycle.json">Sciences</button>
-  <button class="tab-btn" data-json="myp_pe_cycle.json">Physical & Health Ed</button>
+  <button class="tab-btn" data-json="myp_pe_cycle.json">Physical &amp; Health Ed</button>
   <button class="tab-btn" data-json="myp_lang_acq_cycle.json">Language Acq</button>
-  <button class="tab-btn" data-json="myp_english_cycle.json">Language & Lit</button>
-  <button class="tab-btn" data-json="myp_hass_cycle.json">Individuals & Soc</button>
+  <button class="tab-btn" data-json="myp_english_cycle.json">Language &amp; Lit</button>
+  <button class="tab-btn" data-json="myp_hass_cycle.json">Individuals &amp; Soc</button>
   <button class="tab-btn" data-json="myp_maths_cycle.json">Mathematics</button>
-  
 </div>
 
 <div class="main">
@@ -209,7 +217,7 @@
     </div>
 
     <div class="levels-panel">
-      <div class="levels-header">
+      <div class="levels-header" id="levels-header">
         Achievement levels
         <div class="year-toggle" id="year-toggle">
           <button class="year-btn active" data-year="y1">Y1</button>
@@ -219,7 +227,7 @@
       </div>
       <div class="levels-intro" id="levels-intro"></div>
       <div class="levels-list" id="levels-list">
-        <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
+        <p class="levels-empty">Select a phase to see descriptors.</p>
       </div>
     </div>
   </div>
@@ -234,8 +242,30 @@ function loadSubject(jsonFile) {
     document.getElementById('phase-header').innerHTML = '';
     document.getElementById('phase-desc').style.display = 'none';
     document.getElementById('node-grid').innerHTML = '';
-    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see achievement level descriptors.</p>';
+    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see descriptors.</p>';
     document.querySelectorAll('.year-btn').forEach(b => { b.style.background = ''; });
+
+    // ── Update levels panel title from JSON, fallback to default ──
+    const levelsHeaderEl = document.getElementById('levels-header');
+    const panelTitle = (data.levels_panel_title || 'Achievement levels');
+    // Preserve the year-toggle inside the header
+    const toggleHTML = `<div class="year-toggle" id="year-toggle">
+      <button class="year-btn active" data-year="y1">Y1</button>
+      <button class="year-btn" data-year="y3">Y3</button>
+      <button class="year-btn" data-year="y5">Y5</button>
+    </div>`;
+    levelsHeaderEl.innerHTML = panelTitle + toggleHTML;
+
+    // Re-bind year toggle (innerHTML replaced the old buttons)
+    document.getElementById('year-toggle').addEventListener('click', e => {
+      const btn = e.target.closest('.year-btn');
+      if (!btn) return;
+      activeYear = btn.dataset.year;
+      document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (activePhase) renderLevels(activePhase);
+    });
+
     build(data);
   });
 }
@@ -250,7 +280,11 @@ document.getElementById('tab-bar').addEventListener('click', e => {
 });
 
 // Initial load
-loadSubject('myp_design_cycle.json');
+loadSubject('myp_principles_cycle.json');
+
+// Year state — declared at module scope so year-toggle rebind can access
+let activeYear = 'y1';
+let activePhase = null;
 
 function build(data) {
   // ── Render assessment overview panel (static, from JSON) ──
@@ -258,7 +292,7 @@ function build(data) {
     const ao = data.assessment_overview;
     const intro = document.getElementById('levels-intro');
     intro.innerHTML = `
-      <div class="levels-intro-title">Assessment Criteria Overview</div>
+      <div class="levels-intro-title">Panel Overview</div>
       <div class="levels-intro-body">${ao.intro.replace(
         /limited \(1–2\), adequate \(3–4\), substantial \(5–6\), and excellent \(7–8\)/,
         'performance that is:<ul><li>limited (1–2)</li><li>adequate (3–4)</li><li>substantial (5–6)</li><li>excellent (7–8)</li></ul>'
@@ -282,36 +316,29 @@ function build(data) {
   const DIST = W * 0.345;
 
   const anchors = [
-    {cx:CX,      cy:CY-DIST}, // 0 top    — fixed 2 rows, extra nodes add cols
-    {cx:CX+DIST, cy:CY      }, // 1 right  — fixed 2 cols, extra nodes add rows
-    {cx:CX,      cy:CY+DIST}, // 2 bottom — fixed 2 rows, extra nodes add cols
-    {cx:CX-DIST, cy:CY      }, // 3 left   — fixed 2 cols, extra nodes add rows
+    {cx:CX,      cy:CY-DIST},
+    {cx:CX+DIST, cy:CY      },
+    {cx:CX,      cy:CY+DIST},
+    {cx:CX-DIST, cy:CY      },
   ];
 
-  // top/bottom: fixed 2 rows, grow columns
-  // left/right: fixed 2 cols, grow rows
   function phaseOffsets(count, phaseIdx) {
-    const isHoriz = (phaseIdx === 0 || phaseIdx === 2); // top / bottom
-    const fixedDim = 2; // fixed rows (horiz) or fixed cols (vert)
+    const isHoriz = (phaseIdx === 0 || phaseIdx === 2);
     const offsets = [];
     if (isHoriz) {
-      // cols grow, rows fixed at 2
       const cols = Math.ceil(count / 2);
       for (let i = 0; i < count; i++) {
         const col = i % cols;
         const row = Math.floor(i / cols);
-        // centre last row if odd node count
         const rowCount = row === Math.floor((count-1)/cols) && count % cols !== 0 ? count % cols : cols;
         const colOffset = rowCount < cols ? col + (cols - rowCount) / 2 : col;
         offsets.push({ col: colOffset, row, totalCols: cols, totalRows: Math.ceil(count/cols) });
       }
     } else {
-      // rows grow, cols fixed at 2
       const rows = Math.ceil(count / 2);
       for (let i = 0; i < count; i++) {
         const row = Math.floor(i / 2);
         const col = i % 2;
-        // centre last row if odd node count
         const rowSize = row === rows - 1 && count % 2 !== 0 ? 1 : 2;
         const colOffset = rowSize === 1 ? 0.5 : col;
         offsets.push({ col: colOffset, row, totalCols: 2, totalRows: rows });
@@ -339,7 +366,7 @@ function build(data) {
     .attr('transform',`translate(${CX},${CY})`).on('click', clearSel);
   cg.append('circle').attr('r',CR)
     .attr('fill','#e8e4dc').attr('stroke','rgba(255,255,255,0.1)').attr('stroke-width',1.5);
-  const titleWords = (data.title||'MYP Design Cycle').split(' ');
+  const titleWords = (data.title||'MYP').split(' ');
   const tmid = Math.ceil(titleWords.length/2);
   const tLines = [titleWords.slice(0,tmid).join(' '), titleWords.slice(tmid).join(' ')].filter(Boolean);
   const tfs = W*0.023;
@@ -413,19 +440,6 @@ function build(data) {
     });
   });
 
-  // ── Year toggle ──
-  let activeYear = 'y1';
-  let activePhase = null;
-
-  document.getElementById('year-toggle').addEventListener('click', e => {
-    const btn = e.target.closest('.year-btn');
-    if (!btn) return;
-    activeYear = btn.dataset.year;
-    document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    if (activePhase) renderLevels(activePhase);
-  });
-
   function renderLevels(phase) {
     activePhase = phase;
     const list = document.getElementById('levels-list');
@@ -444,7 +458,7 @@ function build(data) {
 
   function clearLevels() {
     activePhase = null;
-    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see achievement level descriptors.</p>';
+    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see descriptors.</p>';
     document.querySelectorAll('.year-btn').forEach(b => { b.style.background = ''; });
   }
 
@@ -452,7 +466,6 @@ function build(data) {
   function buildTable(tableData, cols, cls='') {
     const wrap = document.createElement('div');
     wrap.className = 'gen-table' + (cls ? ' '+cls : '');
-    // Header
     const hRow = document.createElement('div');
     hRow.className = 'gen-row header';
     hRow.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
@@ -460,7 +473,6 @@ function build(data) {
       const d = document.createElement('div'); d.textContent = h; hRow.appendChild(d);
     });
     wrap.appendChild(hRow);
-    // Rows
     tableData.rows.forEach(row => {
       const r = document.createElement('div');
       r.className = 'gen-row';
@@ -478,7 +490,6 @@ function build(data) {
     const wrap = document.createElement('div');
     wrap.style.cssText = 'display:flex;flex-direction:column;gap:10px;margin-top:6px;';
 
-    // Key concepts pills
     const keyRow = document.createElement('div');
     keyRow.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;';
     concepts.key.forEach((k, ki) => {
@@ -496,20 +507,16 @@ function build(data) {
     });
     wrap.appendChild(keyRow);
 
-    // Related concept groups
     concepts.related.forEach(group => {
       const groupWrap = document.createElement('div');
       groupWrap.style.cssText = 'display:flex;flex-direction:column;gap:4px;';
-
       const label = document.createElement('div');
       label.textContent = group.label;
       label.style.cssText = 'font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);';
       groupWrap.appendChild(label);
-
       const pills = document.createElement('div');
       pills.style.cssText = 'display:flex;gap:5px;flex-wrap:wrap;';
       group.items.forEach(item => {
-        // Support both {name, definition} and plain string
         const name = typeof item === 'object' ? item.name : item;
         const def  = typeof item === 'object' ? item.definition : '';
         const p = document.createElement('span');
@@ -588,8 +595,6 @@ function build(data) {
   function clearSel() {
     activePhaseId = null;
     updateWheel();
-    // Reset grid columns for 2x2 layout
-    const grid = document.getElementById('node-grid');
     if (data.overview) renderOverview(data.overview);
   }
 
