@@ -20,11 +20,27 @@
         "quote": "Literature is the art of discovering something extraordinary about ordinary people, and saying with ordinary words something extraordinary. — Boris Pasternak",
         "text": "Language and literature incorporates creative processes and encourages imagination and creativity through self-expression. The six skill areas — listening, speaking, reading, writing, viewing and presenting — develop as both independent and interdependent skills within an inquiry-based learning environment. Students' interaction with texts generates insight into moral, social, economic, political, cultural and environmental factors, contributing to opinion-forming, decision-making and ethical-reasoning skills.",
         "progression_table": {
-          "headers": ["MYP Year 1", "MYP Year 3", "MYP Year 5"],
+          "headers": [
+            "MYP Year 1",
+            "MYP Year 3",
+            "MYP Year 5"
+          ],
           "rows": [
-            ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"],
-            ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"],
-            ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"]
+            [
+              "PLACEHOLDER",
+              "PLACEHOLDER",
+              "PLACEHOLDER"
+            ],
+            [
+              "PLACEHOLDER",
+              "PLACEHOLDER",
+              "PLACEHOLDER"
+            ],
+            [
+              "PLACEHOLDER",
+              "PLACEHOLDER",
+              "PLACEHOLDER"
+            ]
           ]
         }
       },
@@ -32,13 +48,20 @@
         "title": "Key and Related Concepts",
         "text": "PLACEHOLDER — key concepts to be confirmed from language and literature guide.",
         "concepts": {
-          "key": ["PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"],
+          "key": [
+            "PLACEHOLDER",
+            "PLACEHOLDER",
+            "PLACEHOLDER"
+          ],
           "key_definitions": [],
           "related": [
             {
               "label": "Language & Literature",
               "items": [
-                {"name": "PLACEHOLDER", "definition": ""}
+                {
+                  "name": "PLACEHOLDER",
+                  "definition": ""
+                }
               ]
             }
           ]
@@ -53,233 +76,430 @@
   "phases": [
     {
       "id": "a",
-      "label": "PLACEHOLDER\nPhase A",
+      "label": "Analysing",
       "criterion": "Criterion A",
       "color": "#4A90C4",
       "light": "#cde3f5",
-      "description": "PLACEHOLDER — Criterion A description from language and literature guide.",
+      "description": "Students are enabled to deconstruct texts in order to identify their essential elements and their meaning. Analysing involves demonstrating understanding of the creator's choices, the relationship between components of a text and between texts, and making inferences about how an audience responds to a text and the creator's purpose.",
       "nodes": [
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand i",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Analyse",
+          "detail": "content, context, language, structure, technique and style",
+          "strand_full": "Analyse the content, context, language, structure, technique and style of text(s) and the relationship among texts.",
+          "description": "Students examine the full range of textual elements — what a text says, how it is constructed, the language and techniques used, and how it connects to other texts. Analysis requires more than identification; students must show how these elements work together to create meaning.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand ii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Analyse",
+          "detail": "effects of the creator's choices on an audience",
+          "strand_full": "Analyse the effects of the creator's choices on an audience.",
+          "description": "Students examine why creators make specific choices — of form, language, structure, perspective — and how those choices position, affect or influence an intended audience. This moves analysis beyond describing what is present to explaining why it matters.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand iii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Justify",
+          "detail": "opinions and ideas",
+          "strand_full": "Justify opinions and ideas, using examples, explanations and terminology.",
+          "description": "Students support their personal responses and interpretations with specific evidence from the text, clear explanations of how that evidence supports their view, and appropriate literary or linguistic terminology. Unsupported assertion does not constitute analysis.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand iv",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Evaluate",
+          "detail": "similarities and differences across texts",
+          "strand_full": "Evaluate similarities and differences by connecting features across and within genres and texts.",
+          "description": "Students engage in comparative analysis, identifying and evaluating how features — structural, thematic, stylistic — recur, differ or develop across and within genres and texts. Critical literacy requires awareness of different perspectives through interpretation.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         }
       ],
       "levels": {
         "y1": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Provides minimal identification and comment upon significant aspects of texts; provides minimal identification and comment upon the creator's choices; rarely justifies opinions with examples or explanations and uses little or no terminology; identifies few similarities and differences in features within and between texts."
+          },
+          {
+            "band": "3–4",
+            "text": "Provides adequate identification and comment upon significant aspects of texts; provides adequate identification and comment upon the creator's choices; justifies opinions with some examples and explanations though not consistently; uses some terminology; identifies some similarities and differences in features within and between texts."
+          },
+          {
+            "band": "5–6",
+            "text": "Provides substantial identification and comment upon significant aspects of texts; provides substantial identification and comment upon the creator's choices; sufficiently justifies opinions with examples and explanations; uses accurate terminology; describes some similarities and differences in features within and between texts."
+          },
+          {
+            "band": "7–8",
+            "text": "Provides perceptive identification and comment upon significant aspects of texts; provides perceptive identification and comment upon the creator's choices; gives detailed justification of opinions with a range of examples and thorough explanations; uses accurate terminology; compares and contrasts features within and between texts."
+          }
         ],
         "y3": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Provides minimal identification or explanation of content, context, language, structure, technique and style, and does not explain the relationship among texts; provides minimal identification and explanation of the effects of the creator's choices; rarely justifies opinions and uses little or no terminology; interprets few similarities and differences in features within and between genres and texts."
+          },
+          {
+            "band": "3–4",
+            "text": "Provides adequate identification and explanation of content, context, language, structure, technique and style, and some explanation of the relationship among texts; provides adequate identification and explanation of the effects of the creator's choices; justifies opinions with some examples and explanations though not consistently; uses some terminology; interprets some similarities and differences in features within and between genres and texts."
+          },
+          {
+            "band": "5–6",
+            "text": "Provides substantial identification and explanation of content, context, language, structure, technique and style, and explains the relationship among texts; provides substantial identification and explanation of the effects of the creator's choices; sufficiently justifies opinions with examples and explanations; uses accurate terminology; competently interprets similarities and differences in features within and between genres and texts."
+          },
+          {
+            "band": "7–8",
+            "text": "Provides perceptive identification and explanation of content, context, language, structure, technique and style, and explains the relationship among texts thoroughly; provides perceptive identification and explanation of the effects of the creator's choices; gives detailed justification with a range of examples and thorough explanations; uses accurate terminology; perceptively compares and contrasts features within and between genres and texts."
+          }
         ],
         "y5": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Provides limited analysis of the content, context, language, structure, technique and style of text(s) and the relationship among texts; provides limited analysis of the effects of the creator's choices; rarely justifies opinions and uses little or no terminology; evaluates few similarities and differences with minimal connections across and within genres and texts."
+          },
+          {
+            "band": "3–4",
+            "text": "Provides adequate analysis of content, context, language, structure, technique and style and the relationship among texts; provides adequate analysis of the effects of the creator's choices; justifies opinions with some examples and explanations though not consistently; uses some terminology; evaluates some similarities and differences with adequate connections across and within genres and texts."
+          },
+          {
+            "band": "5–6",
+            "text": "Competently analyses content, context, language, structure, technique and style and the relationship among texts; competently analyses the effects of the creator's choices; sufficiently justifies opinions with examples and explanations; uses accurate terminology; evaluates similarities and differences with substantial connections across and within genres and texts."
+          },
+          {
+            "band": "7–8",
+            "text": "Provides perceptive analysis of content, context, language, structure, technique and style and the relationship among texts; perceptively analyses the effects of the creator's choices; gives detailed justification with a range of examples and thorough explanations; uses accurate terminology; perceptively compares and contrasts with extensive connections across and within genres and texts."
+          }
         ]
       }
     },
     {
       "id": "b",
-      "label": "PLACEHOLDER\nPhase B",
+      "label": "Organizing",
       "criterion": "Criterion B",
       "color": "#E8A44A",
       "light": "#fae3bc",
-      "description": "PLACEHOLDER — Criterion B description from language and literature guide.",
+      "description": "Students should understand and be able to organize their ideas and opinions using a range of appropriate conventions for different forms and purposes of communication. Students should also recognize the importance of maintaining academic honesty by respecting intellectual property rights and referencing all sources accurately.",
       "nodes": [
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand i",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Employ",
+          "detail": "organizational structures",
+          "strand_full": "Employ organizational structures that serve the context and intention.",
+          "description": "Students select and use structural approaches — paragraph organization, essay structure, narrative form, visual layout — that are appropriate to the text type, audience and purpose. Structure is a communicative choice, not a formula.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand ii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Organize",
+          "detail": "ideas in a sustained, coherent and logical manner",
+          "strand_full": "Organize opinions and ideas in a sustained, coherent and logical manner.",
+          "description": "Students develop and sustain a line of argument or sequence of ideas that is internally consistent, logically sequenced and maintained throughout the text. Coherence requires each element to connect meaningfully to what precedes and follows it.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand iii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
-        },
-        {
-          "label": "PLACEHOLDER",
-          "detail": "strand iv",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Use",
+          "detail": "referencing and formatting tools",
+          "strand_full": "Use referencing and formatting tools to create a presentation style suitable to the context and intention.",
+          "description": "Students apply appropriate referencing conventions and formatting choices to present their work in a way that serves the context and acknowledges the work of others. Academic honesty is embedded in this strand — all sources must be accurately attributed.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         }
       ],
       "levels": {
         "y1": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Makes minimal use of organizational structures that may not serve the context and intention; organizes opinions and ideas with minimal logic; makes minimal use of referencing and formatting tools and the presentation style may not be suitable."
+          },
+          {
+            "band": "3–4",
+            "text": "Makes adequate use of organizational structures that serve the context and intention; organizes opinions and ideas with some logic; makes adequate use of referencing and formatting tools to create a suitable presentation style."
+          },
+          {
+            "band": "5–6",
+            "text": "Makes competent use of organizational structures that serve the context and intention; organizes opinions and ideas in a logical manner with ideas building on each other; makes competent use of referencing and formatting tools to create a suitable presentation style."
+          },
+          {
+            "band": "7–8",
+            "text": "Makes sophisticated use of organizational structures that serve the context and intention effectively; effectively organizes opinions and ideas in a logical manner with ideas building on each other in a sophisticated way; makes excellent use of referencing and formatting tools to create an effective presentation style."
+          }
         ],
         "y3": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Makes minimal use of organizational structures that may not serve the context and intention; organizes opinions and ideas with minimal coherence and logic; makes minimal use of referencing and formatting tools and the presentation style may not be suitable."
+          },
+          {
+            "band": "3–4",
+            "text": "Makes adequate use of organizational structures that serve the context and intention; organizes opinions and ideas with some coherence and logic; makes adequate use of referencing and formatting tools to create a suitable presentation style."
+          },
+          {
+            "band": "5–6",
+            "text": "Makes competent use of organizational structures that serve the context and intention; organizes opinions and ideas in a coherent and logical manner with ideas building on each other; makes competent use of referencing and formatting tools to create a suitable presentation style."
+          },
+          {
+            "band": "7–8",
+            "text": "Makes sophisticated use of organizational structures that serve the context and intention effectively; effectively organizes opinions and ideas in a coherent and logical manner with ideas building on each other in a sophisticated way; makes excellent use of referencing and formatting tools to create an effective presentation style."
+          }
         ],
         "y5": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Makes minimal use of organizational structures that may not serve the context and intention; organizes opinions and ideas with minimal coherence and logic; makes minimal use of referencing and formatting tools and the presentation style may not be suitable."
+          },
+          {
+            "band": "3–4",
+            "text": "Makes adequate use of organizational structures that serve the context and intention; organizes opinions and ideas with some coherence and logic; makes adequate use of referencing and formatting tools to create a suitable presentation style."
+          },
+          {
+            "band": "5–6",
+            "text": "Makes competent use of organizational structures that serve the context and intention; organizes opinions and ideas in a coherent and logical manner with ideas building on each other; makes competent use of referencing and formatting tools to create a suitable presentation style."
+          },
+          {
+            "band": "7–8",
+            "text": "Makes sophisticated use of organizational structures that serve the context and intention effectively; effectively organizes opinions and ideas in a sustained, coherent and logical manner with ideas building on each other in a sophisticated way; makes excellent use of referencing and formatting tools to create an effective presentation style."
+          }
         ]
       }
     },
     {
       "id": "c",
-      "label": "PLACEHOLDER\nPhase C",
+      "label": "Producing\nText",
       "criterion": "Criterion C",
       "color": "#6AAF6A",
       "light": "#c8e8c8",
-      "description": "PLACEHOLDER — Criterion C description from language and literature guide.",
+      "description": "Students produce written and spoken text, focusing on the creative process itself and on the understanding of the connection between the creator and the audience. Students develop the ability to make choices aimed at producing texts that affect both the creator and the audience.",
       "nodes": [
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand i",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Produce",
+          "detail": "texts with insight, imagination and sensitivity",
+          "strand_full": "Produce texts that demonstrate insight, imagination and sensitivity while exploring and reflecting critically on new perspectives and ideas arising from personal engagement with the creative process.",
+          "description": "Students create original texts that show genuine personal engagement, imaginative thinking and sensitivity to ideas and perspectives. The creative process itself is valued — students reflect critically on how their choices emerge from and contribute to meaning.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand ii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Make",
+          "detail": "stylistic choices for impact",
+          "strand_full": "Make stylistic choices in terms of linguistic, literary and visual devices, demonstrating awareness of impact on an audience.",
+          "description": "Students deliberately select linguistic, literary and visual devices — figurative language, tone, imagery, layout, typography — with awareness of how those choices will affect the intended audience. Stylistic choices must be purposeful, not accidental.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand iii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
-        },
-        {
-          "label": "PLACEHOLDER",
-          "detail": "strand iv",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Select",
+          "detail": "relevant details to develop ideas",
+          "strand_full": "Select relevant details and examples to develop ideas.",
+          "description": "Students choose specific, relevant content — details, examples, evidence — that meaningfully develops their ideas rather than padding or restating. Selection is a craft skill that demonstrates both understanding and control of the text being produced.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         }
       ],
       "levels": {
         "y1": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Produces texts with limited personal engagement, limited thought or imagination and minimal exploration of new perspectives; makes minimal stylistic choices demonstrating limited awareness of impact on an audience; selects few relevant details and examples to support ideas."
+          },
+          {
+            "band": "3–4",
+            "text": "Produces texts with adequate personal engagement, some thought or imagination and some exploration of new perspectives; makes some stylistic choices demonstrating some awareness of impact on an audience; selects some relevant details and examples to support ideas."
+          },
+          {
+            "band": "5–6",
+            "text": "Produces texts with considerable personal engagement, considerable thought or imagination and substantial exploration of new perspectives; makes thoughtful stylistic choices demonstrating good awareness of impact on an audience; selects sufficient relevant details and examples to support ideas."
+          },
+          {
+            "band": "7–8",
+            "text": "Produces texts with a high degree of personal engagement, a high degree of thought or imagination and perceptive exploration of new perspectives; makes perceptive stylistic choices demonstrating clear awareness of impact on an audience; selects extensive relevant details and examples to support ideas."
+          }
         ],
         "y3": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Produces texts with limited personal engagement, limited thought, imagination and sensitivity and minimal exploration and consideration of new perspectives; makes minimal stylistic choices demonstrating limited awareness of impact; selects few relevant details and examples to develop ideas."
+          },
+          {
+            "band": "3–4",
+            "text": "Produces texts with adequate personal engagement, some thought, imagination and sensitivity and some exploration and consideration of new perspectives; makes some stylistic choices demonstrating adequate awareness of impact; selects some relevant details and examples to develop ideas."
+          },
+          {
+            "band": "5–6",
+            "text": "Produces texts with considerable personal engagement, considerable thought, imagination and sensitivity and substantial exploration and consideration of new perspectives; makes thoughtful stylistic choices demonstrating good awareness of impact; selects sufficient relevant details and examples to develop ideas."
+          },
+          {
+            "band": "7–8",
+            "text": "Produces texts with a high degree of personal engagement, a high degree of thought, imagination and sensitivity and perceptive exploration and consideration of new perspectives; makes perceptive stylistic choices demonstrating clear awareness of impact; selects extensive relevant details and examples to develop ideas with precision."
+          }
         ],
         "y5": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Produces texts with limited personal engagement, limited insight, imagination and sensitivity and minimal exploration of, and critical reflection on, new perspectives; makes minimal stylistic choices demonstrating limited awareness of impact; selects few relevant details and examples to develop ideas."
+          },
+          {
+            "band": "3–4",
+            "text": "Produces texts with adequate personal engagement, some insight, imagination and sensitivity and some exploration of, and critical reflection on, new perspectives; makes some stylistic choices demonstrating adequate awareness of impact; selects some relevant details and examples to develop ideas."
+          },
+          {
+            "band": "5–6",
+            "text": "Produces texts with considerable personal engagement, considerable insight, imagination and sensitivity and substantial exploration of, and critical reflection on, new perspectives; makes thoughtful stylistic choices demonstrating good awareness of impact; selects sufficient relevant details and examples to develop ideas."
+          },
+          {
+            "band": "7–8",
+            "text": "Produces texts with a high degree of personal engagement, a high degree of insight, imagination and sensitivity and perceptive exploration of, and critical reflection on, new perspectives; makes perceptive stylistic choices demonstrating good awareness of impact; selects extensive relevant details and examples to develop ideas with precision."
+          }
         ]
       }
     },
     {
       "id": "d",
-      "label": "PLACEHOLDER\nPhase D",
+      "label": "Using\nLanguage",
       "criterion": "Criterion D",
       "color": "#C96060",
       "light": "#f5c8c8",
-      "description": "PLACEHOLDER — Criterion D description from language and literature guide.",
+      "description": "Students have opportunities to develop, organize and express themselves and communicate thoughts, ideas and information. They are required to use accurate and varied language appropriate to the context and intention. This objective applies to written, oral and visual text, as appropriate.",
       "nodes": [
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand i",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Use",
+          "detail": "appropriate and varied vocabulary and structures",
+          "strand_full": "Use appropriate and varied vocabulary, sentence structures and forms of expression.",
+          "description": "Students demonstrate command of a wide range of vocabulary and sentence structures suited to the context. Varied expression avoids repetition and shows linguistic flexibility — the ability to choose the right form for the right purpose.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand ii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Write and speak",
+          "detail": "in appropriate register and style",
+          "strand_full": "Write and speak in a register and style that serve the context and intention.",
+          "description": "Students match their register — formal, informal, academic, creative — and stylistic approach to the demands of the communicative context and their intended purpose. Register awareness is fundamental to effective communication.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand iii",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Use",
+          "detail": "correct grammar, syntax and punctuation",
+          "strand_full": "Use correct grammar, syntax and punctuation.",
+          "description": "Students apply the grammatical conventions and syntactic structures of the language accurately. Correct grammar and punctuation are not merely mechanical — they shape meaning and affect how a text is received.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         },
         {
-          "label": "PLACEHOLDER",
-          "detail": "strand iv",
-          "strand_full": "PLACEHOLDER — full IB strand wording.",
-          "description": "PLACEHOLDER — strand description.",
-          "progression": { "y1": "PLACEHOLDER", "y3": "PLACEHOLDER", "y5": "PLACEHOLDER" }
+          "label": "Spell and pronounce",
+          "detail": "with accuracy",
+          "strand_full": "Spell (alphabetic languages), write (character languages) and pronounce with accuracy.",
+          "description": "Students spell and pronounce words accurately in both written and oral contexts. Accuracy at word level is the foundation of clear communication and demonstrates command of the language system.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
+        },
+        {
+          "label": "Use",
+          "detail": "appropriate non-verbal communication",
+          "strand_full": "Use appropriate non-verbal communication techniques.",
+          "description": "Students deploy non-verbal communication — gesture, eye contact, pacing, visual elements — appropriately in oral and visual texts. Non-verbal choices are part of the communicative act and contribute to audience impact.",
+          "progression": {
+            "y1": "PLACEHOLDER",
+            "y3": "PLACEHOLDER",
+            "y5": "PLACEHOLDER"
+          }
         }
       ],
       "levels": {
         "y1": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Uses a limited range of appropriate vocabulary and forms of expression; writes and speaks in an inappropriate register and style; uses grammar, syntax and punctuation with limited accuracy — errors often hinder communication; spells/writes and pronounces with limited accuracy — errors often hinder communication; makes limited and/or inappropriate use of non-verbal communication techniques."
+          },
+          {
+            "band": "3–4",
+            "text": "Uses an adequate range of appropriate vocabulary, sentence structures and forms of expression; sometimes writes and speaks in a register and style that serve the context and intention; uses grammar, syntax and punctuation with some accuracy — errors sometimes hinder communication; spells/writes and pronounces with some accuracy — errors sometimes hinder communication; makes some use of appropriate non-verbal communication techniques."
+          },
+          {
+            "band": "5–6",
+            "text": "Uses a varied range of appropriate vocabulary, sentence structures and forms of expression competently; writes and speaks competently in a register and style that serve the context and intention; uses grammar, syntax and punctuation with considerable accuracy — errors do not hinder effective communication; spells/writes and pronounces with considerable accuracy — errors do not hinder communication; makes sufficient use of appropriate non-verbal communication techniques."
+          },
+          {
+            "band": "7–8",
+            "text": "Effectively uses a range of appropriate vocabulary, sentence structures and forms of expression; writes and speaks in a consistently appropriate register and style; uses grammar, syntax and punctuation with high accuracy — errors are minor and communication is effective; spells/writes and pronounces with high accuracy — errors are minor; makes effective use of appropriate non-verbal communication techniques."
+          }
         ],
         "y3": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Uses a limited range of appropriate vocabulary and forms of expression; writes and speaks in an inappropriate register and style; uses grammar, syntax and punctuation with limited accuracy — errors often hinder communication; spells/writes and pronounces with limited accuracy — errors often hinder communication; makes limited and/or inappropriate use of non-verbal communication techniques."
+          },
+          {
+            "band": "3–4",
+            "text": "Uses an adequate range of appropriate vocabulary, sentence structures and forms of expression; sometimes writes and speaks in a register and style that serve the context and intention; uses grammar, syntax and punctuation with some accuracy — errors sometimes hinder communication; spells/writes and pronounces with some accuracy — errors sometimes hinder communication; makes some use of appropriate non-verbal communication techniques."
+          },
+          {
+            "band": "5–6",
+            "text": "Uses a varied range of appropriate vocabulary, sentence structures and forms of expression competently; writes and speaks competently in a register and style that serve the context and intention; uses grammar, syntax and punctuation with considerable accuracy — errors do not hinder effective communication; spells/writes and pronounces with considerable accuracy; makes sufficient use of appropriate non-verbal communication techniques."
+          },
+          {
+            "band": "7–8",
+            "text": "Effectively uses a varied range of appropriate vocabulary, sentence structures and forms of expression; writes and speaks in a consistently appropriate register and style; uses grammar, syntax and punctuation with high accuracy — errors are minor; spells/writes and pronounces with high accuracy — errors are minor; makes effective use of appropriate non-verbal communication techniques."
+          }
         ],
         "y5": [
-          { "band": "1–2", "text": "PLACEHOLDER" },
-          { "band": "3–4", "text": "PLACEHOLDER" },
-          { "band": "5–6", "text": "PLACEHOLDER" },
-          { "band": "7–8", "text": "PLACEHOLDER" }
+          {
+            "band": "1–2",
+            "text": "Uses a limited range of appropriate vocabulary and forms of expression; writes and speaks in an inappropriate register and style; uses grammar, syntax and punctuation with limited accuracy — errors often hinder communication; spells/writes and pronounces with limited accuracy — errors often hinder communication; makes limited and/or inappropriate use of non-verbal communication techniques."
+          },
+          {
+            "band": "3–4",
+            "text": "Uses an adequate range of appropriate vocabulary, sentence structures and forms of expression; sometimes writes and speaks in a register and style that serve the context and intention; uses grammar, syntax and punctuation with some accuracy — errors sometimes hinder communication; spells/writes and pronounces with some accuracy — errors sometimes hinder communication; makes some use of appropriate non-verbal communication techniques."
+          },
+          {
+            "band": "5–6",
+            "text": "Uses a varied range of appropriate vocabulary, sentence structures and forms of expression competently; writes and speaks competently in a register and style that serve the context and intention; uses grammar, syntax and punctuation with considerable accuracy — errors do not hinder effective communication; spells/writes and pronounces with considerable accuracy; makes sufficient use of appropriate non-verbal communication techniques."
+          },
+          {
+            "band": "7–8",
+            "text": "Effectively uses a range of appropriate vocabulary, sentence structures and forms of expression; writes and speaks in a consistently appropriate register and style; uses grammar, syntax and punctuation with high accuracy — errors are minor; spells/writes and pronounces with high accuracy — errors are minor; makes effective use of appropriate non-verbal communication techniques."
+          }
         ]
       }
     }
