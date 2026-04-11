@@ -1,0 +1,33 @@
+# MYP Learning Maps
+
+> Interactive learning maps and progression visualisers for all IB Middle Years Programme (MYP) subjects.
+
+This is an independent teacher-developed tool that summarises and visualises MYP subject guides, including objectives, criteria, concepts and progression from Year 1 to Year 5.
+
+The site is a single-page application with tabs for each subject.
+
+## Subjects included
+- Design
+- Arts
+- Sciences
+- Physical and Health Education
+- Language Acquisition
+- Language and Literature
+- Individuals and Societies
+- Mathematics
+
+Each subject includes:
+- Overview of the subject and inquiry model
+- Key and related concepts
+- Criterion-based learning map (A–D)
+- Strand-level progression (Year 1, Year 3, Year 5)
+- Achievement level descriptors (1–8)
+- Summary progression tables
+
+## Notes
+- This is an independent teacher-developed resource.
+- The International Baccalaureate (IB) is the authoritative source for official MYP subject guides.
+- Content is designed to simplify and visualise curriculum structure for teaching and planning.
+
+## Access
+- Main site: https://edu-matthew-pham.github.io/myp-learnings-maps/
