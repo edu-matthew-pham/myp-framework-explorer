@@ -27,11 +27,13 @@
   .main { display: flex; flex: 1; min-height: 0; overflow: hidden; }
 
   /* ── Wheel ── */
-  .wheel-wrap {
-    flex: 0 0 auto;
-    display: flex; align-items: center; justify-content: center;
-    padding: 10px; overflow: visible;
-  }
+    .wheel-wrap {
+    flex: 0 0 40%;  /* try 55–65% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    }
   #wheel { display: block; overflow: visible; }
 
   .node-g { cursor: pointer; }
@@ -111,7 +113,7 @@
   .right-side { display: flex; flex: 1; min-width: 0; border-left: 1px solid var(--border); }
   .info-panel { border-left: none; border-right: 1px solid var(--border); }
   .levels-panel {
-    flex: 0 0 22%;  min-width: 160px; max-width: 260px;
+    flex: 0 0 28%;  min-width: 200px; max-width: 350px;
     display: flex; flex-direction: column;
     overflow: hidden;
   }
@@ -181,32 +183,56 @@
 .myp-table {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 6px;
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .myp-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 6px;
 }
 
 .myp-row div {
-  font-size: 10px;
-  line-height: 1.4;
+  padding: 8px 10px;
+  font-size: 10.5px;
+  line-height: 1.45;
   color: var(--muted);
+  border-right: 1px solid var(--border);
+}
+
+.myp-row div:last-child {
+  border-right: none;
+}
+
+/* horizontal borders */
+.myp-row:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+/* header row */
+.myp-row.header {
+  background: var(--surface2);
 }
 
 .myp-row.header div {
   font-weight: 600;
   color: var(--text);
   font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+/* zebra striping */
+.myp-row:nth-child(even):not(.header) {
+  background: rgba(255,255,255,0.02);
 }
 
 .overview {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  grid-column: 1 / -1;
 }
 
 .overview-section {
@@ -216,9 +242,11 @@
 }
 
 .overview-title {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 800;
   color: var(--text);
+  
+  
 }
 
 .overview-text {
@@ -275,7 +303,15 @@
 
 <script>
 const DATA_URL = './myp_design_cycle.json';
-fetch(DATA_URL).then(r => r.json()).then(build);
+
+async function init() {
+  const response = await fetch(DATA_URL);
+  const data = await response.json();
+  build(data);
+}
+
+init();
+//fetch(DATA_URL).then(r => r.json()).then(build);
 
 function build(data) {
   document.getElementById('h-title').textContent = data.title || 'MYP Cycle';
@@ -334,7 +370,7 @@ function build(data) {
   const labelFs = W*0.021, lh = labelFs*1.3;
   data.phases.forEach((phase, pi) => {
     const lines = phase.label.split('\n');
-    const gapMid = CR + (DIST - BH/2 - CR)*0.52;
+    const gapMid = CR + (DIST - BH/2 - CR)*0.35;
     let tx,ty,rot;
     if (pi===0){tx=CX;        ty=CY-gapMid; rot=0;  }
     if (pi===1){tx=CX+gapMid; ty=CY;        rot=90; }
@@ -446,7 +482,7 @@ function build(data) {
         const descEl = document.getElementById('phase-desc');
         descEl.style.display = '';
         descEl.innerHTML = `
-        Select a phase from the diagram to explore.
+        Select a phase from the diagram to explore or click on the MYP Design Cycle to return to this overview section.
         `;
 
         document.getElementById('node-grid').innerHTML = `
@@ -479,7 +515,7 @@ function build(data) {
                     It is important to note that, while the design cycle includes several successive stages, the design cycle is an iterative and cyclical process.
                 </div>
                 <div class="overview-text">
-                    Students move flexibly within and between phases, revisiting strands as they refine ideas, test solutions and respond to feedback.
+                    Students move freely and flexibly within and between phases, revisiting strands as they refine ideas, test solutions and respond to feedback.
                 </div>
                 </div>
 
@@ -519,6 +555,7 @@ function build(data) {
 
             </div>
             `;
+    
   }
 
   function updateWheel() {
@@ -562,6 +599,7 @@ function build(data) {
       grid.appendChild(card);
     });
   }
+  clearSel();
 }
 </script>
 </body>
