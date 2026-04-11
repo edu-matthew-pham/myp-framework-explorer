@@ -1,0 +1,87 @@
+{
+  "title": "MYP Design Cycle",
+  "subtitle": "Design and Technology",
+  "centre_label": "Design\nCycle",
+  "phases": [
+    {
+      "id": "ia",
+      "label": "Inquiring &\nAnalysing",
+      "criterion": "Criterion A",
+      "color": "#4A90C4",
+      "light": "#cde3f5",
+      "description": "Students develop understanding of design problems by identifying needs, analysing existing products and articulating a design brief and specification.",
+      "nodes": [
+        { "label": "Explain and justify", "detail": "the need" },
+        { "label": "Identify and prioritize", "detail": "the research" },
+        { "label": "Analyse", "detail": "existing products" },
+        { "label": "Develop", "detail": "a Design Brief" }
+      ],
+      "levels": [
+        { "band": "1–2", "text": "States the need; describes one existing product with limited analysis." },
+        { "band": "3–4", "text": "Outlines the need; analyses products with some reference to the design brief." },
+        { "band": "5–6", "text": "Explains and justifies the need; analyses products; develops a detailed design brief." },
+        { "band": "7–8", "text": "Full justification of need; constructs a detailed design brief and specification." }
+      ]
+    },
+    {
+      "id": "di",
+      "label": "Developing\nIdeas",
+      "criterion": "Criterion B",
+      "color": "#E8A44A",
+      "light": "#fae3bc",
+      "description": "Students develop a design specification and generate, develop and present multiple design ideas that respond to that specification.",
+      "nodes": [
+        { "label": "Develop", "detail": "a Design Specification" },
+        { "label": "Develop", "detail": "Design Ideas" },
+        { "label": "Present", "detail": "the Chosen Design" },
+        { "label": "Develop", "detail": "planning drawings or diagrams" }
+      ],
+      "levels": [
+        { "band": "1–2", "text": "Develops a basic design specification; presents one design idea." },
+        { "band": "3–4", "text": "Develops a specification; presents a few ideas with some development." },
+        { "band": "5–6", "text": "Develops a detailed specification; evaluates multiple ideas; selects one." },
+        { "band": "7–8", "text": "Comprehensive specification; evaluates and justifies a range; fully develops chosen." }
+      ]
+    },
+    {
+      "id": "cs",
+      "label": "Creating the\nSolution",
+      "criterion": "Criterion C",
+      "color": "#6AAF6A",
+      "light": "#c8e8c8",
+      "description": "Students construct a logical plan, demonstrate technical skills and follow the plan to create the solution, justifying any changes made.",
+      "nodes": [
+        { "label": "Construct", "detail": "a logical plan" },
+        { "label": "Demonstrate", "detail": "technical skills" },
+        { "label": "Follow", "detail": "the plan to make the solution" },
+        { "label": "Justify", "detail": "changes made to the plan" }
+      ],
+      "levels": [
+        { "band": "1–2", "text": "Constructs a basic plan; attempts to demonstrate technical skills." },
+        { "band": "3–4", "text": "Constructs a plan; demonstrates adequate skills; follows the plan." },
+        { "band": "5–6", "text": "Detailed plan; competent technical skills; justifies some changes." },
+        { "band": "7–8", "text": "Logical detailed plan; excellent skills; follows and justifies all changes." }
+      ]
+    },
+    {
+      "id": "ev",
+      "label": "Evaluating",
+      "criterion": "Criterion D",
+      "color": "#C96060",
+      "light": "#f5c8c8",
+      "description": "Students design testing methods, evaluate the success of the solution against the design specification and explain how it could be improved.",
+      "nodes": [
+        { "label": "Design", "detail": "testing methods" },
+        { "label": "Evaluate", "detail": "the success of the solution" },
+        { "label": "Explain", "detail": "how the solution could be improved" },
+        { "label": "Explain", "detail": "the impact of the solution" }
+      ],
+      "levels": [
+        { "band": "1–2", "text": "Outlines a basic testing method; states if solution was successful." },
+        { "band": "3–4", "text": "Describes testing; evaluates with some reference to specification." },
+        { "band": "5–6", "text": "Designs relevant tests; evaluates against specification; suggests improvements." },
+        { "band": "7–8", "text": "Detailed tests; full evaluation against spec; justifies detailed improvements." }
+      ]
+    }
+  ]
+}
