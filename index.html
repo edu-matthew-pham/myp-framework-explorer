@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MYP Cycle</title>
+<title>MYP Learning Maps</title>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <style>
@@ -247,7 +247,7 @@
   <h1>MYP Learning Maps</h1>
 </header>
 <div class="tab-bar" id="tab-bar">
-  <button class="tab-btn active" data-json="myp_principles_cycle.json">Principles of Practice</button>
+  <button class="tab-btn active" data-json="myp_principles_cycle.json">From Principles into Practice</button>
   <div class="tab-sep"></div>
   <button class="tab-btn" data-json="myp_design_cycle.json">Design</button>
   <button class="tab-btn" data-json="myp_arts_cycle.json">Arts</button>
@@ -841,5 +841,15 @@ function renderFoundations(fd, tabIndex) {
   padding:7px 11px; font-size:10.5px; line-height:1.55; color:#f0ede8;
   max-width:240px; pointer-events:none; white-space:normal;
 "></div>
+<div style="
+  flex-shrink: 0;
+  padding: 7px 24px;
+  font-size: 10.5px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+">
+  An independent teacher-developed tool based on <a href="https://www.ibo.org/programmes/middle-years-programme/" target="_blank" style="color:var(--muted);text-decoration:underline;">IB MYP: From Principles into Practice</a> (2014, updated 2022) and the MYP subject-group guides. The IB is the authoritative source for all programme documentation.
+</div>
 </body>
 </html>

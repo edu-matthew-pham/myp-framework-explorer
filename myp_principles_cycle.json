@@ -1,5 +1,5 @@
 {
-  "title": "MYP Principles of Practice",
+  "title": "From Principles Into Practice",
   "subtitle": "Learning Map",
   "overview": {
     "title": "MYP Programme Overview",
@@ -166,7 +166,7 @@
           }
         },
         {
-          "label": "Related Concepts",
+          "label": "Related\nConcepts",
           "detail": "depth",
           "description": "Related concepts are grounded in specific disciplines and add precision and depth to the key concept. They emerge from the nature of the subject itself — its content, craft and processes. Teachers identify one or more related concepts for each unit.",
           "strand_full": "Subject-specific concepts that extend the key concept and deepen disciplinary understanding.",
@@ -419,7 +419,7 @@
           }
         },
         {
-          "label": "Self-management",
+          "label": "Self\nManagement",
           "detail": "Clusters III · IV · V",
           "description": "Self-management encompasses organisation skills (managing time, tasks and information), affective skills (managing emotional states and motivation), and reflection skills (metacognition — understanding how one learns best). These three clusters support students to become autonomous, self-regulated learners.",
           "strand_full": "Organization (Cluster III), Affective (Cluster IV) and Reflection (Cluster V). Supports autonomous, metacognitive learning.",
