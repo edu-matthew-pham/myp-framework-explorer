@@ -812,6 +812,99 @@ function renderFoundations(fd, tabIndex) {
       section.appendChild(ql);
       list.appendChild(section);
     });
+
+  } else if (tabIndex === 3 && fd.service_as_action) {
+    const sa = fd.service_as_action;
+    const intro = document.createElement('p');
+    intro.className = 'found-intro';
+    intro.textContent = sa.intro;
+    list.appendChild(intro);
+
+    const critLabel = document.createElement('div');
+    critLabel.style.cssText = 'font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;';
+    critLabel.textContent = 'Key principles';
+    list.appendChild(critLabel);
+    const principles = document.createElement('div');
+    principles.className = 'found-criteria';
+    sa.principles.forEach(p => {
+      const el = document.createElement('div');
+      el.className = 'found-criterion';
+      el.innerHTML = `<div class="found-criterion-label">${p.label}</div><div class="found-criterion-text">${p.text}</div>`;
+      principles.appendChild(el);
+    });
+    list.appendChild(principles);
+
+    const outLabel = document.createElement('div');
+    outLabel.style.cssText = 'font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:10px 0 6px;';
+    outLabel.textContent = 'Learning outcomes';
+    list.appendChild(outLabel);
+    const outIntro = document.createElement('div');
+    outIntro.style.cssText = 'font-size:10.5px;color:var(--muted);margin-bottom:6px;font-style:italic;';
+    outIntro.textContent = sa.outcomes_intro;
+    list.appendChild(outIntro);
+    const outList = document.createElement('div');
+    outList.className = 'found-gq-list';
+    sa.outcomes.forEach(o => {
+      const item = document.createElement('div');
+      item.className = 'found-gq-item';
+      item.textContent = o;
+      outList.appendChild(item);
+    });
+    list.appendChild(outList);
+
+    const saNote = document.createElement('div');
+    saNote.className = 'found-note';
+    saNote.style.marginTop = '8px';
+    saNote.textContent = sa.note;
+    list.appendChild(saNote);
+
+  } else if (tabIndex === 4 && fd.interdisciplinary) {
+    const id = fd.interdisciplinary;
+    const intro = document.createElement('p');
+    intro.className = 'found-intro';
+    intro.textContent = id.intro;
+    list.appendChild(intro);
+
+    const defBox = document.createElement('div');
+    defBox.className = 'found-formula';
+    defBox.style.fontWeight = '400';
+    defBox.style.fontStyle = 'italic';
+    defBox.textContent = id.definition;
+    list.appendChild(defBox);
+
+    const qLabel = document.createElement('div');
+    qLabel.style.cssText = 'font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;';
+    qLabel.textContent = 'Three key qualities';
+    list.appendChild(qLabel);
+    const qualities = document.createElement('div');
+    qualities.className = 'found-criteria';
+    id.qualities.forEach(q => {
+      const el = document.createElement('div');
+      el.className = 'found-criterion';
+      el.innerHTML = `<div class="found-criterion-label">${q.label}</div><div class="found-criterion-text">${q.text}</div>`;
+      qualities.appendChild(el);
+    });
+    list.appendChild(qualities);
+
+    const whyLabel = document.createElement('div');
+    whyLabel.style.cssText = 'font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:10px 0 6px;';
+    whyLabel.textContent = 'Why it matters';
+    list.appendChild(whyLabel);
+    const whyList = document.createElement('div');
+    whyList.className = 'found-gq-list';
+    id.why.forEach(w => {
+      const item = document.createElement('div');
+      item.className = 'found-gq-item';
+      item.textContent = w;
+      whyList.appendChild(item);
+    });
+    list.appendChild(whyList);
+
+    const idNote = document.createElement('div');
+    idNote.className = 'found-note';
+    idNote.style.marginTop = '8px';
+    idNote.textContent = id.note;
+    list.appendChild(idNote);
   }
 }
 

@@ -638,7 +638,9 @@
     "tabs": [
       "Learner Profile",
       "SOI Construction",
-      "Guiding Questions"
+      "Guiding Questions",
+      "Service as Action",
+      "Interdisciplinary"
     ],
     "learner_profile": {
       "intro": "The IB learner profile is the mission in action — the aspirational outcome that all four programme elements work toward. All MYP learning experiences are designed to develop these ten attributes in students aged 11–16.",
@@ -757,6 +759,63 @@
           ]
         }
       ]
+    },
+    "service_as_action": {
+      "intro": "Service as action is a core outcome of the MYP — the result of successful inquiry leading to principled, real-world engagement. It sits in the second ring of the programme model as something students initiate, not something done to them.",
+      "principles": [
+        {
+          "label": "Service with, not for",
+          "text": "Meaningful service moves beyond doing for others toward engaging with others in a shared commitment to the common good. It requires prior communication and full consultation with the community involved."
+        },
+        {
+          "label": "Connected to learning",
+          "text": "Service must build authentic connections between classroom learning and community experience — applying concepts, skills and knowledge in real contexts. It is not separate from the curriculum."
+        },
+        {
+          "label": "Student-initiated",
+          "text": "Students should have genuine roles in planning, organising and implementing service activities. Teacher facilitation decreases as students move through the programme."
+        },
+        {
+          "label": "Reflection is essential",
+          "text": "Structured time for formal and informal reflection on the service experience is required. Reflection helps students make meaning and develop awareness of their role and responsibility in the world."
+        }
+      ],
+      "outcomes_intro": "MYP students should, through engagement with service as action:",
+      "outcomes": [
+        "Become more aware of their own strengths and areas for growth",
+        "Undertake challenges that develop new skills",
+        "Discuss, evaluate and plan student-initiated activities",
+        "Persevere in action",
+        "Work collaboratively with others",
+        "Develop international-mindedness through global engagement, multilingualism and intercultural understanding",
+        "Consider the ethical implications of their actions"
+      ],
+      "note": "Fulfilment of the school's expectations for service as action is a requirement of the IB MYP certificate."
+    },
+    "interdisciplinary": {
+      "intro": "All MYP schools must engage students in at least one collaboratively planned interdisciplinary unit per year. All MYP teachers are responsible for fostering interdisciplinary understanding.",
+      "definition": "Interdisciplinary learning is the process by which students come to understand bodies of knowledge and modes of thinking from two or more disciplines and integrate them to create a new understanding that would have been unlikely through single-disciplinary means.",
+      "qualities": [
+        {
+          "label": "Purposeful",
+          "text": "Interdisciplinary connections must be meaningful and serve a genuine purpose — not forced. They address real-world complexity that single disciplines cannot adequately tackle alone."
+        },
+        {
+          "label": "Integrative",
+          "text": "Students bring together concepts, methods or forms of communication from two or more disciplines to explain a phenomenon, solve a problem, create a product or raise a new question."
+        },
+        {
+          "label": "Grounded in disciplines",
+          "text": "Strong interdisciplinary understanding depends on solid disciplinary foundations. Students need genuine subject knowledge before they can meaningfully integrate across disciplines."
+        }
+      ],
+      "why": [
+        "Address biases and consider diverse interpretations and points of view",
+        "Engage personal interest and increase motivation for learning",
+        "Develop critical and conceptual thinking by gathering and evaluating relevant data",
+        "Take action in ways that are age-appropriate and develop dispositions for responsible citizenship"
+      ],
+      "note": "For full guidance on interdisciplinary unit planning, consult the IB publication Interdisciplinary teaching and learning in the MYP (2021)."
     }
   }
 }
