@@ -26,14 +26,11 @@
 
   .main { display: flex; flex: 1; min-height: 0; overflow: hidden; }
 
-  /* ── Wheel ── */
-    .wheel-wrap {
-    flex: 0 0 38%;  /* try 55–65% */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .wheel-wrap {
+    flex: 0 0 38%;
+    display: flex; align-items: center; justify-content: center;
     padding: 10px;
-    }
+  }
   #wheel { display: block; overflow: visible; }
 
   .node-g { cursor: pointer; }
@@ -43,14 +40,16 @@
   .node-g.phase-active rect { stroke-width: 3.5 !important; filter: brightness(1.18); }
   .centre-g { cursor: pointer; }
 
-  /* ── Right panel ── */
+  /* Right side */
+  .right-side { display: flex; flex: 1; min-width: 0; border-left: 1px solid var(--border); }
+
   .info-panel {
     flex: 1; min-width: 0;
     display: flex; flex-direction: column;
+    border-right: 1px solid var(--border);
     overflow: hidden;
   }
 
-  /* Phase header */
   .phase-header {
     padding: 16px 20px 12px;
     border-bottom: 1px solid var(--border);
@@ -61,100 +60,43 @@
     display: inline-block; padding: 3px 11px; border-radius: 20px;
     font-size: 10px; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 6px;
   }
-  .phase-name {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 16px; font-weight: 700; line-height: 1.2;
-  }
+  .phase-name { font-family: 'Libre Baskerville', serif; font-size: 16px; font-weight: 700; line-height: 1.2; }
 
-  /* Phase description */
   .phase-desc {
-    padding: 12px 20px;
-    border-bottom: 1px solid var(--border);
-    font-size: 12px; color: var(--muted); line-height: 1.7;
-    flex-shrink: 0;
+    padding: 12px 20px; border-bottom: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); line-height: 1.7; flex-shrink: 0;
   }
 
-  /* Node grid — 2x2 */
   .node-grid {
-    flex: 1; overflow-y: auto;
-    padding: 14px 16px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
+    flex: 1; overflow-y: auto; padding: 14px 16px;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px;
   }
   .node-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px;
     display: flex; flex-direction: column; gap: 5px;
   }
-  .node-card-label {
-    font-size: 12px; font-weight: 600; line-height: 1.3;
-  }
-  .node-card-detail {
-    font-size: 11px; font-style: italic; color: var(--muted);
-  }
-  .node-card-desc {
-    font-size: 11px; color: var(--muted); line-height: 1.6; margin-top: 3px;
-  }
-  .node-card-divider {
-    height: 1px; background: var(--border); margin: 2px 0;
-  }
+  .node-card-label { font-size: 12px; font-weight: 600; line-height: 1.3; }
+  .node-card-detail { font-size: 11px; font-style: italic; color: var(--muted); }
+  .node-card-desc { font-size: 11px; color: var(--muted); line-height: 1.6; margin-top: 3px; }
+  .node-card-divider { height: 1px; background: var(--border); margin: 2px 0; }
 
-  .empty-hint {
-    grid-column: 1 / -1;
-    font-size: 13px; color: var(--muted); line-height: 1.7;
-    align-self: center; text-align: center; padding: 20px;
-  }
+  .node-prog { display: flex; flex-direction: column; gap: 5px; margin-top: 2px; }
+  .node-prog-row { display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: start; }
+  .node-prog-year { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; color: var(--text); opacity: 0.8; }
+  .node-prog-text { font-size: 10px; line-height: 1.5; color: var(--muted); }
 
   /* Levels panel */
-  .right-side { display: flex; flex: 1; min-width: 0; border-left: 1px solid var(--border); }
-  .info-panel { border-left: none; border-right: 1px solid var(--border); }
   .levels-panel {
-    flex: 0 0 32%;  min-width: 200px; max-width: 350px;
-    display: flex; flex-direction: column;
-    overflow: hidden;
+    flex: 0 0 32%; min-width: 200px; max-width: 350px;
+    display: flex; flex-direction: column; overflow: hidden;
   }
   .levels-header {
-    padding: 16px 14px 10px;
-    border-bottom: 1px solid var(--border);
+    padding: 16px 14px 10px; border-bottom: 1px solid var(--border);
     font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--muted);
-    flex-shrink: 0;
+    text-transform: uppercase; color: var(--muted); flex-shrink: 0;
   }
-  .levels-list {
-    flex: 1; overflow-y: auto;
-    padding: 10px 12px;
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .level-card {
-    padding: 8px 10px; border-radius: 7px;
-    background: var(--surface); border: 1px solid var(--border);
-  }
-  .level-band {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; margin-bottom: 3px;
-  }
-  .level-text { font-size: 11px; line-height: 1.5; color: var(--muted); }
-  .levels-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
-  .levels-intro-quote div {
-    color: white;
-  }
-    .levels-intro-quote ul {
-    margin: 0;
-    padding-left: 16px;
-    
-    }
-
-    .levels-intro-quote li {
-    margin-bottom: 4px;
-    color: white;
-    }
-  .year-toggle {
-    display: flex; gap: 4px; margin-bottom: 10px;
-  }
+  .year-toggle { display: flex; gap: 4px; margin-top: 8px; }
   .year-btn {
     padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;
     border: 1px solid var(--border); background: transparent; color: var(--muted);
@@ -164,188 +106,60 @@
   .year-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
   .year-btn.active { color: white; border-color: transparent; }
 
-  .node-prog {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 2px;
-}
+  .levels-intro {
+    padding: 12px 12px 10px; border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02); flex-shrink: 0;
+  }
+  .levels-intro-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text); margin-bottom: 8px;
+  }
+  .levels-intro-body { font-size: 11px; line-height: 1.6; color: var(--muted); margin-bottom: 8px; }
+  .levels-intro-body ul { margin: 4px 0 4px 16px; }
+  .levels-intro-body li { margin-bottom: 2px; color: var(--text); }
+  .levels-intro-req {
+    font-size: 10.5px; line-height: 1.55; color: var(--muted);
+    border-left: 2px solid var(--border); padding-left: 8px; font-style: italic;
+  }
 
-.node-prog-row {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 8px;
-  align-items: start;
-}
+  .levels-list {
+    flex: 1; overflow-y: auto; padding: 10px 12px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .level-card {
+    padding: 8px 10px; border-radius: 7px;
+    background: var(--surface); border: 1px solid var(--border);
+  }
+  .level-band { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+  .level-text { font-size: 11px; line-height: 1.5; color: var(--muted); }
+  .levels-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
-.node-prog-year {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--text);
-  opacity: 0.8;
-}
+  /* Overview (rendered from JSON) */
+  .overview { display: flex; flex-direction: column; gap: 18px; grid-column: 1 / -1; }
+  .overview-section { display: flex; flex-direction: column; gap: 6px; }
+  .overview-title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .overview-quote {
+    font-size: 12px; line-height: 1.7; color: var(--text); font-style: italic;
+    border-left: 2px solid var(--border); padding-left: 10px; margin: 2px 0;
+  }
+  .overview-text { font-size: 12px; line-height: 1.7; color: var(--muted); }
 
-.node-prog-text {
-  font-size: 10px;
-  line-height: 1.5;
-  color: var(--muted);
-}
+  .gen-table {
+    display: flex; flex-direction: column; margin-top: 6px;
+    border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+  .gen-row { display: grid; }
+  .gen-row div {
+    padding: 7px 10px; font-size: 10.5px; line-height: 1.45; color: var(--muted);
+    border-right: 1px solid var(--border);
+  }
+  .gen-row div:last-child { border-right: none; }
+  .gen-row:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .gen-row.header { background: var(--surface2); }
+  .gen-row.header div { font-weight: 600; color: var(--text); font-size: 10px; letter-spacing: 0.04em; }
+  .gen-row:nth-child(even):not(.header) { background: rgba(255,255,255,0.02); }
 
-.myp-table {
-  display: flex;
-  flex-direction: column;
-  margin-top: 8px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.myp-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.myp-row div {
-  padding: 8px 10px;
-  font-size: 10.5px;
-  line-height: 1.45;
-  color: var(--muted);
-  border-right: 1px solid var(--border);
-}
-
-.myp-row div:last-child {
-  border-right: none;
-}
-
-/* horizontal borders */
-.myp-row:not(:last-child) {
-  border-bottom: 1px solid var(--border);
-}
-
-/* header row */
-.myp-row.header {
-  background: var(--surface2);
-}
-
-.myp-row.header div {
-  font-weight: 600;
-  color: var(--text);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-}
-
-/* zebra striping */
-.myp-row:nth-child(even):not(.header) {
-  background: rgba(255,255,255,0.02);
-}
-
-.overview {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  grid-column: 1 / -1;
-}
-
-.overview-section {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.overview-title {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--text);
-  
-  
-}
-
-.overview-text {
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--muted);
-}
-
-.overview-quote {
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--text);
-  font-style: italic;
-  border-left: 2px solid var(--border);
-  padding-left: 10px;
-  margin: 6px 0 4px;
-}
-
-.concept-table {
-  display: flex;
-  flex-direction: column;
-  margin-top: 6px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.concept-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.concept-row div {
-  padding: 6px 8px;
-  font-size: 10.5px;
-  text-align: center;
-  color: var(--muted);
-  border-right: 1px solid var(--border);
-}
-
-.concept-row div:last-child {
-  border-right: none;
-}
-
-.concept-row:not(:last-child) {
-  border-bottom: 1px solid var(--border);
-}
-
-.concept-row.header {
-  background: var(--surface2);
-}
-
-.concept-row.header div {
-  font-weight: 600;
-  color: var(--text);
-}
-
-.levels-intro {
-  padding: 12px 12px 10px;
-  border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,0.02);
-  flex-shrink: 0;
-}
-
-.levels-intro-title {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.levels-intro-quote {
-  font-size: 11px;
-  line-height: 1.6;
-  color: var(--muted);
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.levels-intro-note {
-  font-size: 10.5px;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
+  .concept-table .gen-row div { text-align: center; }
 </style>
 </head>
 <body>
@@ -356,91 +170,54 @@
 </header>
 
 <div class="main">
-
   <div class="wheel-wrap"><svg id="wheel"></svg></div>
 
   <div class="right-side">
-  <div class="info-panel">
-    <div class="phase-header" id="phase-header">
-      <p class="phase-empty-msg">Select a phase from the diagram to explore.</p>
+    <div class="info-panel">
+      <div class="phase-header" id="phase-header"></div>
+      <div class="phase-desc" id="phase-desc" style="display:none;"></div>
+      <div class="node-grid" id="node-grid"></div>
     </div>
-    <div class="phase-desc" id="phase-desc" style="display:none;"></div>
-    <div class="node-grid" id="node-grid">
-      <p class="empty-hint">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>
-    </div>
-  </div>
 
     <div class="levels-panel">
-    <div class="levels-header">Achievement levels
-        <div class="year-toggle" id="year-toggle"><button class="year-btn active" data-year="y1">Y1</button><button class="year-btn" data-year="y3">Y3</button><button class="year-btn" data-year="y5">Y5</button></div>
-    </div>
-
-    <div class="levels-intro" id="levels-intro">
-        <div class="levels-intro-title">Assessment Criteria Overview</div>
-        <div class="levels-intro-quote">
-            <div>Each criterion has eight possible achievement levels (1–8).</div>
-        
-            
-            <div>These are divided into four bands, generally representing performance that is:</div>
-            <ul>
-                <li>limited (1–2)</li>
-                <li>adequate (3–4)</li>
-                <li>substantial (5–6)</li>
-                <li>excellent (7–8)</li>
-            </ul>
-            </li>
-        
-        <div>Each band has its own unique descriptor used to make “best-fit” judgments about students’ progress and achievement.</div>
-</div>
-        <div>
-
+      <div class="levels-header">
+        Achievement levels
+        <div class="year-toggle" id="year-toggle">
+          <button class="year-btn active" data-year="y1">Y1</button>
+          <button class="year-btn" data-year="y3">Y3</button>
+          <button class="year-btn" data-year="y5">Y5</button>
         </div>
-        <div class="levels-intro-quote">
-        <div>Subject groups must assess all strands of all four assessment criteria at least twice in each year of the MYP.</div>
-        </div>
-    </div>
-
-    <div class="levels-list" id="levels-list">
+      </div>
+      <div class="levels-intro" id="levels-intro"></div>
+      <div class="levels-list" id="levels-list">
         <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
+      </div>
     </div>
-    </div>
-
-  </div><!-- end right-side -->
-
-</div>
-
-<div style="
-  max-width:960px;
-  margin: 6px auto auto auto;
-  padding: 16px 32px 16px;
-  font-size: 12px;
-  color:#888;
-  line-height:1.6;
-  border: 1px solid rgba(255,255,255,0.08);
-  background-color: rgba(255,255,255,0.03);
-  text-align: center;
-">
-  This is an independent teacher-developed learning map based on the
-  <a href="https://www.ibo.org/" target="_blank" style="color:#b8b5ae;">IB Middle Years Programme</a>
-  and the MYP Design guide. <br/> The International Baccalaureate is the authoritative source.
+  </div>
 </div>
 
 <script>
 const DATA_URL = './myp_design_cycle.json';
-
-async function init() {
-  const response = await fetch(DATA_URL);
-  const data = await response.json();
-  build(data);
-}
-
-init();
-//fetch(DATA_URL).then(r => r.json()).then(build);
+fetch(DATA_URL).then(r => r.json()).then(build);
 
 function build(data) {
   document.getElementById('h-title').textContent = data.title || 'MYP Cycle';
   document.getElementById('h-sub').textContent   = data.subtitle || '';
 
+  // ── Render assessment overview panel (static, from JSON) ──
+  if (data.assessment_overview) {
+    const ao = data.assessment_overview;
+    const intro = document.getElementById('levels-intro');
+    intro.innerHTML = `
+      <div class="levels-intro-title">Assessment Criteria Overview</div>
+      <div class="levels-intro-body">${ao.intro.replace(
+        /limited \(1–2\), adequate \(3–4\), substantial \(5–6\), and excellent \(7–8\)/,
+        'performance that is:<ul><li>limited (1–2)</li><li>adequate (3–4)</li><li>substantial (5–6)</li><li>excellent (7–8)</li></ul>'
+      )}</div>
+      <div class="levels-intro-req">${ao.requirement}</div>`;
+  }
+
+  // ── Flatten nodes ──
   const nodes = [];
   data.phases.forEach((phase, pi) => {
     phase.nodes.forEach((node, ni) => {
@@ -448,23 +225,18 @@ function build(data) {
     });
   });
 
-  // Canvas
+  // ── Canvas ──
   const H  = Math.min(window.innerHeight - 46, 660);
-  const W  = H;
-  const CX = W/2, CY = H/2;
-
+  const W  = H, CX = W/2, CY = H/2;
   const NW = W*0.155, NH = W*0.132, GAP = W*0.015, CORNER = 10;
   const BW = NW*2+GAP, BH = NH*2+GAP;
   const DIST = W*0.345;
 
   const anchors = [
-    {cx:CX,       cy:CY-DIST},
-    {cx:CX+DIST,  cy:CY     },
-    {cx:CX,       cy:CY+DIST},
-    {cx:CX-DIST,  cy:CY     },
+    {cx:CX,      cy:CY-DIST}, {cx:CX+DIST, cy:CY},
+    {cx:CX,      cy:CY+DIST}, {cx:CX-DIST, cy:CY},
   ];
   const gridOffsets = [{col:0,row:0},{col:1,row:0},{col:0,row:1},{col:1,row:1}];
-
   nodes.forEach(n => {
     const a = anchors[n.phaseIdx], o = gridOffsets[n.nodeIdx];
     n.x = a.cx - BW/2 + o.col*(NW+GAP) + NW/2;
@@ -490,7 +262,7 @@ function build(data) {
       .attr('y',(i-(tLines.length-1)/2)*tfs*1.3).text(line);
   });
 
-  // Phase labels between centre and blocks
+  // Phase labels
   const labelFs = W*0.021, lh = labelFs*1.3;
   data.phases.forEach((phase, pi) => {
     const lines = phase.label.split('\n');
@@ -522,20 +294,15 @@ function build(data) {
   }
 
   let activePhaseId = null;
-
-  const nodeGs = svg.selectAll('.node-g')
-    .data(nodes).enter()
+  const nodeGs = svg.selectAll('.node-g').data(nodes).enter()
     .append('g').attr('class','node-g')
     .attr('transform', d=>`translate(${d.x},${d.y})`)
     .on('click', (e,d) => selectPhase(d.phase.id));
 
   nodeGs.append('rect')
-    .attr('x',-NW/2).attr('y',-NH/2)
-    .attr('width',NW).attr('height',NH)
+    .attr('x',-NW/2).attr('y',-NH/2).attr('width',NW).attr('height',NH)
     .attr('rx',CORNER).attr('ry',CORNER)
-    .attr('fill', d=>d.phase.color)
-    .attr('stroke', d=>d.phase.light)
-    .attr('stroke-width',2);
+    .attr('fill', d=>d.phase.color).attr('stroke', d=>d.phase.light).attr('stroke-width',2);
 
   nodeGs.each(function(d) {
     const g = d3.select(this);
@@ -558,7 +325,6 @@ function build(data) {
     });
   });
 
-  // ── Interaction ──
   // ── Year toggle ──
   let activeYear = 'y1';
   let activePhase = null;
@@ -574,21 +340,102 @@ function build(data) {
 
   function renderLevels(phase) {
     activePhase = phase;
-    const levelsList = document.getElementById('levels-list');
-    levelsList.innerHTML = '';
-    const lvls = phase.levels[activeYear] || [];
+    const list = document.getElementById('levels-list');
+    list.innerHTML = '';
+    const lvls = (phase.levels && phase.levels[activeYear]) || [];
     lvls.forEach(lv => {
       const card = document.createElement('div');
       card.className = 'level-card';
       card.innerHTML = `<div class="level-band" style="color:${phase.light}">${lv.band}</div><div class="level-text">${lv.text}</div>`;
-      levelsList.appendChild(card);
+      list.appendChild(card);
     });
-    // Colour active year button to phase colour
     document.querySelectorAll('.year-btn').forEach(b => {
       b.style.background = b.dataset.year === activeYear ? phase.color : '';
     });
   }
 
+  function clearLevels() {
+    activePhase = null;
+    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see achievement level descriptors.</p>';
+    document.querySelectorAll('.year-btn').forEach(b => { b.style.background = ''; });
+  }
+
+  // ── Generic table builder ──
+  function buildTable(tableData, cols, cls='') {
+    const wrap = document.createElement('div');
+    wrap.className = 'gen-table' + (cls ? ' '+cls : '');
+    // Header
+    const hRow = document.createElement('div');
+    hRow.className = 'gen-row header';
+    hRow.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    tableData.headers.forEach(h => {
+      const d = document.createElement('div'); d.textContent = h; hRow.appendChild(d);
+    });
+    wrap.appendChild(hRow);
+    // Rows
+    tableData.rows.forEach(row => {
+      const r = document.createElement('div');
+      r.className = 'gen-row';
+      r.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+      row.forEach(cell => {
+        const d = document.createElement('div'); d.textContent = cell; r.appendChild(d);
+      });
+      wrap.appendChild(r);
+    });
+    return wrap;
+  }
+
+  // ── Render overview from JSON ──
+  function renderOverview(ov) {
+    document.getElementById('phase-header').innerHTML =
+      `<div class="phase-name">${ov.title}</div>`;
+    const descEl = document.getElementById('phase-desc');
+    descEl.style.display = '';
+    descEl.textContent = ov.description;
+
+    const grid = document.getElementById('node-grid');
+    grid.style.gridTemplateColumns = '1fr';
+    grid.style.gridTemplateRows = 'auto';
+    grid.innerHTML = '';
+
+    const container = document.createElement('div');
+    container.className = 'overview';
+
+    ov.sections.forEach(sec => {
+      const secEl = document.createElement('div');
+      secEl.className = 'overview-section';
+
+      const title = document.createElement('div');
+      title.className = 'overview-title';
+      title.textContent = sec.title;
+      secEl.appendChild(title);
+
+      if (sec.quote) {
+        const q = document.createElement('div');
+        q.className = 'overview-quote';
+        q.textContent = sec.quote;
+        secEl.appendChild(q);
+      }
+      if (sec.text) {
+        const t = document.createElement('div');
+        t.className = 'overview-text';
+        t.textContent = sec.text;
+        secEl.appendChild(t);
+      }
+      if (sec.progression_table) {
+        secEl.appendChild(buildTable(sec.progression_table, sec.progression_table.headers.length));
+      }
+      if (sec.concepts_table) {
+        secEl.appendChild(buildTable(sec.concepts_table, sec.concepts_table.headers.length, 'concept-table'));
+      }
+      container.appendChild(secEl);
+    });
+
+    grid.appendChild(container);
+    clearLevels();
+  }
+
+  // ── Phase interaction ──
   function selectPhase(phaseId) {
     if (activePhaseId === phaseId) return;
     activePhaseId = phaseId;
@@ -599,121 +446,11 @@ function build(data) {
   function clearSel() {
     activePhaseId = null;
     updateWheel();
-    document.getElementById('phase-header').innerHTML = `
-        <div class="phase-name">MYP Design Overview</div>
-        `;
-
-        const descEl = document.getElementById('phase-desc');
-        descEl.style.display = '';
-        descEl.innerHTML = `
-        Select a phase from the diagram to explore or click on the MYP Design Cycle to return to this overview section.
-        `;
-
-        document.getElementById('node-grid').innerHTML = `
-            <div class="overview">
-
-                <div class="overview-section">
-                <div class="overview-title">Programme Model</div>
-                <div class="overview-quote">
-                    The MYP is flexible enough to accommodate the demands of most national or local curriculums.
-                </div>
-                <div class="overview-text">
-                    The programme is structured around concepts, global contexts and approaches to learning (ATL).
-                    Learning is inquiry-based and connected to real-world contexts.
-                </div>
-                </div>
-
-                <div class="overview-section">
-                <div class="overview-title">Nature of Design</div>
-                <div class="overview-quote">
-                    MYP design challenges all students to apply practical and creative thinking skills to solve design problems.
-                </div>
-                <div class="overview-text">
-                    Design involves identifying problems, exploring design ideas, developing solutions and evaluating outcomes.
-                </div>
-                </div>
-
-                <div class="overview-section">
-                <div class="overview-title">Design Cycle</div>
-                <div class="overview-quote">
-                    It is important to note that, while the design cycle includes several successive stages, the design cycle is an iterative and cyclical process.
-                </div>
-                <div class="overview-text">
-                    Students move flexibly within and between phases, revisiting strands as they refine ideas, test solutions and respond to feedback.
-                </div>
-                </div>
-
-                <div class="overview-section">
-                <div class="overview-title">Curriculum Planning</div>
-                <div class="overview-text">
-                    The table below shows how the teaching and learning experiences and the students’ expected outcomes in design should progress from the earlier years to the final years of the MYP.
-                </div>
-
-                <div class="myp-table">
-                    <div class="myp-row header">
-                    <div>MYP year 1</div>
-                    <div>MYP year 3</div>
-                    <div>MYP year 5</div>
-                    </div>
-
-                    <div class="myp-row">
-                    <div>Emphasis placed on individual strands of the objectives.</div>
-                    <div>Emphasis placed on addressing individual objectives.</div>
-                    <div>The objectives are fully addressed.</div>
-                    </div>
-
-                    <div class="myp-row">
-                    <div>Students explore contrived, teacher-led design challenges set in familiar contexts.</div>
-                    <div>Students explore identified, real-life problems set in familiar and unfamiliar contexts.</div>
-                    <div>Students independently explore complex real-life problems set in unfamiliar contexts.</div>
-                    </div>
-
-                    <div class="myp-row">
-                    <div>Students design for themselves.</div>
-                    <div>Students design products for familiar groups of people.</div>
-                    <div>Students design products for a client or an identified target audience.</div>
-                    </div>
-                </div>
-
-                </div>
-
-                <div class="overview-title">Key and Related Concepts</div>
-
-                <div class="concept-table">
-
-                    <div class="concept-row header">
-                    <div>Communication</div>
-                    <div>Communities</div>
-                    <div>Development</div>
-                    <div>Systems</div>
-                    </div>
-
-                    <div class="concept-row">
-                    <div>Adaptation</div>
-                    <div>Collaboration</div>
-                    <div>Ergonomics</div>
-                    <div>Evaluation</div>
-                    </div>
-
-                    <div class="concept-row">
-                    <div>Form</div>
-                    <div>Function</div>
-                    <div>Innovation</div>
-                    <div>Invention</div>
-                    </div>
-
-                    <div class="concept-row">
-                    <div>Markets and trends</div>
-                    <div>Perspective</div>
-                    <div>Resources</div>
-                    <div>Sustainability</div>
-                    </div>
-
-                </div>
-
-            </div>
-            `;
-    
+    // Reset grid columns for 2x2 layout
+    const grid = document.getElementById('node-grid');
+    grid.style.gridTemplateColumns = '1fr 1fr';
+    grid.style.gridTemplateRows = '1fr 1fr';
+    if (data.overview) renderOverview(data.overview);
   }
 
   function updateWheel() {
@@ -723,26 +460,26 @@ function build(data) {
   }
 
   function renderPhase(phase) {
-    // Header
     document.getElementById('phase-header').innerHTML = `
       <span class="badge" style="background:${phase.color}33;color:${phase.light};border:1px solid ${phase.color}66">${phase.criterion}</span>
       <div class="phase-name" style="color:${phase.light};margin-top:4px;">${phase.label.replace(/\n/g,' ')}</div>`;
 
-    // Phase description
     const descEl = document.getElementById('phase-desc');
     descEl.style.display = '';
     descEl.textContent = phase.description;
 
-    // Levels
     renderLevels(phase);
 
-    // 2×2 node cards
     const grid = document.getElementById('node-grid');
+    grid.style.gridTemplateColumns = '1fr 1fr';
+    grid.style.gridTemplateRows = '1fr 1fr';
     grid.innerHTML = '';
+
     phase.nodes.forEach(node => {
       const card = document.createElement('div');
       card.className = 'node-card';
       card.style.borderColor = phase.color + '55';
+      const prog = node.progression || {};
       card.innerHTML = `
         <div class="node-card-label" style="color:${phase.light}">${node.label}</div>
         <div class="node-card-detail">${node.detail}</div>
@@ -750,13 +487,15 @@ function build(data) {
         <div class="node-card-desc">${node.description || ''}</div>
         <div class="node-card-divider"></div>
         <div class="node-prog">
-            <div class="node-prog-row"><span class="node-prog-year">Y1</span><span class="node-prog-text">${node.progression?.y1 || ''}</span></div>
-            <div class="node-prog-row"><span class="node-prog-year">Y3</span><span class="node-prog-text">${node.progression?.y3 || ''}</span></div>
-            <div class="node-prog-row"><span class="node-prog-year">Y5</span><span class="node-prog-text">${node.progression?.y5 || ''}</span></div>
+          <div class="node-prog-row"><span class="node-prog-year">Y1</span><span class="node-prog-text">${prog.y1 || ''}</span></div>
+          <div class="node-prog-row"><span class="node-prog-year">Y3</span><span class="node-prog-text">${prog.y3 || ''}</span></div>
+          <div class="node-prog-row"><span class="node-prog-year">Y5</span><span class="node-prog-text">${prog.y5 || ''}</span></div>
         </div>`;
       grid.appendChild(card);
     });
   }
+
+  // Start on overview
   clearSel();
 }
 </script>
