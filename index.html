@@ -275,25 +275,43 @@ function build(data) {
   const W  = H, CX = W/2, CY = H/2;
   const NW = W*0.155, NH = W*0.132, GAP = W*0.015, CORNER = 10;
   const BW = NW*2+GAP, BH = NH*2+GAP;
-  const DIST = W*0.345;
+  const DIST = W * 0.345;
 
   const anchors = [
-    {cx:CX,      cy:CY-DIST}, {cx:CX+DIST, cy:CY},
-    {cx:CX,      cy:CY+DIST}, {cx:CX-DIST, cy:CY},
+    {cx:CX,      cy:CY-DIST}, // 0 top    — fixed 2 rows, extra nodes add cols
+    {cx:CX+DIST, cy:CY      }, // 1 right  — fixed 2 cols, extra nodes add rows
+    {cx:CX,      cy:CY+DIST}, // 2 bottom — fixed 2 rows, extra nodes add cols
+    {cx:CX-DIST, cy:CY      }, // 3 left   — fixed 2 cols, extra nodes add rows
   ];
-  // Build per-phase offsets dynamically based on node count
-  // Lay out in a 2-column grid, wrapping rows as needed, centred on the anchor
-  function phaseOffsets(count) {
-    const cols = 2;
-    const rows = Math.ceil(count / cols);
+
+  // top/bottom: fixed 2 rows, grow columns
+  // left/right: fixed 2 cols, grow rows
+  function phaseOffsets(count, phaseIdx) {
+    const isHoriz = (phaseIdx === 0 || phaseIdx === 2); // top / bottom
+    const fixedDim = 2; // fixed rows (horiz) or fixed cols (vert)
     const offsets = [];
-    for (let i = 0; i < count; i++) {
-      const row = Math.floor(i / cols);
-      const colCount = (row === rows - 1 && count % cols !== 0) ? count % cols : cols;
-      const col = i % cols;
-      // Centre single-column rows
-      const xOffset = colCount === 1 ? 0.5 : col;
-      offsets.push({ col: xOffset, row, totalRows: rows, colsInRow: colCount });
+    if (isHoriz) {
+      // cols grow, rows fixed at 2
+      const cols = Math.ceil(count / 2);
+      for (let i = 0; i < count; i++) {
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+        // centre last row if odd node count
+        const rowCount = row === Math.floor((count-1)/cols) && count % cols !== 0 ? count % cols : cols;
+        const colOffset = rowCount < cols ? col + (cols - rowCount) / 2 : col;
+        offsets.push({ col: colOffset, row, totalCols: cols, totalRows: Math.ceil(count/cols) });
+      }
+    } else {
+      // rows grow, cols fixed at 2
+      const rows = Math.ceil(count / 2);
+      for (let i = 0; i < count; i++) {
+        const row = Math.floor(i / 2);
+        const col = i % 2;
+        // centre last row if odd node count
+        const rowSize = row === rows - 1 && count % 2 !== 0 ? 1 : 2;
+        const colOffset = rowSize === 1 ? 0.5 : col;
+        offsets.push({ col: colOffset, row, totalCols: 2, totalRows: rows });
+      }
     }
     return offsets;
   }
@@ -301,11 +319,11 @@ function build(data) {
   nodes.forEach(n => {
     const a = anchors[n.phaseIdx];
     const phaseNodes = nodes.filter(x => x.phaseIdx === n.phaseIdx);
-    const offsets = phaseOffsets(phaseNodes.length);
+    const offsets = phaseOffsets(phaseNodes.length, n.phaseIdx);
     const o = offsets[n.nodeIdx];
-    const totalRows = o.totalRows;
-    const blockH = totalRows * NH + (totalRows - 1) * GAP;
-    n.x = a.cx - BW/2 + o.col * (NW + GAP) + NW/2;
+    const blockW = o.totalCols * NW + (o.totalCols - 1) * GAP;
+    const blockH = o.totalRows * NH + (o.totalRows - 1) * GAP;
+    n.x = a.cx - blockW/2 + o.col * (NW + GAP) + NW/2;
     n.y = a.cy - blockH/2 + o.row * (NH + GAP) + NH/2;
   });
 
@@ -451,6 +469,47 @@ function build(data) {
     return wrap;
   }
 
+  // ── Build concepts block ──
+  function buildConcepts(concepts) {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'display:flex;flex-direction:column;gap:10px;margin-top:6px;';
+
+    // Key concepts row
+    const keyRow = document.createElement('div');
+    keyRow.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;';
+    concepts.key.forEach(k => {
+      const pill = document.createElement('span');
+      pill.textContent = k;
+      pill.style.cssText = 'padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--text);letter-spacing:0.03em;';
+      keyRow.appendChild(pill);
+    });
+    wrap.appendChild(keyRow);
+
+    // Related concept tables — one per group
+    concepts.related.forEach(group => {
+      const groupWrap = document.createElement('div');
+      groupWrap.style.cssText = 'display:flex;flex-direction:column;gap:4px;';
+
+      const label = document.createElement('div');
+      label.textContent = group.label;
+      label.style.cssText = 'font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);';
+      groupWrap.appendChild(label);
+
+      const pills = document.createElement('div');
+      pills.style.cssText = 'display:flex;gap:5px;flex-wrap:wrap;';
+      group.items.forEach(item => {
+        const p = document.createElement('span');
+        p.textContent = item;
+        p.style.cssText = 'padding:2px 9px;border-radius:20px;font-size:10.5px;background:var(--surface);border:1px solid var(--border);color:var(--muted);';
+        pills.appendChild(p);
+      });
+      groupWrap.appendChild(pills);
+      wrap.appendChild(groupWrap);
+    });
+
+    return wrap;
+  }
+
   // ── Render overview from JSON ──
   function renderOverview(ov) {
     document.getElementById('phase-header').innerHTML =
@@ -489,8 +548,8 @@ function build(data) {
       if (sec.progression_table) {
         secEl.appendChild(buildTable(sec.progression_table, sec.progression_table.headers.length));
       }
-      if (sec.concepts_table) {
-        secEl.appendChild(buildTable(sec.concepts_table, sec.concepts_table.headers.length, 'concept-table'));
+      if (sec.concepts) {
+        secEl.appendChild(buildConcepts(sec.concepts));
       }
       container.appendChild(secEl);
     });
@@ -541,8 +600,8 @@ function build(data) {
       card.style.borderColor = phase.color + '55';
       const prog = node.progression || {};
       card.innerHTML = `
-        <div class="node-card-label" style="color:${phase.light}">${node.label}</div>
-        <div class="node-card-detail">${node.detail}</div>
+        <div class="node-card-label" style="color:${phase.light}">${node.label} <span style="font-weight:400;opacity:0.65;font-size:11px;">${node.detail}</span></div>
+        <div class="node-card-detail">${node.strand_full || ''}</div>
         <div class="node-card-divider"></div>
         <div class="node-card-desc">${node.description || ''}</div>
         <div class="node-card-divider"></div>

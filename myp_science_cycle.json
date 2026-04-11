@@ -45,32 +45,82 @@
       },
       {
         "title": "Key and Related Concepts",
-        "concepts_table": {
-          "headers": [
-            "PLACEHOLDER",
-            "PLACEHOLDER",
-            "PLACEHOLDER",
-            "PLACEHOLDER"
+        "text": "The key concepts contributed by the study of sciences are Change, Relationships and Systems. Related concepts vary by discipline — select the relevant set when planning units.",
+        "concepts": {
+          "key": [
+            "Change",
+            "Relationships",
+            "Systems"
           ],
-          "rows": [
-            [
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER"
-            ],
-            [
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER"
-            ],
-            [
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER"
-            ]
+          "related": [
+            {
+              "label": "Biology",
+              "items": [
+                "Balance",
+                "Consequences",
+                "Energy",
+                "Environment",
+                "Evidence",
+                "Form",
+                "Function",
+                "Interaction",
+                "Models",
+                "Movement",
+                "Patterns",
+                "Transformation"
+              ]
+            },
+            {
+              "label": "Chemistry",
+              "items": [
+                "Balance",
+                "Conditions",
+                "Consequences",
+                "Energy",
+                "Evidence",
+                "Form",
+                "Function",
+                "Interaction",
+                "Models",
+                "Movement",
+                "Patterns",
+                "Transfer"
+              ]
+            },
+            {
+              "label": "Physics",
+              "items": [
+                "Consequences",
+                "Development",
+                "Energy",
+                "Environment",
+                "Evidence",
+                "Form",
+                "Function",
+                "Interaction",
+                "Models",
+                "Movement",
+                "Patterns",
+                "Transformation"
+              ]
+            },
+            {
+              "label": "Integrated / Modular",
+              "items": [
+                "Balance",
+                "Consequences",
+                "Energy",
+                "Environment",
+                "Evidence",
+                "Form",
+                "Function",
+                "Interaction",
+                "Models",
+                "Movement",
+                "Patterns",
+                "Transformation"
+              ]
+            }
           ]
         }
       }
@@ -97,7 +147,8 @@
             "y1": "Outline scientific knowledge.",
             "y3": "Describe scientific knowledge.",
             "y5": "Explain scientific knowledge."
-          }
+          },
+          "strand_full": "Explain scientific knowledge."
         },
         {
           "label": "Apply",
@@ -107,7 +158,8 @@
             "y1": "Apply scientific knowledge and understanding to solve problems set in familiar situations and suggest solutions to problems set in unfamiliar situations.",
             "y3": "Apply scientific knowledge and understanding to solve problems set in familiar and unfamiliar situations.",
             "y5": "Apply scientific knowledge and understanding to solve problems set in familiar and unfamiliar situations."
-          }
+          },
+          "strand_full": "Apply scientific knowledge and understanding to solve problems set in familiar and unfamiliar situations."
         },
         {
           "label": "Analyse and evaluate",
@@ -117,62 +169,63 @@
             "y1": "Interpret information to make scientifically supported judgments.",
             "y3": "Analyse information to make scientifically supported judgments.",
             "y5": "Analyse and evaluate information to make scientifically supported judgments."
-          }
+          },
+          "strand_full": "Analyse and evaluate information to make scientifically supported judgments."
         }
       ],
       "levels": {
         "y1": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "Selects scientific knowledge; selects scientific knowledge and understanding to suggest solutions to problems set in familiar situations; applies information to make judgments, with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Recalls scientific knowledge; applies scientific knowledge and understanding to suggest solutions to problems set in familiar situations; applies information to make judgments."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "States scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar situations; applies information to make scientifically supported judgments."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Outlines scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar situations and suggest solutions to problems set in unfamiliar situations; interprets information to make scientifically supported judgments."
           }
         ],
         "y3": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "Recalls scientific knowledge; applies scientific knowledge and understanding to suggest solutions to problems set in familiar situations; applies information to make judgments."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "States scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar situations; applies information to make scientifically supported judgments."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Outlines scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar situations and suggest solutions to problems set in unfamiliar situations; interprets information to make scientifically supported judgments."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Describes scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar and unfamiliar situations; analyses information to make scientifically supported judgments."
           }
         ],
         "y5": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "States scientific knowledge; applies scientific knowledge and understanding to suggest solutions to problems set in familiar situations; interprets information to make judgments."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Outlines scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar situations; interprets information to make scientifically supported judgments."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Describes scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar situations and suggest solutions to problems set in unfamiliar situations; analyses information to make scientifically supported judgments."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Explains scientific knowledge; applies scientific knowledge and understanding to solve problems set in familiar and unfamiliar situations; analyses and evaluates information to make scientifically supported judgments."
           }
         ]
       }
@@ -193,7 +246,8 @@
             "y1": "Outline an appropriate problem or research question to be tested by a scientific investigation.",
             "y3": "Describe a problem or question to be tested by a scientific investigation.",
             "y5": "Explain a problem or question to be tested by a scientific investigation."
-          }
+          },
+          "strand_full": "Explain a problem or question to be tested by a scientific investigation."
         },
         {
           "label": "Formulate",
@@ -203,7 +257,8 @@
             "y1": "Outline a testable prediction using scientific reasoning.",
             "y3": "Outline a testable hypothesis and explain it using scientific reasoning.",
             "y5": "Formulate a testable hypothesis and explain it using scientific reasoning."
-          }
+          },
+          "strand_full": "Formulate a testable hypothesis and explain it using scientific reasoning."
         },
         {
           "label": "Explain",
@@ -213,72 +268,74 @@
             "y1": "Outline how to manipulate the variables, and outline how data will be collected.",
             "y3": "Describe how to manipulate the variables, and describe how data will be collected.",
             "y5": "Explain how to manipulate the variables, and explain how data will be collected."
-          }
+          },
+          "strand_full": "Explain how to manipulate the variables, and explain how data will be collected."
         },
         {
           "label": "Design",
-          "detail": "scientific investigations",
-          "description": "Students design a logical, complete and safe scientific investigation method in response to an open-ended problem. The method should include only relevant information, correctly sequenced, so that another person could replicate it.",
+          "detail": "a logical, complete and safe method",
+          "description": "Students design a logical, complete and safe scientific investigation method in response to an open-ended problem, selecting appropriate materials and equipment. The method should include only relevant information, correctly sequenced, so that another person could replicate it. The sophistication of the surrounding context (problem statement, hypothesis, variable explanation) increases across year groups — the design requirement itself is consistent.",
           "progression": {
-            "y1": "Design scientific investigations.",
-            "y3": "Design scientific investigations.",
-            "y5": "Design scientific investigations."
-          }
+            "y1": "Design a logical, complete and safe method, selecting appropriate materials and equipment.",
+            "y3": "Design a logical, complete and safe method, selecting appropriate materials and equipment.",
+            "y5": "Design a logical, complete and safe method, selecting appropriate materials and equipment."
+          },
+          "strand_full": "Design scientific investigations."
         }
       ],
       "levels": {
         "y1": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "Selects a problem or question to be tested; selects a testable prediction; states a variable; designs a method with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "States a problem or question to be tested; states a testable prediction; states how to manipulate the variables and how data will be collected; designs a safe method in which they select materials and equipment."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "States a problem or question to be tested; outlines a testable prediction; outlines how to manipulate the variables and states how relevant data will be collected; designs a complete and safe method in which they select appropriate materials and equipment."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Outlines a problem or question to be tested; outlines a testable prediction using scientific reasoning; outlines how to manipulate the variables and outlines how sufficient, relevant data will be collected; designs a logical, complete and safe method in which they select appropriate materials and equipment."
           }
         ],
         "y3": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "States a problem or question to be tested, with limited success; states a testable hypothesis; states the variables; designs a method, with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "States a problem or question to be tested; outlines a testable hypothesis using scientific reasoning; outlines how to manipulate the variables and states how relevant data will be collected; designs a safe method in which they select materials and equipment."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Outlines a problem or question to be tested; outlines and explains a testable hypothesis using scientific reasoning; outlines how to manipulate the variables and outlines how sufficient, relevant data will be collected; designs a complete and safe method in which they select appropriate materials and equipment."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Describes a problem or question to be tested; outlines and explains a testable hypothesis using correct scientific reasoning; describes how to manipulate the variables and describes how sufficient, relevant data will be collected; designs a logical, complete and safe method in which they select appropriate materials and equipment."
           }
         ],
         "y5": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "States a problem or question to be tested; outlines a testable hypothesis; outlines the variables; designs a method, with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Outlines a problem or question to be tested; formulates a testable hypothesis using scientific reasoning; outlines how to manipulate the variables and outlines how relevant data will be collected; designs a safe method in which they select materials and equipment."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Describes a problem or question to be tested; formulates and explains a testable hypothesis using scientific reasoning; describes how to manipulate the variables and describes how sufficient, relevant data will be collected; designs a complete and safe method in which they select appropriate materials and equipment."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Explains a problem or question to be tested; formulates and explains a testable hypothesis using correct scientific reasoning; explains how to manipulate the variables and explains how sufficient, relevant data will be collected; designs a logical, complete and safe method in which they select appropriate materials and equipment."
           }
         ]
       }
@@ -299,7 +356,8 @@
             "y1": "Present collected and transformed data.",
             "y3": "Present collected and transformed data.",
             "y5": "Present collected and transformed data."
-          }
+          },
+          "strand_full": "Present collected and transformed data."
         },
         {
           "label": "Interpret data",
@@ -309,7 +367,8 @@
             "y1": "Interpret data and outline results using scientific reasoning.",
             "y3": "Interpret data and describe results using scientific reasoning.",
             "y5": "Interpret data and explain results using scientific reasoning."
-          }
+          },
+          "strand_full": "Interpret data and explain results using scientific reasoning."
         },
         {
           "label": "Evaluate",
@@ -319,7 +378,8 @@
             "y1": "Discuss the validity of a prediction based on the outcome of the scientific investigation.",
             "y3": "Discuss the validity of a hypothesis based on the outcome of the scientific investigation.",
             "y5": "Evaluate the validity of a hypothesis based on the outcome of the scientific investigation."
-          }
+          },
+          "strand_full": "Evaluate the validity of a hypothesis based on the outcome of the scientific investigation."
         },
         {
           "label": "Evaluate the method",
@@ -329,7 +389,8 @@
             "y1": "Discuss the validity of the method.",
             "y3": "Discuss the validity of the method.",
             "y5": "Evaluate the validity of the method."
-          }
+          },
+          "strand_full": "Evaluate the validity of the method."
         },
         {
           "label": "Explain",
@@ -339,62 +400,63 @@
             "y1": "Describe improvements or extensions to the method.",
             "y3": "Describe improvements or extensions to the method.",
             "y5": "Explain improvements or extensions to the method."
-          }
+          },
+          "strand_full": "Explain improvements or extensions to the method."
         }
       ],
       "levels": {
         "y1": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "Collects and presents data in numerical and/or visual forms; interprets data; states the validity of a prediction and the validity of the method, with limited success; states improvements or extensions to the method, with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects and presents data in numerical and/or visual forms; accurately interprets data and outlines results; states the validity of a prediction based on the outcome of the investigation; states the validity of the method; states improvements or extensions to the method."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects, organizes and presents data in numerical and/or visual forms; accurately interprets data and outlines results using scientific reasoning; outlines the validity of a prediction; outlines the validity of the method; outlines improvements or extensions to the method."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects, organizes, transforms and presents data in numerical and/or visual forms; accurately interprets data and outlines results using correct scientific reasoning; discusses the validity of a prediction; discusses the validity of the method; describes improvements or extensions to the method."
           }
         ],
         "y3": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "Collects and presents data in numerical and/or visual forms; accurately interprets data; states the validity of a hypothesis with limited reference to the investigation; states the validity of the method with limited reference; states limited improvements or extensions."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects and presents data in numerical and/or visual forms; accurately interprets data and describes results; states the validity of a hypothesis based on the outcome of the investigation; states the validity of the method; states improvements or extensions to the method."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects, organizes and presents data in numerical and/or visual forms; accurately interprets data and describes results using scientific reasoning; outlines the validity of a hypothesis; outlines the validity of the method; outlines improvements or extensions to the method."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects, organizes, transforms and presents data in numerical and/or visual forms; accurately interprets data and describes results using correct scientific reasoning; discusses the validity of a hypothesis; discusses the validity of the method; describes improvements or extensions to the method."
           }
         ],
         "y5": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "Collects and presents data in numerical and/or visual forms; interprets data; states the validity of a hypothesis; states the validity of the method; states improvements or extensions to the method."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects and presents data in numerical and/or visual forms; accurately interprets data and explains results; outlines the validity of a hypothesis; outlines the validity of the method; outlines improvements or extensions to the method."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects, organizes and presents data in numerical and/or visual forms; accurately interprets data and explains results using scientific reasoning; discusses the validity of a hypothesis; discusses the validity of the method; describes improvements or extensions to the method."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Correctly collects, organizes, transforms and presents data in numerical and/or visual forms; accurately interprets data and explains results using correct scientific reasoning; evaluates the validity of a hypothesis; evaluates the validity of the method; explains improvements or extensions to the method."
           }
         ]
       }
@@ -415,7 +477,8 @@
             "y1": "Summarize the ways in which science is applied and used to address a specific problem or issue.",
             "y3": "Describe the ways in which science is applied and used to address a specific problem or issue.",
             "y5": "Explain the ways in which science is applied and used to address a specific problem or issue."
-          }
+          },
+          "strand_full": "Explain the ways in which science is applied and used to address a specific problem or issue."
         },
         {
           "label": "Discuss and evaluate",
@@ -425,82 +488,85 @@
             "y1": "Describe and summarize the various implications of the use of science and its application in solving a specific problem or issue.",
             "y3": "Discuss and analyse the various implications of the use of science and its application in solving a specific problem or issue.",
             "y5": "Discuss and evaluate the various implications of the use of science and its application in solving a specific problem or issue."
-          }
+          },
+          "strand_full": "Discuss and evaluate the various implications of the use of science and its application in solving a specific problem or issue."
         },
         {
           "label": "Apply",
           "detail": "scientific language",
           "description": "Students apply scientific language effectively to communicate understanding. This includes using correct terminology, symbols, conventions and representations appropriate to the scientific context.",
           "progression": {
-            "y1": "Apply scientific language effectively.",
-            "y3": "Apply scientific language effectively.",
-            "y5": "Apply scientific language effectively."
-          }
+            "y1": "Apply scientific language to communicate understanding — moving from limited success (1–2) to consistent and precise use (7–8).",
+            "y3": "Apply scientific language to communicate understanding — moving from limited success (1–2) to consistent and precise use (7–8).",
+            "y5": "Apply scientific language to communicate understanding consistently, clearly and precisely throughout."
+          },
+          "strand_full": "Apply scientific language effectively."
         },
         {
           "label": "Document",
           "detail": "sources and others' work",
           "description": "Students document the work of others and sources of information used, demonstrating awareness of the importance of acknowledging contributions and maintaining academic integrity in scientific communication.",
           "progression": {
-            "y1": "Document the work of others and sources of information used.",
-            "y3": "Document the work of others and sources of information used.",
-            "y5": "Document the work of others and sources of information used."
-          }
+            "y1": "Document sources — moving from partial or inconsistent documentation (1–4) to complete documentation (7–8).",
+            "y3": "Document sources correctly and consistently — moving from limited (1–2) to complete (7–8).",
+            "y5": "Document the work of others and sources of information used completely and consistently."
+          },
+          "strand_full": "Document the work of others and sources of information used."
         }
       ],
       "levels": {
         "y1": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "States the ways in which science is used to address a specific problem or issue; states the implications of using science, interacting with a factor; applies scientific language to communicate understanding; documents sources — all with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "States the ways in which science is used to address a specific problem or issue; states the implications of using science, interacting with a factor; sometimes applies scientific language to communicate understanding; sometimes documents sources correctly."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Outlines the ways in which science is used to address a specific problem or issue; outlines the implications of using science, interacting with a factor; usually applies scientific language to communicate understanding clearly and precisely; usually documents sources correctly."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Summarizes the ways in which science is applied and used to address a specific problem or issue; describes and summarizes the implications of using science and its application, interacting with a factor; consistently applies scientific language to communicate understanding clearly and precisely; documents sources completely."
           }
         ],
         "y3": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "States the ways in which science is used to address a specific problem or issue; states the implications of using science, interacting with a factor; applies scientific language with limited success; documents sources with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Outlines the ways in which science is used to address a specific problem or issue; outlines the implications of using science, interacting with a factor; sometimes applies scientific language to communicate understanding; sometimes documents sources correctly."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Summarizes the ways in which science is applied and used to address a specific problem or issue; describes the implications of using science and its application, interacting with a factor; usually applies scientific language to communicate understanding clearly and precisely; usually documents sources correctly."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Describes the ways in which science is applied and used to address a specific problem or issue; discusses and analyses the implications of using science and its application, interacting with a factor; consistently applies scientific language to communicate understanding clearly and precisely; documents sources completely."
           }
         ],
         "y5": [
           {
             "band": "1–2",
-            "text": "PLACEHOLDER"
+            "text": "Outlines the ways in which science is used to address a specific problem or issue; outlines the implications of using science, interacting with a factor; applies scientific language with limited success; documents sources with limited success."
           },
           {
             "band": "3–4",
-            "text": "PLACEHOLDER"
+            "text": "Summarizes the ways in which science is applied and used to address a specific problem or issue; describes the implications of using science and its application, interacting with a factor; sometimes applies scientific language to communicate understanding; sometimes documents sources correctly."
           },
           {
             "band": "5–6",
-            "text": "PLACEHOLDER"
+            "text": "Describes the ways in which science is applied and used to address a specific problem or issue; discusses the implications of using science and its application, interacting with a factor; usually applies scientific language to communicate understanding clearly and precisely; usually documents sources correctly."
           },
           {
             "band": "7–8",
-            "text": "PLACEHOLDER"
+            "text": "Explains the ways in which science is applied and used to address a specific problem or issue; discusses and evaluates the implications of using science and its application, interacting with a factor; consistently applies scientific language to communicate understanding clearly and precisely; documents sources completely."
           }
         ]
       }
