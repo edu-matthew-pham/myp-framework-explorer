@@ -28,7 +28,7 @@
 
   /* ── Wheel ── */
     .wheel-wrap {
-    flex: 0 0 40%;  /* try 55–65% */
+    flex: 0 0 38%;  /* try 55–65% */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,7 +113,7 @@
   .right-side { display: flex; flex: 1; min-width: 0; border-left: 1px solid var(--border); }
   .info-panel { border-left: none; border-right: 1px solid var(--border); }
   .levels-panel {
-    flex: 0 0 28%;  min-width: 200px; max-width: 350px;
+    flex: 0 0 32%;  min-width: 200px; max-width: 350px;
     display: flex; flex-direction: column;
     overflow: hidden;
   }
@@ -139,7 +139,19 @@
   }
   .level-text { font-size: 11px; line-height: 1.5; color: var(--muted); }
   .levels-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .levels-intro-quote div {
+    color: white;
+  }
+    .levels-intro-quote ul {
+    margin: 0;
+    padding-left: 16px;
+    
+    }
 
+    .levels-intro-quote li {
+    margin-bottom: 4px;
+    color: white;
+    }
   .year-toggle {
     display: flex; gap: 4px; margin-bottom: 10px;
   }
@@ -303,6 +315,37 @@
   font-weight: 600;
   color: var(--text);
 }
+
+.levels-intro {
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  flex-shrink: 0;
+}
+
+.levels-intro-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.levels-intro-quote {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.levels-intro-note {
+  font-size: 10.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 </style>
 </head>
 <body>
@@ -327,14 +370,40 @@
     </div>
   </div>
 
-  <div class="levels-panel">
+    <div class="levels-panel">
     <div class="levels-header">Achievement levels
-      <div class="year-toggle" id="year-toggle"><button class="year-btn active" data-year="y1">Y1</button><button class="year-btn" data-year="y3">Y3</button><button class="year-btn" data-year="y5">Y5</button></div>
+        <div class="year-toggle" id="year-toggle"><button class="year-btn active" data-year="y1">Y1</button><button class="year-btn" data-year="y3">Y3</button><button class="year-btn" data-year="y5">Y5</button></div>
     </div>
+
+    <div class="levels-intro" id="levels-intro">
+        <div class="levels-intro-title">Assessment Criteria Overview</div>
+        <div class="levels-intro-quote">
+            <div>Each criterion has eight possible achievement levels (1–8).</div>
+        
+            
+            <div>These are divided into four bands, generally representing performance that is:</div>
+            <ul>
+                <li>limited (1–2)</li>
+                <li>adequate (3–4)</li>
+                <li>substantial (5–6)</li>
+                <li>excellent (7–8)</li>
+            </ul>
+            </li>
+        
+        <div>Each band has its own unique descriptor used to make “best-fit” judgments about students’ progress and achievement.</div>
+</div>
+        <div>
+
+        </div>
+        <div class="levels-intro-quote">
+        <div>Subject groups must assess all strands of all four assessment criteria at least twice in each year of the MYP.</div>
+        </div>
+    </div>
+
     <div class="levels-list" id="levels-list">
-      <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
+        <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
     </div>
-  </div>
+    </div>
 
   </div><!-- end right-side -->
 
