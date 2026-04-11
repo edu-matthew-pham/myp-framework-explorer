@@ -137,6 +137,18 @@
   }
   .level-text { font-size: 11px; line-height: 1.5; color: var(--muted); }
   .levels-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  .year-toggle {
+    display: flex; gap: 4px; margin-bottom: 10px;
+  }
+  .year-btn {
+    padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;
+    border: 1px solid var(--border); background: transparent; color: var(--muted);
+    cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em;
+  }
+  .year-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+  .year-btn.active { color: white; border-color: transparent; }
 </style>
 </head>
 <body>
@@ -162,7 +174,9 @@
   </div>
 
   <div class="levels-panel">
-    <div class="levels-header">Achievement levels</div>
+    <div class="levels-header">Achievement levels
+      <div class="year-toggle" id="year-toggle"><button class="year-btn active" data-year="y1">Y1</button><button class="year-btn" data-year="y3">Y3</button><button class="year-btn" data-year="y5">Y5</button></div>
+    </div>
     <div class="levels-list" id="levels-list">
       <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
     </div>
@@ -298,6 +312,36 @@ function build(data) {
   });
 
   // ── Interaction ──
+  // ── Year toggle ──
+  let activeYear = 'y1';
+  let activePhase = null;
+
+  document.getElementById('year-toggle').addEventListener('click', e => {
+    const btn = e.target.closest('.year-btn');
+    if (!btn) return;
+    activeYear = btn.dataset.year;
+    document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (activePhase) renderLevels(activePhase);
+  });
+
+  function renderLevels(phase) {
+    activePhase = phase;
+    const levelsList = document.getElementById('levels-list');
+    levelsList.innerHTML = '';
+    const lvls = phase.levels[activeYear] || [];
+    lvls.forEach(lv => {
+      const card = document.createElement('div');
+      card.className = 'level-card';
+      card.innerHTML = `<div class="level-band" style="color:${phase.light}">${lv.band}</div><div class="level-text">${lv.text}</div>`;
+      levelsList.appendChild(card);
+    });
+    // Colour active year button to phase colour
+    document.querySelectorAll('.year-btn').forEach(b => {
+      b.style.background = b.dataset.year === activeYear ? phase.color : '';
+    });
+  }
+
   function selectPhase(phaseId) {
     if (activePhaseId === phaseId) return;
     activePhaseId = phaseId;
@@ -335,14 +379,7 @@ function build(data) {
     descEl.textContent = phase.description;
 
     // Levels
-    const levelsList = document.getElementById('levels-list');
-    levelsList.innerHTML = '';
-    phase.levels.forEach(lv => {
-      const card = document.createElement('div');
-      card.className = 'level-card';
-      card.innerHTML = `<div class="level-band" style="color:${phase.light}">${lv.band}</div><div class="level-text">${lv.text}</div>`;
-      levelsList.appendChild(card);
-    });
+    renderLevels(phase);
 
     // 2×2 node cards
     const grid = document.getElementById('node-grid');
