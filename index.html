@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <style>
   :root {
-    --bg: #1a1a1e; --surface: #242428;
+    --bg: #1a1a1e; --surface: #242428; --surface2: #2c2c30;
     --text: #f0ede8; --muted: #9a9790;
     --border: rgba(255,255,255,0.08);
   }
@@ -17,56 +17,120 @@
   body { font-family: 'DM Sans', sans-serif; color: var(--text); display: flex; flex-direction: column; }
 
   header {
-    padding: 13px 28px; border-bottom: 1px solid var(--border);
+    padding: 12px 24px; border-bottom: 1px solid var(--border);
     background: var(--bg); flex-shrink: 0;
     display: flex; align-items: baseline; gap: 12px;
   }
-  header h1 { font-family: 'Libre Baskerville', serif; font-size: 17px; font-weight: 400; letter-spacing: -0.02em; }
+  header h1 { font-family: 'Libre Baskerville', serif; font-size: 16px; font-weight: 400; letter-spacing: -0.02em; }
   header .sub { font-size: 12px; color: var(--muted); }
 
   .main { display: flex; flex: 1; min-height: 0; overflow: hidden; }
 
+  /* ── Wheel ── */
   .wheel-wrap {
     flex: 0 0 auto;
     display: flex; align-items: center; justify-content: center;
-    padding: 12px; overflow: visible;
+    padding: 10px; overflow: visible;
   }
   #wheel { display: block; overflow: visible; }
 
   .node-g { cursor: pointer; }
-  .node-g rect { transition: opacity 0.15s, filter 0.15s; }
-  .node-g text { pointer-events: none; transition: opacity 0.15s; }
-  .node-g.dimmed rect, .node-g.dimmed text { opacity: 0.12; }
-  .node-g:hover rect { filter: brightness(1.12); }
-  .node-g.active rect { filter: brightness(1.22); stroke-width: 3.5 !important; }
+  .node-g rect { transition: filter 0.15s, stroke-width 0.15s; }
+  .node-g text { pointer-events: none; }
+  .node-g:hover rect { filter: brightness(1.1); }
+  .node-g.phase-active rect { stroke-width: 3.5 !important; filter: brightness(1.18); }
   .centre-g { cursor: pointer; }
 
-  .info-panel {
-    flex: 1; min-width: 0; max-width: 360px;
-    padding: 20px 24px; overflow-y: auto;
-    display: flex; flex-direction: column; gap: 14px;
+  /* ── Right side: two panels ── */
+  .right-side {
+    display: flex; flex: 1; min-width: 0;
     border-left: 1px solid var(--border);
   }
-  .info-empty { display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 10px; }
-  .info-empty p { font-size: 13px; color: var(--muted); line-height: 1.7; max-width: 250px; }
-  .info-detail { display: none; flex-direction: column; gap: 12px; }
-  .info-detail.show { display: flex; }
-  .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; }
-  .phase-name { font-family: 'Libre Baskerville', serif; font-size: 17px; font-weight: 700; line-height: 1.2; margin-top: 4px; }
-  .node-name { font-size: 13px; font-weight: 600; }
-  .node-detail-text { font-size: 12px; color: var(--muted); font-style: italic; }
-  .phase-desc { font-size: 12px; color: var(--muted); line-height: 1.65; margin-top: 6px; }
-  .section-head { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
-  .divider { height: 1px; background: var(--border); }
+
+  /* Info panel — phase + tasks + detail */
+  .info-panel {
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column;
+    border-right: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .phase-header {
+    padding: 16px 18px 14px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .phase-empty-msg {
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  .badge {
+    display: inline-block; padding: 3px 11px; border-radius: 20px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 6px;
+  }
+  .phase-name {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px; font-weight: 700; line-height: 1.2;
+  }
+
+  .tasks-section {
+    flex: 0 0 auto;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-head {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+  }
   .task-list { display: flex; flex-direction: column; gap: 4px; }
-  .task-item { padding: 7px 11px; border-radius: 7px; border: 1px solid var(--border); background: var(--surface); font-size: 12px; cursor: pointer; transition: border-color 0.15s; }
-  .task-item:hover { border-color: rgba(255,255,255,0.25); }
+  .task-item {
+    padding: 7px 11px; border-radius: 7px;
+    border: 1px solid var(--border); background: var(--surface);
+    font-size: 12px; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+    line-height: 1.4;
+  }
+  .task-item:hover { border-color: rgba(255,255,255,0.2); }
+  .task-item.selected { background: var(--surface2); }
   .task-item strong { font-weight: 600; }
   .task-item em { font-style: italic; color: var(--muted); }
-  .level-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-  .level-card { padding: 7px 9px; border-radius: 7px; background: var(--surface); border: 1px solid var(--border); }
-  .level-band { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
-  .level-text { font-size: 11px; line-height: 1.5; }
+
+  .detail-section {
+    flex: 1; overflow-y: auto;
+    padding: 14px 18px;
+  }
+  .detail-section p {
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  .detail-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .detail-body  { font-size: 12px; color: var(--muted); line-height: 1.65; }
+
+  /* Levels panel */
+  .levels-panel {
+    flex: 0 0 200px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .levels-header {
+    padding: 16px 14px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+    flex-shrink: 0;
+  }
+  .levels-list {
+    flex: 1; overflow-y: auto;
+    padding: 10px 14px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .level-card {
+    padding: 8px 10px; border-radius: 7px;
+    background: var(--surface); border: 1px solid var(--border);
+  }
+  .level-band {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 3px;
+  }
+  .level-text { font-size: 11px; line-height: 1.5; color: var(--muted); }
+  .levels-empty { font-size: 12px; color: var(--muted); padding: 4px 0; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -77,25 +141,38 @@
 </header>
 
 <div class="main">
+
   <div class="wheel-wrap"><svg id="wheel"></svg></div>
-  <div class="info-panel">
-    <div class="info-empty" id="info-empty">
-      <p>Click any node to explore its intent and achievement level descriptors.</p>
-      <p style="font-size:11px;">The cycle is iterative — students may enter and revisit any phase.</p>
-    </div>
-    <div class="info-detail" id="info-detail">
-      <div>
-        <span class="badge" id="d-badge"></span>
-        <div class="phase-name" id="d-phase"></div>
-        <div class="node-name" id="d-node"></div>
-        <div class="node-detail-text" id="d-detail"></div>
-        <div class="phase-desc" id="d-desc"></div>
+
+  <div class="right-side">
+
+    <!-- Info panel: phase header + tasks + detail -->
+    <div class="info-panel">
+
+      <div class="phase-header" id="phase-header">
+        <p class="phase-empty-msg">Select a phase from the diagram to explore.</p>
       </div>
-      <div class="divider"></div>
-      <div><div class="section-head">Phase tasks</div><div class="task-list" id="d-tasks"></div></div>
-      <div class="divider"></div>
-      <div><div class="section-head">Achievement levels</div><div class="level-grid" id="d-levels"></div></div>
+
+      <div class="tasks-section" id="tasks-section" style="display:none;">
+        <div class="section-head">Phase tasks</div>
+        <div class="task-list" id="task-list"></div>
+      </div>
+
+      <div class="detail-section" id="phase-desc-section">
+        <p style="font-size:12px;color:var(--muted);">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>
+      </div>
+      <div class="detail-section" id="node-desc-section" style="display:none;border-top:1px solid var(--border);"></div>
+
     </div>
+
+    <!-- Achievement levels panel -->
+    <div class="levels-panel">
+      <div class="levels-header">Achievement levels</div>
+      <div class="levels-list" id="levels-list">
+        <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -107,7 +184,6 @@ function build(data) {
   document.getElementById('h-title').textContent = data.title || 'MYP Cycle';
   document.getElementById('h-sub').textContent   = data.subtitle || '';
 
-  // Flatten nodes
   const nodes = [];
   data.phases.forEach((phase, pi) => {
     phase.nodes.forEach((node, ni) => {
@@ -115,30 +191,22 @@ function build(data) {
     });
   });
 
-  // Canvas — height-driven square, fits in viewport
-  const H  = Math.min(window.innerHeight - 52, window.innerWidth * 0.58, 660);
+  // Canvas
+  const H  = Math.min(window.innerHeight - 46, 660);
   const W  = H;
   const CX = W/2, CY = H/2;
 
-  // Node dimensions — squarish
-  const NW = W * 0.155, NH = W * 0.132, GAP = W * 0.015, CORNER = 10;
-  const BW = NW*2 + GAP, BH = NH*2 + GAP;
+  const NW = W*0.155, NH = W*0.132, GAP = W*0.015, CORNER = 10;
+  const BW = NW*2+GAP, BH = NH*2+GAP;
+  const DIST = W*0.345;
 
-  // Distance from centre to middle of each 2x2 block
-  const DIST = W * 0.345;
-
-  // Phase block anchor positions: top, right, bottom, left
   const anchors = [
-    { cx: CX,        cy: CY - DIST },
-    { cx: CX + DIST, cy: CY        },
-    { cx: CX,        cy: CY + DIST },
-    { cx: CX - DIST, cy: CY        },
+    { cx:CX,       cy:CY-DIST },
+    { cx:CX+DIST,  cy:CY      },
+    { cx:CX,       cy:CY+DIST },
+    { cx:CX-DIST,  cy:CY      },
   ];
-
-  const gridOffsets = [
-    {col:0,row:0},{col:1,row:0},
-    {col:0,row:1},{col:1,row:1},
-  ];
+  const gridOffsets = [{col:0,row:0},{col:1,row:0},{col:0,row:1},{col:1,row:1}];
 
   nodes.forEach(n => {
     const a = anchors[n.phaseIdx], o = gridOffsets[n.nodeIdx];
@@ -146,157 +214,164 @@ function build(data) {
     n.y = a.cy - BH/2 + o.row*(NH+GAP) + NH/2;
   });
 
-  const svg = d3.select('#wheel').attr('width', W).attr('height', H);
+  const svg = d3.select('#wheel').attr('width',W).attr('height',H);
 
-  // ── Centre circle — light bg, title text ──
-  const CR  = W * 0.125;
-  const cg  = svg.append('g').attr('class','centre-g')
+  // Centre circle
+  const CR = W*0.125;
+  const cg = svg.append('g').attr('class','centre-g')
     .attr('transform',`translate(${CX},${CY})`).on('click', clearSel);
-  cg.append('circle').attr('r', CR)
+  cg.append('circle').attr('r',CR)
     .attr('fill','#e8e4dc').attr('stroke','rgba(255,255,255,0.1)').attr('stroke-width',1.5);
-
-  // Title lines
-  const titleWords = (data.title || 'MYP Design Cycle').split(' ');
-  const mid = Math.ceil(titleWords.length / 2);
-  const tLines = [titleWords.slice(0,mid).join(' '), titleWords.slice(mid).join(' ')].filter(Boolean);
-  const tfs = W * 0.024;
-  tLines.forEach((line, i) => {
-    cg.append('text')
-      .attr('text-anchor','middle').attr('dominant-baseline','middle')
+  const titleWords = (data.title||'MYP Design Cycle').split(' ');
+  const tmid = Math.ceil(titleWords.length/2);
+  const tLines = [titleWords.slice(0,tmid).join(' '), titleWords.slice(tmid).join(' ')].filter(Boolean);
+  const tfs = W*0.023;
+  tLines.forEach((line,i) => {
+    cg.append('text').attr('text-anchor','middle').attr('dominant-baseline','middle')
       .attr('font-family','Libre Baskerville').attr('font-weight','700')
-      .attr('font-size', tfs).attr('fill','#2c2c2a')
-      .attr('y', (i - (tLines.length-1)/2) * tfs * 1.3)
-      .text(line);
+      .attr('font-size',tfs).attr('fill','#2c2c2a')
+      .attr('y',(i-(tLines.length-1)/2)*tfs*1.3).text(line);
   });
 
-  // ── Phase labels — between centre circle and blocks ──
-  // Placed at midpoint of gap between circle edge and block inner edge
-  const labelFs = W * 0.021;
-  const lh      = labelFs * 1.3;
-
+  // Phase labels
+  const labelFs = W*0.021, lh = labelFs*1.3;
   data.phases.forEach((phase, pi) => {
     const lines = phase.label.split('\n');
-    // midpoint between circle edge and block face
-    const gapMid = CR + (DIST - BH/2 - CR) * 0.52;
-    let tx, ty, rot;
-    if (pi === 0) { tx = CX;        ty = CY - gapMid; rot = 0;    }
-    if (pi === 1) { tx = CX + gapMid; ty = CY;        rot = 90;   }
-    if (pi === 2) { tx = CX;        ty = CY + gapMid; rot = 0;    }
-    if (pi === 3) { tx = CX - gapMid; ty = CY;        rot = -90;  }
-
+    const gapMid = CR + (DIST - BH/2 - CR)*0.52;
+    let tx,ty,rot;
+    if (pi===0){tx=CX;       ty=CY-gapMid; rot=0;}
+    if (pi===1){tx=CX+gapMid;ty=CY;        rot=90;}
+    if (pi===2){tx=CX;       ty=CY+gapMid; rot=0;}
+    if (pi===3){tx=CX-gapMid;ty=CY;        rot=-90;}
     const el = svg.append('text')
       .attr('font-family','Libre Baskerville').attr('font-weight','700')
-      .attr('font-size', labelFs).attr('fill', phase.color)
+      .attr('font-size',labelFs).attr('fill',phase.color)
       .attr('text-anchor','middle').attr('dominant-baseline','middle')
-      .attr('transform', `translate(${tx},${ty}) rotate(${rot})`);
-
-    lines.forEach((line, li) => {
-      el.append('tspan')
-        .attr('x', 0)
-        .attr('dy', li === 0 ? -(lines.length-1)*lh/2 : lh)
-        .text(line);
+      .attr('transform',`translate(${tx},${ty}) rotate(${rot})`);
+    lines.forEach((line,li)=>{
+      el.append('tspan').attr('x',0).attr('dy', li===0 ? -(lines.length-1)*lh/2 : lh).text(line);
     });
   });
 
-  // ── Nodes ──
-  const lfs = Math.min(W*0.020, 12);
-  const dfs = Math.min(W*0.017, 10);
-  const lh2 = lfs * 1.22;
-
+  // Nodes
+  const lfs = Math.min(W*0.020,12), dfs = Math.min(W*0.017,10), lh2 = lfs*1.22;
   function wrap(text, maxCh) {
-    const words = text.split(' '), lines = []; let cur = '';
-    words.forEach(w => {
-      const t = cur ? cur+' '+w : w;
-      if (t.length > maxCh && cur) { lines.push(cur); cur = w; } else cur = t;
-    });
-    if (cur) lines.push(cur);
-    return lines;
+    const words=text.split(' '),lines=[];let cur='';
+    words.forEach(w=>{const t=cur?cur+' '+w:w;if(t.length>maxCh&&cur){lines.push(cur);cur=w;}else cur=t;});
+    if(cur)lines.push(cur);return lines;
   }
 
-  let activeId = null;
+  let activePhaseId = null, activeNodeIdx = null;
 
   const nodeGs = svg.selectAll('.node-g')
     .data(nodes).enter()
     .append('g').attr('class','node-g')
-    .attr('transform', d => `translate(${d.x},${d.y})`)
-    .on('click', (e,d) => selectNode(d));
+    .attr('transform',d=>`translate(${d.x},${d.y})`)
+    .on('click',(e,d)=>selectPhase(d.phase.id));
 
   nodeGs.append('rect')
     .attr('x',-NW/2).attr('y',-NH/2)
     .attr('width',NW).attr('height',NH)
     .attr('rx',CORNER).attr('ry',CORNER)
-    .attr('fill', d => d.phase.color)
-    .attr('stroke', d => d.phase.light)
-    .attr('stroke-width', 2);
+    .attr('fill',d=>d.phase.color)
+    .attr('stroke',d=>d.phase.light)
+    .attr('stroke-width',2);
 
   nodeGs.each(function(d) {
     const g = d3.select(this);
-    const mc = Math.floor(NW / (lfs * 0.52));
-    const ll = wrap(d.node.label, mc);
-    const dl = wrap(d.node.detail, mc+2);
-    const th = ll.length*lh2 + dl.length*lh2*0.92 + lh2*0.25;
-    let y = -th/2 + lh2*0.5;
-    ll.forEach(line => {
+    const mc=Math.floor(NW/(lfs*0.52));
+    const ll=wrap(d.node.label,mc), dl=wrap(d.node.detail,mc+2);
+    const th=ll.length*lh2+dl.length*lh2*0.92+lh2*0.25;
+    let y=-th/2+lh2*0.5;
+    ll.forEach(line=>{
       g.append('text').attr('text-anchor','middle').attr('dominant-baseline','middle')
         .attr('y',y).attr('font-size',lfs).attr('font-weight',600)
         .attr('font-family','DM Sans').attr('fill','white').text(line);
-      y += lh2;
+      y+=lh2;
     });
-    y += lh2*0.12;
-    dl.forEach(line => {
+    y+=lh2*0.12;
+    dl.forEach(line=>{
       g.append('text').attr('text-anchor','middle').attr('dominant-baseline','middle')
         .attr('y',y).attr('font-size',dfs).attr('font-style','italic')
         .attr('font-family','DM Sans').attr('fill',d.phase.light).text(line);
-      y += lh2*0.92;
+      y+=lh2*0.92;
     });
   });
 
-  function selectNode(d) { activeId = d.id; updateWheel(); renderInfo(d); }
-  function clearSel() {
-    activeId = null; updateWheel();
-    document.getElementById('info-empty').style.display = '';
-    document.getElementById('info-detail').classList.remove('show');
+  // ── Interaction ──
+  function selectPhase(phaseId) {
+    activePhaseId = phaseId;
+    activeNodeIdx = null;
+    updateWheel();
+    renderPhase(data.phases.find(p=>p.id===phaseId));
   }
+
+  function clearSel() {
+    activePhaseId = null; activeNodeIdx = null;
+    updateWheel();
+    document.getElementById('phase-header').innerHTML = '<p class="phase-empty-msg">Select a phase from the diagram to explore.</p>';
+    document.getElementById('tasks-section').style.display = 'none';
+    document.getElementById('phase-desc-section').innerHTML = '<p style="font-size:12px;color:var(--muted);">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>';
+    document.getElementById('node-desc-section').style.display = 'none';
+    document.getElementById('node-desc-section').innerHTML = '';
+    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see achievement level descriptors.</p>';
+  }
+
   function updateWheel() {
     svg.selectAll('.node-g').each(function(d) {
-      const el = d3.select(this);
-      el.classed('dimmed', activeId !== null && d.id !== activeId);
-      el.classed('active', d.id === activeId);
+      d3.select(this).classed('phase-active', d.phase.id === activePhaseId);
     });
   }
-  function renderInfo(d) {
-    document.getElementById('info-empty').style.display = 'none';
-    document.getElementById('info-detail').classList.add('show');
-    const badge = document.getElementById('d-badge');
-    badge.textContent = d.phase.criterion;
-    badge.style.background = d.phase.color+'33';
-    badge.style.color = d.phase.light;
-    badge.style.border = `1px solid ${d.phase.color}66`;
-    document.getElementById('d-phase').textContent  = d.phase.label.replace(/\n/g,' ');
-    document.getElementById('d-node').textContent   = d.node.label;
-    document.getElementById('d-detail').textContent = d.node.detail;
-    document.getElementById('d-desc').textContent   = d.phase.description;
-    const taskList = document.getElementById('d-tasks');
+
+  function renderPhase(phase) {
+    // Phase header
+    const header = document.getElementById('phase-header');
+    header.innerHTML = `
+      <span class="badge" style="background:${phase.color}33;color:${phase.light};border:1px solid ${phase.color}66">${phase.criterion}</span>
+      <div class="phase-name" style="color:${phase.light};margin-top:4px;">${phase.label.replace(/\n/g,' ')}</div>`;
+
+    // Phase description — always visible, always shows current phase
+    document.getElementById('phase-desc-section').innerHTML =
+      `<p class="detail-body">${phase.description}</p>`;
+
+    // Tasks
+    document.getElementById('tasks-section').style.display = '';
+    const taskList = document.getElementById('task-list');
     taskList.innerHTML = '';
-    d.phase.nodes.forEach((node,ni) => {
+    phase.nodes.forEach((node,ni) => {
       const div = document.createElement('div');
-      div.className = 'task-item'+(ni===d.nodeIdx?' active':'');
-      if (ni===d.nodeIdx) div.style.borderColor = d.phase.color;
+      div.className = 'task-item';
       div.innerHTML = `<strong>${node.label}</strong> <em>${node.detail}</em>`;
-      div.addEventListener('click', () => {
-        const nd = nodes.find(n => n.phase.id===d.phase.id && n.nodeIdx===ni);
-        if (nd) selectNode(nd);
-      });
+      div.addEventListener('click', () => selectNode(phase, ni));
       taskList.appendChild(div);
     });
-    const lg = document.getElementById('d-levels');
-    lg.innerHTML = '';
-    d.phase.levels.forEach(lv => {
-      const c = document.createElement('div');
-      c.className = 'level-card';
-      c.innerHTML = `<div class="level-band">${lv.band}</div><div class="level-text">${lv.text}</div>`;
-      lg.appendChild(c);
+
+    // Levels
+    const levelsList = document.getElementById('levels-list');
+    levelsList.innerHTML = '';
+    phase.levels.forEach(lv => {
+      const card = document.createElement('div');
+      card.className = 'level-card';
+      card.innerHTML = `<div class="level-band" style="color:${phase.light}">${lv.band}</div><div class="level-text">${lv.text}</div>`;
+      levelsList.appendChild(card);
     });
+
+    // Auto-select first node
+    selectNode(phase, 0);
+  }
+
+  function selectNode(phase, ni) {
+    activeNodeIdx = ni;
+    const node = phase.nodes[ni];
+    document.querySelectorAll('.task-item').forEach((el,i) => {
+      el.classList.toggle('selected', i===ni);
+      el.style.borderColor = i===ni ? phase.color : '';
+    });
+    const nodeDesc = document.getElementById('node-desc-section');
+    nodeDesc.style.display = '';
+    nodeDesc.innerHTML = `
+      <div class="detail-title" style="color:${phase.light}">${node.label} <span style="font-weight:400;font-style:italic;color:var(--muted)">${node.detail}</span></div>
+      <div class="detail-body" style="margin-top:6px;">${node.description || ''}</div>`;
   }
 }
 </script>

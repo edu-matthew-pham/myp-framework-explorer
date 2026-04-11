@@ -1,7 +1,7 @@
 {
   "title": "MYP Design Cycle",
   "subtitle": "Design and Technology",
-  "centre_label": "Design\nCycle",
+  "centre_label": "MYP Design Cycle",
   "phases": [
     {
       "id": "ia",
@@ -9,18 +9,34 @@
       "criterion": "Criterion A",
       "color": "#4A90C4",
       "light": "#cde3f5",
-      "description": "Students develop understanding of design problems by identifying needs, analysing existing products and articulating a design brief and specification.",
+      "description": "Students develop their understanding of a design problem by identifying a need or opportunity, researching existing products, and building a clear design brief and specification. This phase grounds all subsequent decisions in real-world context and user need.",
       "nodes": [
-        { "label": "Explain and justify", "detail": "the need" },
-        { "label": "Identify and prioritize", "detail": "the research" },
-        { "label": "Analyse", "detail": "existing products" },
-        { "label": "Develop", "detail": "a Design Brief" }
+        {
+          "label": "Explain and justify",
+          "detail": "the need",
+          "description": "Students identify and articulate a genuine need or design opportunity. They explain why the need exists, who it affects, and why addressing it is worthwhile. Justification should reference research, observation or real user context — not assumption."
+        },
+        {
+          "label": "Identify and prioritize",
+          "detail": "the research",
+          "description": "Students determine what information is needed to inform their design and rank research priorities. This includes existing solutions, user needs, materials, technologies and constraints. Prioritising focuses inquiry rather than collecting information indiscriminately."
+        },
+        {
+          "label": "Analyse",
+          "detail": "existing products",
+          "description": "Students examine comparable or related existing products against relevant criteria — function, aesthetics, materials, ergonomics, cultural context. Analysis should go beyond description to evaluate what works, what doesn't, and what can be learned for their own design."
+        },
+        {
+          "label": "Develop",
+          "detail": "a Design Brief",
+          "description": "Students synthesise their research into a clear design brief that defines the problem, the target user, the context, and any constraints. The brief becomes the anchor for all design decisions and the benchmark against which the final solution is evaluated."
+        }
       ],
       "levels": [
-        { "band": "1–2", "text": "States the need; describes one existing product with limited analysis." },
-        { "band": "3–4", "text": "Outlines the need; analyses products with some reference to the design brief." },
-        { "band": "5–6", "text": "Explains and justifies the need; analyses products; develops a detailed design brief." },
-        { "band": "7–8", "text": "Full justification of need; constructs a detailed design brief and specification." }
+        { "band": "1–2", "text": "States the need with limited justification; describes one existing product superficially; outlines a basic design brief." },
+        { "band": "3–4", "text": "Outlines the need with some justification; analyses existing products with some reference to design criteria; develops a design brief with some detail." },
+        { "band": "5–6", "text": "Explains and justifies the need clearly; analyses existing products against relevant criteria; develops a detailed design brief that identifies key constraints." },
+        { "band": "7–8", "text": "Explains and fully justifies the need with supporting evidence; provides thorough analysis of existing products; constructs a comprehensive design brief and detailed design specification." }
       ]
     },
     {
@@ -29,18 +45,34 @@
       "criterion": "Criterion B",
       "color": "#E8A44A",
       "light": "#fae3bc",
-      "description": "Students develop a design specification and generate, develop and present multiple design ideas that respond to that specification.",
+      "description": "Students translate their design brief into a formal specification, then generate, develop and evaluate multiple design ideas. The best idea is selected, refined and presented with enough detail to guide its creation. This phase emphasises creative exploration within constraints.",
       "nodes": [
-        { "label": "Develop", "detail": "a Design Specification" },
-        { "label": "Develop", "detail": "Design Ideas" },
-        { "label": "Present", "detail": "the Chosen Design" },
-        { "label": "Develop", "detail": "planning drawings or diagrams" }
+        {
+          "label": "Develop",
+          "detail": "a Design Specification",
+          "description": "Students translate the design brief into a precise, measurable set of criteria and constraints. A strong specification is testable — each criterion can be objectively assessed when evaluating the final solution. It should address function, aesthetics, user needs, materials, safety and sustainability."
+        },
+        {
+          "label": "Develop",
+          "detail": "Design Ideas",
+          "description": "Students generate a range of possible design solutions using appropriate techniques — sketches, diagrams, models or digital tools. Ideas should be genuinely varied, not minor variations of the same concept. Annotation explains design thinking, material choices and how each idea responds to the specification."
+        },
+        {
+          "label": "Present",
+          "detail": "the Chosen Design",
+          "description": "Students select and justify their preferred design idea with reference to the specification. The chosen design is presented clearly enough that someone else could construct it — including dimensions, materials, finishes and any technical details. Justification explains why this design best meets the brief."
+        },
+        {
+          "label": "Develop",
+          "detail": "planning drawings or diagrams",
+          "description": "Students produce detailed technical drawings, planning diagrams or prototypes that translate the chosen design into a production plan. This may include step-by-step processes, timelines, material lists and quality checkpoints — bridging the gap between idea and creation."
+        }
       ],
       "levels": [
-        { "band": "1–2", "text": "Develops a basic design specification; presents one design idea." },
-        { "band": "3–4", "text": "Develops a specification; presents a few ideas with some development." },
-        { "band": "5–6", "text": "Develops a detailed specification; evaluates multiple ideas; selects one." },
-        { "band": "7–8", "text": "Comprehensive specification; evaluates and justifies a range; fully develops chosen." }
+        { "band": "1–2", "text": "Develops a basic design specification; presents one design idea with limited annotation; selects a design with little justification." },
+        { "band": "3–4", "text": "Develops a design specification with some measurable criteria; presents a few design ideas with some annotation; selects and partially justifies a design." },
+        { "band": "5–6", "text": "Develops a detailed specification with measurable criteria; presents and evaluates multiple ideas; selects and justifies a design with reference to the specification; produces adequate planning drawings." },
+        { "band": "7–8", "text": "Develops a comprehensive, fully measurable specification; presents, evaluates and justifies a range of varied ideas; fully develops and justifies the chosen design; produces detailed, accurate planning drawings or diagrams." }
       ]
     },
     {
@@ -49,18 +81,34 @@
       "criterion": "Criterion C",
       "color": "#6AAF6A",
       "light": "#c8e8c8",
-      "description": "Students construct a logical plan, demonstrate technical skills and follow the plan to create the solution, justifying any changes made.",
+      "description": "Students bring their design to life by following their plan, demonstrating technical skills and documenting the creation process. This phase is not just about making — it requires ongoing decision-making, adaptation and reflection as the solution takes shape.",
       "nodes": [
-        { "label": "Construct", "detail": "a logical plan" },
-        { "label": "Demonstrate", "detail": "technical skills" },
-        { "label": "Follow", "detail": "the plan to make the solution" },
-        { "label": "Justify", "detail": "changes made to the plan" }
+        {
+          "label": "Construct",
+          "detail": "a logical plan",
+          "description": "Students produce a step-by-step production plan that sequences tasks logically, identifies materials and tools, estimates time, and anticipates potential challenges. A strong plan makes the creation process manageable and provides a reference point when adapting during construction."
+        },
+        {
+          "label": "Demonstrate",
+          "detail": "technical skills",
+          "description": "Students apply the techniques, tools and processes required to create their solution to a high standard. This includes safe and accurate use of materials, appropriate finishing, and attention to quality at each stage. Skills should be matched to the demands of the design — not over-simplified."
+        },
+        {
+          "label": "Follow",
+          "detail": "the plan to make the solution",
+          "description": "Students carry out the creation process in a logical sequence, referring to their plan and managing time and resources effectively. Documenting progress through photos, logs or annotations provides evidence of process and demonstrates that the plan was genuinely followed."
+        },
+        {
+          "label": "Justify",
+          "detail": "changes made to the plan",
+          "description": "When students deviate from their plan — as almost always happens — they explain why the change was made, what alternatives were considered, and how the change affected the outcome. Justification distinguishes adaptive problem-solving from arbitrary deviation."
+        }
       ],
       "levels": [
-        { "band": "1–2", "text": "Constructs a basic plan; attempts to demonstrate technical skills." },
-        { "band": "3–4", "text": "Constructs a plan; demonstrates adequate skills; follows the plan." },
-        { "band": "5–6", "text": "Detailed plan; competent technical skills; justifies some changes." },
-        { "band": "7–8", "text": "Logical detailed plan; excellent skills; follows and justifies all changes." }
+        { "band": "1–2", "text": "Constructs a basic plan with limited logic; attempts to demonstrate technical skills with limited success; follows the plan partially." },
+        { "band": "3–4", "text": "Constructs a plan with some logical sequencing; demonstrates adequate technical skills; follows the plan and notes some changes." },
+        { "band": "5–6", "text": "Constructs a detailed, logical plan; demonstrates competent technical skills; follows the plan and justifies some changes made during construction." },
+        { "band": "7–8", "text": "Constructs a comprehensive, logical plan; demonstrates excellent technical skills with consistent quality; follows the plan and fully justifies all changes with clear reasoning." }
       ]
     },
     {
@@ -69,18 +117,34 @@
       "criterion": "Criterion D",
       "color": "#C96060",
       "light": "#f5c8c8",
-      "description": "Students design testing methods, evaluate the success of the solution against the design specification and explain how it could be improved.",
+      "description": "Students critically assess the success of their solution against the design specification and consider its broader impact. Evaluation is not a final-step formality — it is the point at which students demonstrate that they can judge quality, identify limitations and propose meaningful improvements.",
       "nodes": [
-        { "label": "Design", "detail": "testing methods" },
-        { "label": "Evaluate", "detail": "the success of the solution" },
-        { "label": "Explain", "detail": "how the solution could be improved" },
-        { "label": "Explain", "detail": "the impact of the solution" }
+        {
+          "label": "Design",
+          "detail": "testing methods",
+          "description": "Students design objective, repeatable methods for testing their solution against the design specification. Testing methods should directly address the measurable criteria established earlier — not just general impressions. They may include user trials, measurements, comparisons or structured observations."
+        },
+        {
+          "label": "Evaluate",
+          "detail": "the success of the solution",
+          "description": "Students apply their testing methods and evaluate results honestly against each criterion in the design specification. A strong evaluation acknowledges both successes and shortcomings with specific evidence — not vague claims that 'it worked well' or 'people liked it'."
+        },
+        {
+          "label": "Explain",
+          "detail": "how the solution could be improved",
+          "description": "Students identify specific, realistic improvements that would address weaknesses revealed by testing. Improvements should be grounded in evidence from evaluation — not wishful additions. This distinguishes reflective improvement thinking from superficial 'I would add more features' responses."
+        },
+        {
+          "label": "Explain",
+          "detail": "the impact of the solution",
+          "description": "Students consider the broader impact of their solution — on users, communities, society and the environment. This may include ethical, cultural, economic or sustainability dimensions. Impact thinking connects the individual design to wider contexts and encourages responsible design practice."
+        }
       ],
       "levels": [
-        { "band": "1–2", "text": "Outlines a basic testing method; states if solution was successful." },
-        { "band": "3–4", "text": "Describes testing; evaluates with some reference to specification." },
-        { "band": "5–6", "text": "Designs relevant tests; evaluates against specification; suggests improvements." },
-        { "band": "7–8", "text": "Detailed tests; full evaluation against spec; justifies detailed improvements." }
+        { "band": "1–2", "text": "Outlines a basic testing method; states whether the solution was successful with limited reference to the specification." },
+        { "band": "3–4", "text": "Describes testing methods; evaluates the solution with some reference to the specification; suggests some improvements." },
+        { "band": "5–6", "text": "Designs relevant testing methods; evaluates the solution against the specification with specific evidence; proposes realistic improvements." },
+        { "band": "7–8", "text": "Designs detailed, objective testing methods; evaluates the solution thoroughly against all specification criteria; proposes and justifies detailed, realistic improvements; reflects on broader impact." }
       ]
     }
   ]
