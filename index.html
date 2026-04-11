@@ -134,6 +134,59 @@
   .level-text { font-size: 11px; line-height: 1.5; color: var(--muted); }
   .levels-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
+  /* ── Foundations panel (Principles of Practice mode) ── */
+  .found-tabs { display: flex; gap: 2px; margin-top: 8px; flex-wrap: wrap; }
+  .found-tab-btn {
+    padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 600;
+    border: 1px solid var(--border); background: transparent; color: var(--muted);
+    cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em; white-space: nowrap;
+  }
+  .found-tab-btn:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+  .found-tab-btn.active { background: #5a7a9a; color: white; border-color: transparent; }
+
+  .found-intro { font-size: 11px; line-height: 1.6; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+  .found-attr { display: flex; flex-direction: column; gap: 6px; }
+  .found-attr-card {
+    padding: 8px 10px; border-radius: 7px;
+    background: var(--surface); border: 1px solid var(--border);
+  }
+  .found-attr-name { font-size: 11px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .found-attr-desc { font-size: 10.5px; line-height: 1.5; color: var(--muted); }
+
+  .found-formula {
+    font-size: 11px; font-weight: 600; color: var(--text);
+    background: var(--surface2); border-radius: 6px;
+    padding: 8px 10px; margin-bottom: 10px; line-height: 1.5; letter-spacing: 0.01em;
+  }
+  .found-criteria { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+  .found-criterion {
+    padding: 7px 10px; border-radius: 7px;
+    background: var(--surface); border: 1px solid var(--border);
+  }
+  .found-criterion-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); margin-bottom: 2px; }
+  .found-criterion-text { font-size: 10.5px; line-height: 1.5; color: var(--muted); }
+  .found-connection {
+    font-size: 10.5px; line-height: 1.6; color: var(--muted);
+    border-left: 2px solid var(--border); padding-left: 8px; margin-bottom: 8px;
+  }
+  .found-note {
+    font-size: 10px; line-height: 1.5; color: var(--muted); font-style: italic;
+    opacity: 0.7;
+  }
+
+  .found-gq-phase { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+  .found-gq-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text); padding-bottom: 4px; border-bottom: 1px solid var(--border);
+  }
+  .found-gq-list { display: flex; flex-direction: column; gap: 4px; }
+  .found-gq-item {
+    font-size: 10.5px; line-height: 1.5; color: var(--muted);
+    padding: 4px 8px; border-radius: 5px; background: var(--surface);
+    border-left: 2px solid var(--border);
+  }
+
   /* Overview (rendered from JSON) */
   .overview { display: flex; flex-direction: column; gap: 18px; grid-column: 1 / -1; }
   .overview-section { display: flex; flex-direction: column; gap: 6px; }
@@ -243,28 +296,69 @@ function loadSubject(jsonFile) {
     document.getElementById('phase-desc').style.display = 'none';
     document.getElementById('node-grid').innerHTML = '';
     document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see descriptors.</p>';
-    document.querySelectorAll('.year-btn').forEach(b => { b.style.background = ''; });
+    document.getElementById('levels-intro').innerHTML = '';
 
-    // ── Update levels panel title from JSON, fallback to default ──
     const levelsHeaderEl = document.getElementById('levels-header');
     const panelTitle = (data.levels_panel_title || 'Achievement levels');
-    // Preserve the year-toggle inside the header
-    const toggleHTML = `<div class="year-toggle" id="year-toggle">
-      <button class="year-btn active" data-year="y1">Y1</button>
-      <button class="year-btn" data-year="y3">Y3</button>
-      <button class="year-btn" data-year="y5">Y5</button>
-    </div>`;
-    levelsHeaderEl.innerHTML = panelTitle + toggleHTML;
 
-    // Re-bind year toggle (innerHTML replaced the old buttons)
-    document.getElementById('year-toggle').addEventListener('click', e => {
-      const btn = e.target.closest('.year-btn');
-      if (!btn) return;
-      activeYear = btn.dataset.year;
-      document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (activePhase) renderLevels(activePhase);
-    });
+    if (data.levels_panel_mode === 'foundations' && data.foundations) {
+      // ── Foundations mode: three static tabs, no year buttons ──
+      const tabs = data.foundations.tabs || [];
+      const tabsHTML = tabs.map((t, i) =>
+        `<button class="found-tab-btn${i===0?' active':''}" data-fi="${i}">${t}</button>`
+      ).join('');
+      levelsHeaderEl.innerHTML = panelTitle +
+        `<div class="found-tabs" id="found-tabs">${tabsHTML}</div>`;
+
+      // Show assessment_overview in intro if present
+      if (data.assessment_overview) {
+        document.getElementById('levels-intro').innerHTML =
+          `<div class="levels-intro-req">${data.assessment_overview.requirement}</div>`;
+      }
+
+      // Render first tab immediately
+      activeFoundTab = 0;
+      renderFoundations(data.foundations, 0);
+
+      // Bind tab clicks
+      document.getElementById('found-tabs').addEventListener('click', e => {
+        const btn = e.target.closest('.found-tab-btn');
+        if (!btn) return;
+        activeFoundTab = parseInt(btn.dataset.fi);
+        document.querySelectorAll('.found-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderFoundations(data.foundations, activeFoundTab);
+      });
+
+    } else {
+      // ── Standard mode: Y1/Y3/Y5 achievement levels ──
+      const toggleHTML = `<div class="year-toggle" id="year-toggle">
+        <button class="year-btn active" data-year="y1">Y1</button>
+        <button class="year-btn" data-year="y3">Y3</button>
+        <button class="year-btn" data-year="y5">Y5</button>
+      </div>`;
+      levelsHeaderEl.innerHTML = panelTitle + toggleHTML;
+
+      if (data.assessment_overview) {
+        const ao = data.assessment_overview;
+        document.getElementById('levels-intro').innerHTML = `
+          <div class="levels-intro-title">Panel Overview</div>
+          <div class="levels-intro-body">${ao.intro.replace(
+            /limited \(1–2\), adequate \(3–4\), substantial \(5–6\), and excellent \(7–8\)/,
+            'performance that is:<ul><li>limited (1–2)</li><li>adequate (3–4)</li><li>substantial (5–6)</li><li>excellent (7–8)</li></ul>'
+          )}</div>
+          <div class="levels-intro-req">${ao.requirement}</div>`;
+      }
+
+      document.getElementById('year-toggle').addEventListener('click', e => {
+        const btn = e.target.closest('.year-btn');
+        if (!btn) return;
+        activeYear = btn.dataset.year;
+        document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (activePhase) renderLevels(activePhase);
+      });
+    }
 
     build(data);
   });
@@ -282,23 +376,12 @@ document.getElementById('tab-bar').addEventListener('click', e => {
 // Initial load
 loadSubject('myp_principles_cycle.json');
 
-// Year state — declared at module scope so year-toggle rebind can access
+// State — module scope so panel rebinds can access
 let activeYear = 'y1';
 let activePhase = null;
+let activeFoundTab = 0;
 
 function build(data) {
-  // ── Render assessment overview panel (static, from JSON) ──
-  if (data.assessment_overview) {
-    const ao = data.assessment_overview;
-    const intro = document.getElementById('levels-intro');
-    intro.innerHTML = `
-      <div class="levels-intro-title">Panel Overview</div>
-      <div class="levels-intro-body">${ao.intro.replace(
-        /limited \(1–2\), adequate \(3–4\), substantial \(5–6\), and excellent \(7–8\)/,
-        'performance that is:<ul><li>limited (1–2)</li><li>adequate (3–4)</li><li>substantial (5–6)</li><li>excellent (7–8)</li></ul>'
-      )}</div>
-      <div class="levels-intro-req">${ao.requirement}</div>`;
-  }
 
   // ── Flatten nodes ──
   const nodes = [];
@@ -441,6 +524,7 @@ function build(data) {
   });
 
   function renderLevels(phase) {
+    if (data.levels_panel_mode === 'foundations') return;
     activePhase = phase;
     const list = document.getElementById('levels-list');
     list.innerHTML = '';
@@ -458,8 +542,11 @@ function build(data) {
 
   function clearLevels() {
     activePhase = null;
-    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see descriptors.</p>';
-    document.querySelectorAll('.year-btn').forEach(b => { b.style.background = ''; });
+    // In foundations mode the panel is always populated — don't reset it
+    if (data.levels_panel_mode !== 'foundations') {
+      document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see descriptors.</p>';
+      document.querySelectorAll('.year-btn').forEach(b => { b.style.background = ''; });
+    }
   }
 
   // ── Generic table builder ──
@@ -640,6 +727,92 @@ function build(data) {
 
   // Start on overview
   clearSel();
+}
+
+// ── Foundations panel renderer (module scope) ──
+function renderFoundations(fd, tabIndex) {
+  const list = document.getElementById('levels-list');
+  list.innerHTML = '';
+
+  if (tabIndex === 0 && fd.learner_profile) {
+    const lp = fd.learner_profile;
+    const intro = document.createElement('p');
+    intro.className = 'found-intro';
+    intro.textContent = lp.intro;
+    list.appendChild(intro);
+    const wrap = document.createElement('div');
+    wrap.className = 'found-attr';
+    lp.attributes.forEach(attr => {
+      const card = document.createElement('div');
+      card.className = 'found-attr-card';
+      card.innerHTML = `<div class="found-attr-name">${attr.name}</div><div class="found-attr-desc">${attr.description}</div>`;
+      wrap.appendChild(card);
+    });
+    list.appendChild(wrap);
+
+  } else if (tabIndex === 1 && fd.soi_construction) {
+    const soi = fd.soi_construction;
+    const intro = document.createElement('p');
+    intro.className = 'found-intro';
+    intro.textContent = soi.intro;
+    list.appendChild(intro);
+
+    const formula = document.createElement('div');
+    formula.className = 'found-formula';
+    formula.textContent = soi.formula;
+    list.appendChild(formula);
+
+    const critLabel = document.createElement('div');
+    critLabel.style.cssText = 'font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;';
+    critLabel.textContent = 'Quality criteria';
+    list.appendChild(critLabel);
+
+    const criteria = document.createElement('div');
+    criteria.className = 'found-criteria';
+    soi.criteria.forEach(c => {
+      const el = document.createElement('div');
+      el.className = 'found-criterion';
+      el.innerHTML = `<div class="found-criterion-label">${c.label}</div><div class="found-criterion-text">${c.text}</div>`;
+      criteria.appendChild(el);
+    });
+    list.appendChild(criteria);
+
+    const conn = document.createElement('div');
+    conn.className = 'found-connection';
+    conn.textContent = soi.connection;
+    list.appendChild(conn);
+
+    const note = document.createElement('div');
+    note.className = 'found-note';
+    note.textContent = soi.note;
+    list.appendChild(note);
+
+  } else if (tabIndex === 2 && fd.guiding_questions) {
+    const gq = fd.guiding_questions;
+    const intro = document.createElement('p');
+    intro.className = 'found-intro';
+    intro.textContent = gq.intro;
+    list.appendChild(intro);
+
+    gq.phases.forEach(ph => {
+      const section = document.createElement('div');
+      section.className = 'found-gq-phase';
+      const label = document.createElement('div');
+      label.className = 'found-gq-label';
+      label.textContent = ph.label;
+      section.appendChild(label);
+      const ql = document.createElement('div');
+      ql.className = 'found-gq-list';
+      ph.questions.forEach(q => {
+        const item = document.createElement('div');
+        item.className = 'found-gq-item';
+        item.textContent = q;
+        ql.appendChild(item);
+      });
+      section.appendChild(ql);
+      list.appendChild(section);
+    });
+  }
 }
 
   // ── Shared tooltip ──

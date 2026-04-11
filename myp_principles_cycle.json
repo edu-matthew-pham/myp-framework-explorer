@@ -14,12 +14,32 @@
         "title": "The Programme Model",
         "text": "Four interlocking elements surround the learner at the centre of the MYP. Concepts provide the big, transferable ideas that drive disciplinary and interdisciplinary understanding. Global Contexts frame learning in authentic, meaningful real-world settings. Approaches to Learning (ATL) build the skills students need to learn independently and with others. Approaches to Teaching describes the pedagogical characteristics that make all of this coherent in the classroom. Together these elements are expressed through every MYP unit via the statement of inquiry — a sentence combining a key concept, related concept and global context that anchors every question, task and assessment in that unit.",
         "progression_table": {
-          "headers": ["Element", "The teacher's role", "The student's role"],
+          "headers": [
+            "Element",
+            "The teacher's role",
+            "The student's role"
+          ],
           "rows": [
-            ["Key & Related Concepts", "Selects one key concept and related concepts that unlock deep, transferable understanding", "Explores how a big idea connects and applies across subjects, times and cultures"],
-            ["Global Contexts", "Frames the unit around one of six real-world lenses that gives the content meaning and purpose", "Investigates how the content relates to identity, environment, fairness and human experience"],
-            ["ATL Skills", "Designs tasks that explicitly require and develop specific skill clusters", "Develops transferable learning skills deliberately and reflects on their growth over time"],
-            ["Approaches to Teaching", "Applies six research-based pedagogical principles to unit design and classroom practice", "Experiences learning as inquiry-driven, collaborative, contextualised and concept-connected"]
+            [
+              "Key & Related Concepts",
+              "Selects one key concept and related concepts that unlock deep, transferable understanding",
+              "Explores how a big idea connects and applies across subjects, times and cultures"
+            ],
+            [
+              "Global Contexts",
+              "Frames the unit around one of six real-world lenses that gives the content meaning and purpose",
+              "Investigates how the content relates to identity, environment, fairness and human experience"
+            ],
+            [
+              "ATL Skills",
+              "Designs tasks that explicitly require and develop specific skill clusters",
+              "Develops transferable learning skills deliberately and reflects on their growth over time"
+            ],
+            [
+              "Approaches to Teaching",
+              "Applies six research-based pedagogical principles to unit design and classroom practice",
+              "Experiences learning as inquiry-driven, collaborative, contextualised and concept-connected"
+            ]
           ]
         }
       },
@@ -32,24 +52,89 @@
         "title": "The 16 Key Concepts",
         "text": "All 16 key concepts are shared across MYP subject groups, providing a common language for interdisciplinary thinking. Each unit uses one key concept as its driving idea. Hover over any concept to see its definition.",
         "concepts": {
-          "key": ["Aesthetics", "Change", "Communication", "Communities", "Connections", "Creativity", "Culture", "Development", "Form", "Global interactions", "Identity", "Logic", "Perspective", "Relationships", "Systems", "Time, place and space"],
+          "key": [
+            "Aesthetics",
+            "Change",
+            "Communication",
+            "Communities",
+            "Connections",
+            "Creativity",
+            "Culture",
+            "Development",
+            "Form",
+            "Global interactions",
+            "Identity",
+            "Logic",
+            "Perspective",
+            "Relationships",
+            "Systems",
+            "Time, place and space"
+          ],
           "key_definitions": [
-            { "name": "Aesthetics", "definition": "Deals with the characteristics, creation, meaning and perception of beauty and taste. The study of aesthetics develops skills for critical appreciation and analysis of art, culture and nature." },
-            { "name": "Change", "definition": "A conversion, transformation or movement from one form, state or value to another. Inquiry into change involves understanding and evaluating causes, processes and consequences." },
-            { "name": "Communication", "definition": "The exchange or transfer of signals, facts, ideas and symbols. It requires a sender, a message and an intended receiver. Effective communication requires a common language — written, spoken or non-verbal." },
-            { "name": "Communities", "definition": "Groups that exist in proximity defined by space, time or relationship — including groups sharing beliefs or values, and groups of interdependent organisms in a specific habitat." },
-            { "name": "Connections", "definition": "Links, bonds and relationships among people, objects, organisms or ideas." },
-            { "name": "Creativity", "definition": "The process of generating novel ideas and considering existing ideas from new perspectives. Creativity includes recognizing the value of ideas when developing innovative responses to problems." },
-            { "name": "Culture", "definition": "A range of learned and shared beliefs, values, interests, attitudes, products, ways of knowing and patterns of behaviour created by human communities. Culture is dynamic and organic." },
-            { "name": "Development", "definition": "The act or process of growth, progress or evolution, sometimes through iterative improvements." },
-            { "name": "Form", "definition": "The shape and underlying structure of an entity or piece of work, including its organization, essential nature and external appearance." },
-            { "name": "Global interactions", "definition": "Focuses on the connections among individuals and communities, and their relationships with built and natural environments, from the perspective of the world as a whole." },
-            { "name": "Identity", "definition": "The particular features that define individuals, groups, things, eras, places, symbols and styles. Identity can be observed, constructed, asserted and shaped by external and internal influences." },
-            { "name": "Logic", "definition": "A method of reasoning and a system of principles used to build arguments and reach conclusions." },
-            { "name": "Perspective", "definition": "The position from which we observe situations, objects, facts, ideas and opinions. Different perspectives often lead to multiple representations and interpretations." },
-            { "name": "Relationships", "definition": "The connections and associations between properties, objects, people and ideas. Any change in relationship brings consequences that may affect large networks and systems." },
-            { "name": "Systems", "definition": "Sets of interacting or interdependent components. Systems provide structure and order in human, natural and built environments. Systems can be static or dynamic, simple or complex." },
-            { "name": "Time, place and space", "definition": "Refers to the absolute or relative position of people, objects and ideas, and focuses on how we construct and use our understanding of location — 'where' and 'when'." }
+            {
+              "name": "Aesthetics",
+              "definition": "Deals with the characteristics, creation, meaning and perception of beauty and taste. The study of aesthetics develops skills for critical appreciation and analysis of art, culture and nature."
+            },
+            {
+              "name": "Change",
+              "definition": "A conversion, transformation or movement from one form, state or value to another. Inquiry into change involves understanding and evaluating causes, processes and consequences."
+            },
+            {
+              "name": "Communication",
+              "definition": "The exchange or transfer of signals, facts, ideas and symbols. It requires a sender, a message and an intended receiver. Effective communication requires a common language — written, spoken or non-verbal."
+            },
+            {
+              "name": "Communities",
+              "definition": "Groups that exist in proximity defined by space, time or relationship — including groups sharing beliefs or values, and groups of interdependent organisms in a specific habitat."
+            },
+            {
+              "name": "Connections",
+              "definition": "Links, bonds and relationships among people, objects, organisms or ideas."
+            },
+            {
+              "name": "Creativity",
+              "definition": "The process of generating novel ideas and considering existing ideas from new perspectives. Creativity includes recognizing the value of ideas when developing innovative responses to problems."
+            },
+            {
+              "name": "Culture",
+              "definition": "A range of learned and shared beliefs, values, interests, attitudes, products, ways of knowing and patterns of behaviour created by human communities. Culture is dynamic and organic."
+            },
+            {
+              "name": "Development",
+              "definition": "The act or process of growth, progress or evolution, sometimes through iterative improvements."
+            },
+            {
+              "name": "Form",
+              "definition": "The shape and underlying structure of an entity or piece of work, including its organization, essential nature and external appearance."
+            },
+            {
+              "name": "Global interactions",
+              "definition": "Focuses on the connections among individuals and communities, and their relationships with built and natural environments, from the perspective of the world as a whole."
+            },
+            {
+              "name": "Identity",
+              "definition": "The particular features that define individuals, groups, things, eras, places, symbols and styles. Identity can be observed, constructed, asserted and shaped by external and internal influences."
+            },
+            {
+              "name": "Logic",
+              "definition": "A method of reasoning and a system of principles used to build arguments and reach conclusions."
+            },
+            {
+              "name": "Perspective",
+              "definition": "The position from which we observe situations, objects, facts, ideas and opinions. Different perspectives often lead to multiple representations and interpretations."
+            },
+            {
+              "name": "Relationships",
+              "definition": "The connections and associations between properties, objects, people and ideas. Any change in relationship brings consequences that may affect large networks and systems."
+            },
+            {
+              "name": "Systems",
+              "definition": "Sets of interacting or interdependent components. Systems provide structure and order in human, natural and built environments. Systems can be static or dynamic, simple or complex."
+            },
+            {
+              "name": "Time, place and space",
+              "definition": "Refers to the absolute or relative position of people, objects and ideas, and focuses on how we construct and use our understanding of location — 'where' and 'when'."
+            }
           ],
           "related": []
         }
@@ -116,22 +201,58 @@
       ],
       "levels": {
         "y1": [
-          { "band": "Key concept", "text": "Introduced through familiar, concrete content. The teacher makes explicit connections between the concept and the unit's topics. Students encounter it as a shared big idea label." },
-          { "band": "Related concept", "text": "One related concept introduced to add focus. Teacher provides definitions, examples and models of how key and related concepts connect within the subject." },
-          { "band": "Statement of inquiry", "text": "Teacher-constructed and explicitly shared. Students are guided through what it means and helped to see how each learning activity connects to it." },
-          { "band": "Inquiry questions", "text": "All three question types are teacher-generated. Students respond to factual questions and are introduced to conceptual questions through structured discussion." }
+          {
+            "band": "Key concept",
+            "text": "Introduced through familiar, concrete content. The teacher makes explicit connections between the concept and the unit's topics. Students encounter it as a shared big idea label."
+          },
+          {
+            "band": "Related concept",
+            "text": "One related concept introduced to add focus. Teacher provides definitions, examples and models of how key and related concepts connect within the subject."
+          },
+          {
+            "band": "Statement of inquiry",
+            "text": "Teacher-constructed and explicitly shared. Students are guided through what it means and helped to see how each learning activity connects to it."
+          },
+          {
+            "band": "Inquiry questions",
+            "text": "All three question types are teacher-generated. Students respond to factual questions and are introduced to conceptual questions through structured discussion."
+          }
         ],
         "y3": [
-          { "band": "Key concept", "text": "Students explore the key concept with growing independence, applying it across contexts and beginning to see how it appears in other subjects." },
-          { "band": "Related concept", "text": "Students work with related concepts more fluently and can articulate the connection between key and related concepts in their own words." },
-          { "band": "Statement of inquiry", "text": "Students engage actively with the SOI, generating questions from it and explaining how summative tasks relate to the conceptual understanding it expresses." },
-          { "band": "Inquiry questions", "text": "Students contribute to generating questions. Debatable questions appear in discussion and written tasks. Students begin defending positions with evidence." }
+          {
+            "band": "Key concept",
+            "text": "Students explore the key concept with growing independence, applying it across contexts and beginning to see how it appears in other subjects."
+          },
+          {
+            "band": "Related concept",
+            "text": "Students work with related concepts more fluently and can articulate the connection between key and related concepts in their own words."
+          },
+          {
+            "band": "Statement of inquiry",
+            "text": "Students engage actively with the SOI, generating questions from it and explaining how summative tasks relate to the conceptual understanding it expresses."
+          },
+          {
+            "band": "Inquiry questions",
+            "text": "Students contribute to generating questions. Debatable questions appear in discussion and written tasks. Students begin defending positions with evidence."
+          }
         ],
         "y5": [
-          { "band": "Key concept", "text": "Students transfer the key concept to complex, unfamiliar contexts independently. They can explain how the concept applies across multiple disciplines." },
-          { "band": "Related concept", "text": "Students articulate how related concepts deepen key concept understanding and use both together to generate sophisticated disciplinary analysis." },
-          { "band": "Statement of inquiry", "text": "Students understand the logic of SOI construction and evaluate how well their work addresses the transferable conceptual understanding it expresses." },
-          { "band": "Inquiry questions", "text": "Students independently develop all three types of inquiry question. Debatable questions anchor major assessment tasks and sustained argument." }
+          {
+            "band": "Key concept",
+            "text": "Students transfer the key concept to complex, unfamiliar contexts independently. They can explain how the concept applies across multiple disciplines."
+          },
+          {
+            "band": "Related concept",
+            "text": "Students articulate how related concepts deepen key concept understanding and use both together to generate sophisticated disciplinary analysis."
+          },
+          {
+            "band": "Statement of inquiry",
+            "text": "Students understand the logic of SOI construction and evaluate how well their work addresses the transferable conceptual understanding it expresses."
+          },
+          {
+            "band": "Inquiry questions",
+            "text": "Students independently develop all three types of inquiry question. Debatable questions anchor major assessment tasks and sustained argument."
+          }
         ]
       }
     },
@@ -212,22 +333,58 @@
       ],
       "levels": {
         "y1": [
-          { "band": "Purpose", "text": "The global context is introduced clearly by the teacher. Students can name the context and describe how it connects to the unit's content in basic terms." },
-          { "band": "Exploration", "text": "Explorations are familiar and personal. Content is drawn from students' own communities and experiences. Abstract or distant examples are scaffolded carefully." },
-          { "band": "Inquiry connection", "text": "Students respond to context-related questions with teacher guidance. The link between global context and the statement of inquiry is made explicit." },
-          { "band": "Action", "text": "Students may suggest or take small-scale action related to the global context within their immediate community, with substantial teacher facilitation." }
+          {
+            "band": "Purpose",
+            "text": "The global context is introduced clearly by the teacher. Students can name the context and describe how it connects to the unit's content in basic terms."
+          },
+          {
+            "band": "Exploration",
+            "text": "Explorations are familiar and personal. Content is drawn from students' own communities and experiences. Abstract or distant examples are scaffolded carefully."
+          },
+          {
+            "band": "Inquiry connection",
+            "text": "Students respond to context-related questions with teacher guidance. The link between global context and the statement of inquiry is made explicit."
+          },
+          {
+            "band": "Action",
+            "text": "Students may suggest or take small-scale action related to the global context within their immediate community, with substantial teacher facilitation."
+          }
         ],
         "y3": [
-          { "band": "Purpose", "text": "Students can articulate why the global context has been chosen for this unit and how it gives meaning to the concepts being explored." },
-          { "band": "Exploration", "text": "Explorations involve national and international examples. Students compare and contrast across cultures or historical periods within the context." },
-          { "band": "Inquiry connection", "text": "Students contribute inquiry questions inspired by the global context and sustain longer analysis connecting context to content." },
-          { "band": "Action", "text": "Students design or participate in service or advocacy activities connected to the global context, with growing independence in planning and reflection." }
+          {
+            "band": "Purpose",
+            "text": "Students can articulate why the global context has been chosen for this unit and how it gives meaning to the concepts being explored."
+          },
+          {
+            "band": "Exploration",
+            "text": "Explorations involve national and international examples. Students compare and contrast across cultures or historical periods within the context."
+          },
+          {
+            "band": "Inquiry connection",
+            "text": "Students contribute inquiry questions inspired by the global context and sustain longer analysis connecting context to content."
+          },
+          {
+            "band": "Action",
+            "text": "Students design or participate in service or advocacy activities connected to the global context, with growing independence in planning and reflection."
+          }
         ],
         "y5": [
-          { "band": "Purpose", "text": "Students can evaluate how different global contexts would change the nature of inquiry in a unit — critically assessing or choosing among context options." },
-          { "band": "Exploration", "text": "Students independently pursue complex, multi-layered explorations of the global context, drawing on diverse sources and perspectives." },
-          { "band": "Inquiry connection", "text": "Students generate sophisticated debatable questions using the global context to examine systems, power, ethics and competing values." },
-          { "band": "Action", "text": "Students independently initiate and reflect on service as action connected to the global context, demonstrating awareness of real-world impact and ethical implications." }
+          {
+            "band": "Purpose",
+            "text": "Students can evaluate how different global contexts would change the nature of inquiry in a unit — critically assessing or choosing among context options."
+          },
+          {
+            "band": "Exploration",
+            "text": "Students independently pursue complex, multi-layered explorations of the global context, drawing on diverse sources and perspectives."
+          },
+          {
+            "band": "Inquiry connection",
+            "text": "Students generate sophisticated debatable questions using the global context to examine systems, power, ethics and competing values."
+          },
+          {
+            "band": "Action",
+            "text": "Students independently initiate and reflect on service as action connected to the global context, demonstrating awareness of real-world impact and ethical implications."
+          }
         ]
       }
     },
@@ -240,14 +397,25 @@
       "description": "ATL skills are five categories of transferable learning skills that help students 'learn how to learn'. They are explicitly taught by all MYP teachers across all subjects, providing the foundation for independent and collaborative lifelong learning.",
       "nodes": [
         {
-          "label": "Communication\n& Social",
-          "detail": "Clusters I & II",
-          "description": "Communication skills involve reading, writing, speaking and listening effectively across a range of formats and purposes. Social skills — collaboration — involve working cooperatively and flexibly with others, managing interpersonal dynamics and contributing to shared inquiry.",
-          "strand_full": "Communication (Cluster I) and Collaboration (Cluster II). Essential across all subjects and central to meaningful inquiry.",
+          "label": "Communication",
+          "detail": "Cluster I",
+          "description": "Communication skills involve reading, writing, speaking and listening effectively across a range of formats and purposes. Students use language and other modes of expression to share ideas, make meaning and demonstrate understanding across all subjects.",
+          "strand_full": "Communication (Cluster I) — reading, writing, speaking, listening and using language across all subjects.",
           "progression": {
-            "y1": "Students communicate within structured tasks and practise listening and turn-taking. Collaboration is introduced through guided group work with clear, teacher-assigned roles.",
-            "y3": "Students communicate increasingly complex ideas across multiple formats. Collaboration involves shared responsibility and negotiation of meaning.",
-            "y5": "Students communicate with precision and creativity for varied purposes and audiences. They collaborate strategically, managing conflict and sustaining shared inquiry."
+            "y1": "Students communicate within structured tasks using teacher-modelled formats. Focus on clarity and basic organisation of ideas in written and spoken form.",
+            "y3": "Students communicate increasingly complex ideas across multiple formats, adapting style to purpose and audience with growing confidence.",
+            "y5": "Students communicate with precision and creativity for diverse purposes and audiences, selecting and justifying the most effective mode for each context."
+          }
+        },
+        {
+          "label": "Collaboration",
+          "detail": "Cluster II — Social",
+          "description": "Social skills involve working cooperatively and flexibly with others. Students learn to listen to and value different perspectives, take on different roles, manage interpersonal dynamics and contribute to shared inquiry and group outcomes.",
+          "strand_full": "Collaboration/Social (Cluster II) — working cooperatively, managing group dynamics, contributing to shared goals.",
+          "progression": {
+            "y1": "Students practise listening and turn-taking in structured group work with teacher-assigned roles and clear shared tasks.",
+            "y3": "Students collaborate with growing independence, sharing responsibility and beginning to negotiate meaning and manage disagreement constructively.",
+            "y5": "Students lead and sustain collaborative inquiry, manage interpersonal complexity and reflect on their contribution to group outcomes."
           }
         },
         {
@@ -286,22 +454,70 @@
       ],
       "levels": {
         "y1": [
-          { "band": "Communication & Social", "text": "Students communicate within structured tasks. Listening and turn-taking are practised. Group work has clear, teacher-assigned roles and structured processes." },
-          { "band": "Self-management", "text": "Students use teacher-provided organisational structures. Reflection involves simple responses to guided prompts. Affective skills are introduced through class discussion." },
-          { "band": "Research", "text": "Students locate information from provided or teacher-curated sources. They begin to identify whether a source seems reliable with support and explicit criteria." },
-          { "band": "Thinking", "text": "Students analyse straightforward problems and apply skills to familiar contexts. Creative tasks are structured and scaffolded. Transfer is supported by teacher-drawn connections." }
+          {
+            "band": "Communication",
+            "text": "Students communicate within structured tasks. Focus on clarity and basic organisation of written and spoken expression using teacher-modelled formats."
+          },
+          {
+            "band": "Collaboration",
+            "text": "Students practise listening and turn-taking. Group work has teacher-assigned roles and structured processes."
+          },
+          {
+            "band": "Self-management",
+            "text": "Students use teacher-provided organisational structures. Reflection involves simple responses to guided prompts. Affective skills are introduced through class discussion."
+          },
+          {
+            "band": "Research",
+            "text": "Students locate information from provided or teacher-curated sources. They begin to identify whether a source seems reliable with support and explicit criteria."
+          },
+          {
+            "band": "Thinking",
+            "text": "Students analyse straightforward problems and apply skills to familiar contexts. Creative tasks are structured and scaffolded. Transfer is supported by teacher-drawn connections."
+          }
         ],
         "y3": [
-          { "band": "Communication & Social", "text": "Students communicate increasingly complex ideas across formats. Collaboration involves shared responsibility, negotiation of meaning and beginning to manage disagreement." },
-          { "band": "Self-management", "text": "Students manage time and tasks with growing independence, set learning goals and use basic metacognitive strategies to monitor and evaluate their work." },
-          { "band": "Research", "text": "Students select and evaluate sources independently, analysing bias, credibility and currency across print and digital sources with increasing sophistication." },
-          { "band": "Thinking", "text": "Students evaluate competing arguments, generate and refine creative solutions, and begin to transfer conceptual understanding across subjects and contexts." }
+          {
+            "band": "Communication",
+            "text": "Students communicate increasingly complex ideas across formats. Collaboration involves shared responsibility, negotiation of meaning and beginning to manage disagreement."
+          },
+          {
+            "band": "Collaboration",
+            "text": "Students practise listening and turn-taking. Group work has teacher-assigned roles and structured processes."
+          },
+          {
+            "band": "Self-management",
+            "text": "Students manage time and tasks with growing independence, set learning goals and use basic metacognitive strategies to monitor and evaluate their work."
+          },
+          {
+            "band": "Research",
+            "text": "Students select and evaluate sources independently, analysing bias, credibility and currency across print and digital sources with increasing sophistication."
+          },
+          {
+            "band": "Thinking",
+            "text": "Students evaluate competing arguments, generate and refine creative solutions, and begin to transfer conceptual understanding across subjects and contexts."
+          }
         ],
         "y5": [
-          { "band": "Communication & Social", "text": "Students communicate with precision and creativity for diverse purposes and audiences. They collaborate strategically, sustaining shared inquiry and managing interpersonal complexity." },
-          { "band": "Self-management", "text": "Students independently plan, execute and evaluate complex projects. They apply sophisticated metacognition and demonstrate resilience, self-regulation and initiative." },
-          { "band": "Research", "text": "Students conduct sophisticated independent research, synthesising multiple sources critically. They evaluate their own research processes and produce original, well-evidenced outcomes." },
-          { "band": "Thinking", "text": "Students think critically about complex global challenges, produce innovative responses and fluidly transfer conceptual understanding to unfamiliar disciplines and real-world situations." }
+          {
+            "band": "Communication",
+            "text": "Students communicate with precision and creativity for diverse purposes and audiences. They collaborate strategically, sustaining shared inquiry and managing interpersonal complexity."
+          },
+          {
+            "band": "Collaboration",
+            "text": "Students practise listening and turn-taking. Group work has teacher-assigned roles and structured processes."
+          },
+          {
+            "band": "Self-management",
+            "text": "Students independently plan, execute and evaluate complex projects. They apply sophisticated metacognition and demonstrate resilience, self-regulation and initiative."
+          },
+          {
+            "band": "Research",
+            "text": "Students conduct sophisticated independent research, synthesising multiple sources critically. They evaluate their own research processes and produce original, well-evidenced outcomes."
+          },
+          {
+            "band": "Thinking",
+            "text": "Students think critically about complex global challenges, produce innovative responses and fluidly transfer conceptual understanding to unfamiliar disciplines and real-world situations."
+          }
         ]
       }
     },
@@ -360,24 +576,187 @@
       ],
       "levels": {
         "y1": [
-          { "band": "Inquiry-based", "text": "Teacher structures and leads inquiry closely. Questions are largely teacher-generated. Students are guided step-by-step through research and meaning-making processes." },
-          { "band": "Concept-driven", "text": "Concepts are introduced explicitly with definitions and concrete examples. The teacher makes the link between concept and content visible and explicit at every stage." },
-          { "band": "Contextualised", "text": "Real-world connections are familiar and personal. The teacher provides explicit links between content and local or student-relevant examples and situations." },
-          { "band": "Collaborative & Differentiated", "text": "Group work uses structured, teacher-assigned roles. Differentiation is teacher-designed: scaffolds, worked examples and adjusted timelines are provided proactively for all learners." }
+          {
+            "band": "Inquiry-based",
+            "text": "Teacher structures and leads inquiry closely. Questions are largely teacher-generated. Students are guided step-by-step through research and meaning-making processes."
+          },
+          {
+            "band": "Concept-driven",
+            "text": "Concepts are introduced explicitly with definitions and concrete examples. The teacher makes the link between concept and content visible and explicit at every stage."
+          },
+          {
+            "band": "Contextualised",
+            "text": "Real-world connections are familiar and personal. The teacher provides explicit links between content and local or student-relevant examples and situations."
+          },
+          {
+            "band": "Collaborative & Differentiated",
+            "text": "Group work uses structured, teacher-assigned roles. Differentiation is teacher-designed: scaffolds, worked examples and adjusted timelines are provided proactively for all learners."
+          }
         ],
         "y3": [
-          { "band": "Inquiry-based", "text": "Students contribute questions and take increasing ownership of inquiry. Teacher facilitates rather than leads. Students begin designing aspects of their own inquiry." },
-          { "band": "Concept-driven", "text": "Students explore concepts across multiple contexts and subjects. They can articulate how a concept looks in different disciplines and apply it in new transferable situations." },
-          { "band": "Contextualised", "text": "Contexts span national and international settings. Students independently recognise connections between their learning and broader real-world issues and challenges." },
-          { "band": "Collaborative & Differentiated", "text": "Students collaborate with growing independence. Differentiation includes student-selected modes of expression and flexible pathways. Teacher and students co-design support structures." }
+          {
+            "band": "Inquiry-based",
+            "text": "Students contribute questions and take increasing ownership of inquiry. Teacher facilitates rather than leads. Students begin designing aspects of their own inquiry."
+          },
+          {
+            "band": "Concept-driven",
+            "text": "Students explore concepts across multiple contexts and subjects. They can articulate how a concept looks in different disciplines and apply it in new transferable situations."
+          },
+          {
+            "band": "Contextualised",
+            "text": "Contexts span national and international settings. Students independently recognise connections between their learning and broader real-world issues and challenges."
+          },
+          {
+            "band": "Collaborative & Differentiated",
+            "text": "Students collaborate with growing independence. Differentiation includes student-selected modes of expression and flexible pathways. Teacher and students co-design support structures."
+          }
         ],
         "y5": [
-          { "band": "Inquiry-based", "text": "Students design and drive their own sustained inquiry. Teacher acts as facilitator and intellectual partner. Students defend and refine their inquiry approach." },
-          { "band": "Concept-driven", "text": "Conceptual understanding is transferred independently to complex, novel, cross-disciplinary situations. Students generate new inquiry questions from conceptual insight." },
-          { "band": "Contextualised", "text": "Students engage with complex, unfamiliar global contexts and evaluate the real-world implications of their learning with sophistication and ethical awareness." },
-          { "band": "Collaborative & Differentiated", "text": "Students lead collaborative inquiry and manage group dynamics. Differentiation is student-initiated. Students independently advocate for and manage their own learning needs." }
+          {
+            "band": "Inquiry-based",
+            "text": "Students design and drive their own sustained inquiry. Teacher acts as facilitator and intellectual partner. Students defend and refine their inquiry approach."
+          },
+          {
+            "band": "Concept-driven",
+            "text": "Conceptual understanding is transferred independently to complex, novel, cross-disciplinary situations. Students generate new inquiry questions from conceptual insight."
+          },
+          {
+            "band": "Contextualised",
+            "text": "Students engage with complex, unfamiliar global contexts and evaluate the real-world implications of their learning with sophistication and ethical awareness."
+          },
+          {
+            "band": "Collaborative & Differentiated",
+            "text": "Students lead collaborative inquiry and manage group dynamics. Differentiation is student-initiated. Students independently advocate for and manage their own learning needs."
+          }
         ]
       }
     }
-  ]
+  ],
+  "levels_panel_mode": "foundations",
+  "levels_panel_title": "Programme Foundations",
+  "foundations": {
+    "tabs": [
+      "Learner Profile",
+      "SOI Construction",
+      "Guiding Questions"
+    ],
+    "learner_profile": {
+      "intro": "The IB learner profile is the mission in action — the aspirational outcome that all four programme elements work toward. All MYP learning experiences are designed to develop these ten attributes in students aged 11–16.",
+      "attributes": [
+        {
+          "name": "Inquirers",
+          "description": "Nurture curiosity, developing skills for inquiry and research. Learn independently and with others. Learn with enthusiasm and sustain love of learning throughout life."
+        },
+        {
+          "name": "Knowledgeable",
+          "description": "Develop and use conceptual understanding, exploring knowledge across disciplines. Engage with issues and ideas that have local and global significance."
+        },
+        {
+          "name": "Thinkers",
+          "description": "Use critical and creative thinking skills to analyse and take responsible action on complex problems. Exercise initiative in making reasoned, ethical decisions."
+        },
+        {
+          "name": "Communicators",
+          "description": "Express themselves confidently and creatively in more than one language and in many ways. Collaborate effectively, listening carefully to the perspectives of others."
+        },
+        {
+          "name": "Principled",
+          "description": "Act with integrity and honesty, with a strong sense of fairness and justice, and with respect for the dignity and rights of people everywhere. Take responsibility for actions and their consequences."
+        },
+        {
+          "name": "Open-minded",
+          "description": "Critically appreciate own cultures and personal histories, as well as the values and traditions of others. Seek and evaluate a range of points of view, and are willing to grow from the experience."
+        },
+        {
+          "name": "Caring",
+          "description": "Show empathy, compassion and respect. Have a commitment to service, and act to make a positive difference in the lives of others and in the world around them."
+        },
+        {
+          "name": "Risk-takers",
+          "description": "Approach uncertainty with forethought and determination; work independently and cooperatively to explore new ideas and innovative strategies. Are resourceful and resilient in the face of challenges and change."
+        },
+        {
+          "name": "Balanced",
+          "description": "Understand the importance of balancing different aspects of life — intellectual, physical and emotional — to achieve well-being for themselves and others. Recognise interdependence with other people and the world."
+        },
+        {
+          "name": "Reflective",
+          "description": "Thoughtfully consider the world and their own ideas and experience. Work to understand their strengths and weaknesses in order to support their learning and personal development."
+        }
+      ]
+    },
+    "soi_construction": {
+      "intro": "The statement of inquiry (SOI) is the conceptual and contextual heart of every MYP unit. Teachers construct it by combining a key concept, one or more related concepts, and a global context into a meaningful, transferable sentence that students can understand.",
+      "formula": "Key concept + Related concept(s) + Global context = Statement of inquiry",
+      "criteria": [
+        {
+          "label": "Contextualised & conceptual",
+          "text": "Represents a contextualised, conceptual understanding — not a topic description or a question."
+        },
+        {
+          "label": "Complex relationship",
+          "text": "Describes a relationship that is genuinely complex and worthy of sustained inquiry."
+        },
+        {
+          "label": "Clear purpose",
+          "text": "Explains what students should understand and why that understanding is meaningful."
+        },
+        {
+          "label": "Qualifiable",
+          "text": "Can be qualified using words like often, may or can if not universally true, but must still be an important idea."
+        },
+        {
+          "label": "Transferable",
+          "text": "Can be formulated at different levels of specificity, but must not be so narrow that it cannot transfer beyond the unit's content."
+        }
+      ],
+      "connection": "The SOI anchors the entire unit: all three types of inquiry questions are drawn from it, the summative assessment must relate to it, and ATL skills are selected in service of it.",
+      "note": "Worked examples of subject-specific statements of inquiry are provided in MYP subject-group guides and Teacher Support Materials."
+    },
+    "guiding_questions": {
+      "intro": "These questions from the MYP unit planner guide teacher reflection at three points in the inquiry cycle. Teachers need not address every question — choosing a focus leads to more meaningful results.",
+      "phases": [
+        {
+          "label": "Before teaching",
+          "questions": [
+            "Why do we think that the unit or the selection of topics will be interesting?",
+            "What do students already know, and what can they do?",
+            "What have students encountered in this discipline before?",
+            "What attributes of the learner profile does this unit offer students opportunities to develop?",
+            "What potential interdisciplinary connections can we identify?",
+            "What do we know about students' preferences and patterns of interaction?",
+            "Are there any possible opportunities for meaningful service learning?",
+            "How can we use students' multilingualism as a resource for learning?"
+          ]
+        },
+        {
+          "label": "During teaching",
+          "questions": [
+            "What difficulties did we encounter while completing the unit or the summative assessment task(s)?",
+            "What resources are proving useful, and what other resources do we need?",
+            "What student inquiries are emerging?",
+            "What can we adjust or change?",
+            "What is the level of student engagement?",
+            "How can we scaffold learning for students who need more guidance?",
+            "What is happening in the world right now with which we could connect learning and teaching in this unit?",
+            "How well are the learning experiences aligned with the unit's objectives?"
+          ]
+        },
+        {
+          "label": "After teaching",
+          "questions": [
+            "What were the learning outcomes of this unit?",
+            "How well did the summative assessment task serve to distinguish achievement levels?",
+            "Was the task sufficiently complex to allow students to reach the highest levels?",
+            "What evidence of learning can we identify?",
+            "Which teaching strategies were effective? Why?",
+            "What student-initiated action did we notice?",
+            "What will we do differently next time?",
+            "How effectively did we differentiate learning in this unit?",
+            "What can students carry forward from this unit to the next year/level of study?"
+          ]
+        }
+      ]
+    }
+  }
 }
