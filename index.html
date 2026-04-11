@@ -264,6 +264,45 @@
   padding-left: 10px;
   margin: 6px 0 4px;
 }
+
+.concept-table {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.concept-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.concept-row div {
+  padding: 6px 8px;
+  font-size: 10.5px;
+  text-align: center;
+  color: var(--muted);
+  border-right: 1px solid var(--border);
+}
+
+.concept-row div:last-child {
+  border-right: none;
+}
+
+.concept-row:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.concept-row.header {
+  background: var(--surface2);
+}
+
+.concept-row.header div {
+  font-weight: 600;
+  color: var(--text);
+}
 </style>
 </head>
 <body>
@@ -522,7 +561,7 @@ function build(data) {
                 <div class="overview-section">
                 <div class="overview-title">Curriculum Planning</div>
                 <div class="overview-text">
-                    Table 1 shows how the teaching and learning experiences and the students’ expected outcomes in design should progress from the earlier years to the final years of the MYP.
+                    The table below shows how the teaching and learning experiences and the students’ expected outcomes in design should progress from the earlier years to the final years of the MYP.
                 </div>
 
                 <div class="myp-table">
@@ -550,6 +589,40 @@ function build(data) {
                     <div>Students design products for a client or an identified target audience.</div>
                     </div>
                 </div>
+
+                </div>
+
+                <div class="overview-title">Key and Related Concepts</div>
+
+                <div class="concept-table">
+
+                    <div class="concept-row header">
+                    <div>Communication</div>
+                    <div>Communities</div>
+                    <div>Development</div>
+                    <div>Systems</div>
+                    </div>
+
+                    <div class="concept-row">
+                    <div>Adaptation</div>
+                    <div>Collaboration</div>
+                    <div>Ergonomics</div>
+                    <div>Evaluation</div>
+                    </div>
+
+                    <div class="concept-row">
+                    <div>Form</div>
+                    <div>Function</div>
+                    <div>Innovation</div>
+                    <div>Invention</div>
+                    </div>
+
+                    <div class="concept-row">
+                    <div>Markets and trends</div>
+                    <div>Perspective</div>
+                    <div>Resources</div>
+                    <div>Sustainability</div>
+                    </div>
 
                 </div>
 
