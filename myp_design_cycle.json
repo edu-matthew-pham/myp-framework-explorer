@@ -114,7 +114,7 @@
       "criterion": "Criterion B",
       "color": "#E8A44A",
       "light": "#fae3bc",
-      "description": "Students write a detailed specification, which drives the development of a solution. They present the solution.",
+      "description": "Students develop and refine design ideas in response to a design problem. They generate, evaluate and communicate possible solutions, guided by a design specification.",
       "nodes": [
         {
           "label": "Develop",
@@ -220,7 +220,7 @@
       "criterion": "Criterion C",
       "color": "#6AAF6A",
       "light": "#c8e8c8",
-      "description": "Students plan the creation of the chosen solution and follow the plan to create a prototype sufficient for testing and evaluation.",
+      "description": "Students plan and create a solution, applying technical skills and refining their approach as they develop a functioning outcome.",
       "nodes": [
         {
           "label": "Construct",
@@ -255,7 +255,7 @@
         {
           "label": "Justify",
           "detail": "changes made",
-          "description": "When students deviate from their plan, they fully justify each change — explaining why it was made and how it affected the outcome. This distinguishes adaptive problem-solving from arbitrary deviation.",
+          "description": "When students deviate from their plan, they fully justify each change — explaining why it was made and how it affected the outcome. This distinguishes adaptive problem-solving from changes that are not clearly justified.",
           "progression": {
             "y1": "States or lists changes made to the chosen design or plan.",
             "y3": "Outlines or explains changes made to the design and plan during creation.",
@@ -326,7 +326,7 @@
       "criterion": "Criterion D",
       "color": "#C96060",
       "light": "#f5c8c8",
-      "description": "Students design tests to evaluate the solution, carry out those tests and objectively evaluate its success. Students identify areas where the solution could be improved and explain how their solution will impact on the client or target audience.",
+      "description": "Students design and carry out tests to evaluate a solution, analysing its effectiveness and identifying opportunities for improvement and impact.",
       "nodes": [
         {
           "label": "Design",
