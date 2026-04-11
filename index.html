@@ -485,17 +485,8 @@ function build(data) {
       const hasTooltip = def.length > 0;
       pill.style.cssText = `padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--text);letter-spacing:0.03em;${hasTooltip ? 'cursor:help;' : ''}`;
       if (hasTooltip) {
-        const tip = document.createElement('span');
-        tip.textContent = def;
-        tip.style.cssText = [
-          'display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%)',
-          'background:#2c2c30;border:1px solid rgba(255,255,255,0.12);border-radius:6px',
-          'padding:6px 10px;font-size:10.5px;line-height:1.5;color:#f0ede8',
-          'width:220px;text-align:left;pointer-events:none;z-index:100;white-space:normal;'
-        ].join(';');
-        pill.appendChild(tip);
-        pill.addEventListener('mouseenter', () => { tip.style.display = 'block'; });
-        pill.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+        pill.addEventListener('mouseenter', () => showTip(pill, def));
+        pill.addEventListener('mouseleave', hideTip);
       }
       keyRow.appendChild(pill);
     });
