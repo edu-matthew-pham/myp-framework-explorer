@@ -138,6 +138,59 @@
           ],
           "related": []
         }
+      },
+      {
+        "title": "Unit Planning Workflow",
+        "text": "MYP unit planning is iterative rather than strictly linear — teachers move back and forth between these steps — but the following sequence describes how the elements typically come together. Note: this workflow is a teacher-developed synthesis; the IB does not prescribe a numbered sequence.",
+        "progression_table": {
+          "headers": [
+            "Step",
+            "What the teacher does",
+            "Tool element"
+          ],
+          "rows": [
+            [
+              "1. Choose a key concept",
+              "Select one of the 16 key concepts that will drive the unit's big idea and transfer potential.",
+              "Key Concepts"
+            ],
+            [
+              "2. Add related concept(s)",
+              "Identify one or more subject-specific related concepts that add disciplinary depth and precision.",
+              "Related Concepts"
+            ],
+            [
+              "3. Select a global context",
+              "Choose one of the six global contexts that gives the content authentic real-world meaning and answers 'Why are we learning this?'",
+              "Global Contexts"
+            ],
+            [
+              "4. Write the statement of inquiry",
+              "Combine key concept + related concept(s) + global context into a transferable, thought-provoking sentence that anchors the unit.",
+              "SOI Construction"
+            ],
+            [
+              "5. Develop inquiry questions",
+              "Generate factual, conceptual and debatable questions drawn from the SOI to scaffold and scope the unit.",
+              "Inquiry Questions"
+            ],
+            [
+              "6. Design summative assessment",
+              "Create a task directly linked to the SOI that gives students the opportunity to demonstrate understanding at all achievement levels.",
+              "Approaches to Teaching"
+            ],
+            [
+              "7. Plan learning experiences & ATL",
+              "Design the learning sequence, select ATL skill clusters to develop explicitly, and plan formative assessment and differentiation.",
+              "ATL Skills"
+            ],
+            [
+              "8. Reflect",
+              "Before, during and after teaching — use the guiding questions to evaluate and improve the unit.",
+              "Guiding Questions"
+            ]
+          ]
+        }
       }
     ]
   },
