@@ -69,7 +69,7 @@
 
   .node-grid {
     flex: 1; overflow-y: auto; padding: 14px 16px;
-    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(46%, 1fr)); grid-auto-rows: min-content; gap: 10px;
   }
   .node-card {
     background: var(--surface); border: 1px solid var(--border);
@@ -160,14 +160,39 @@
   .gen-row:nth-child(even):not(.header) { background: rgba(255,255,255,0.02); }
 
   .concept-table .gen-row div { text-align: center; }
+
+  /* ── Subject tabs ── */
+  .tab-bar {
+    display: flex; align-items: center; gap: 2px;
+    padding: 0 16px; flex-shrink: 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .tab-btn {
+    padding: 9px 16px; font-size: 12px; font-weight: 500;
+    color: var(--muted); background: transparent; border: none;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--text); border-bottom-color: var(--text); }
+  .tab-btn.soon { opacity: 0.35; cursor: default; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1 id="h-title">MYP Cycle</h1>
-  <span class="sub" id="h-sub"></span>
+  <h1>MYP Learning Maps</h1>
 </header>
+<div class="tab-bar" id="tab-bar">
+  <button class="tab-btn active" data-json="myp_design_cycle.json">Design</button>
+  <button class="tab-btn" data-json="myp_science_cycle.json">Sciences</button>
+  <button class="tab-btn soon" title="Coming soon">Mathematics</button>
+  <button class="tab-btn soon" title="Coming soon">English</button>
+  <button class="tab-btn soon" title="Coming soon">HASS</button>
+</div>
 
 <div class="main">
   <div class="wheel-wrap"><svg id="wheel"></svg></div>
@@ -197,13 +222,33 @@
 </div>
 
 <script>
-const DATA_URL = './myp_design_cycle.json';
-fetch(DATA_URL).then(r => r.json()).then(build);
+function loadSubject(jsonFile) {
+  fetch('./' + jsonFile).then(r => r.json()).then(data => {
+    // Reset wheel SVG
+    d3.select('#wheel').selectAll('*').remove();
+    // Reset panels
+    document.getElementById('phase-header').innerHTML = '';
+    document.getElementById('phase-desc').style.display = 'none';
+    document.getElementById('node-grid').innerHTML = '';
+    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see achievement level descriptors.</p>';
+    document.querySelectorAll('.year-btn').forEach(b => { b.style.background = ''; });
+    build(data);
+  });
+}
+
+// Tab click handler
+document.getElementById('tab-bar').addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn || btn.classList.contains('soon')) return;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  loadSubject(btn.dataset.json);
+});
+
+// Initial load
+loadSubject('myp_design_cycle.json');
 
 function build(data) {
-  document.getElementById('h-title').textContent = data.title || 'MYP Cycle';
-  document.getElementById('h-sub').textContent   = data.subtitle || '';
-
   // ── Render assessment overview panel (static, from JSON) ──
   if (data.assessment_overview) {
     const ao = data.assessment_overview;
@@ -236,11 +281,32 @@ function build(data) {
     {cx:CX,      cy:CY-DIST}, {cx:CX+DIST, cy:CY},
     {cx:CX,      cy:CY+DIST}, {cx:CX-DIST, cy:CY},
   ];
-  const gridOffsets = [{col:0,row:0},{col:1,row:0},{col:0,row:1},{col:1,row:1}];
+  // Build per-phase offsets dynamically based on node count
+  // Lay out in a 2-column grid, wrapping rows as needed, centred on the anchor
+  function phaseOffsets(count) {
+    const cols = 2;
+    const rows = Math.ceil(count / cols);
+    const offsets = [];
+    for (let i = 0; i < count; i++) {
+      const row = Math.floor(i / cols);
+      const colCount = (row === rows - 1 && count % cols !== 0) ? count % cols : cols;
+      const col = i % cols;
+      // Centre single-column rows
+      const xOffset = colCount === 1 ? 0.5 : col;
+      offsets.push({ col: xOffset, row, totalRows: rows, colsInRow: colCount });
+    }
+    return offsets;
+  }
+
   nodes.forEach(n => {
-    const a = anchors[n.phaseIdx], o = gridOffsets[n.nodeIdx];
-    n.x = a.cx - BW/2 + o.col*(NW+GAP) + NW/2;
-    n.y = a.cy - BH/2 + o.row*(NH+GAP) + NH/2;
+    const a = anchors[n.phaseIdx];
+    const phaseNodes = nodes.filter(x => x.phaseIdx === n.phaseIdx);
+    const offsets = phaseOffsets(phaseNodes.length);
+    const o = offsets[n.nodeIdx];
+    const totalRows = o.totalRows;
+    const blockH = totalRows * NH + (totalRows - 1) * GAP;
+    n.x = a.cx - BW/2 + o.col * (NW + GAP) + NW/2;
+    n.y = a.cy - blockH/2 + o.row * (NH + GAP) + NH/2;
   });
 
   const svg = d3.select('#wheel').attr('width',W).attr('height',H);
@@ -394,8 +460,6 @@ function build(data) {
     descEl.textContent = ov.description;
 
     const grid = document.getElementById('node-grid');
-    grid.style.gridTemplateColumns = '1fr';
-    grid.style.gridTemplateRows = 'auto';
     grid.innerHTML = '';
 
     const container = document.createElement('div');
@@ -448,8 +512,6 @@ function build(data) {
     updateWheel();
     // Reset grid columns for 2x2 layout
     const grid = document.getElementById('node-grid');
-    grid.style.gridTemplateColumns = '1fr 1fr';
-    grid.style.gridTemplateRows = '1fr 1fr';
     if (data.overview) renderOverview(data.overview);
   }
 
@@ -471,8 +533,6 @@ function build(data) {
     renderLevels(phase);
 
     const grid = document.getElementById('node-grid');
-    grid.style.gridTemplateColumns = '1fr 1fr';
-    grid.style.gridTemplateRows = '1fr 1fr';
     grid.innerHTML = '';
 
     phase.nodes.forEach(node => {
