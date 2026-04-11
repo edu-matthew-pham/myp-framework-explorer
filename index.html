@@ -177,6 +177,65 @@
   line-height: 1.5;
   color: var(--muted);
 }
+
+.myp-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.myp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+}
+
+.myp-row div {
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.myp-row.header div {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 10px;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.overview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.overview-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.overview-text {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.overview-quote {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+  border-left: 2px solid var(--border);
+  padding-left: 10px;
+  margin: 6px 0 4px;
+}
 </style>
 </head>
 <body>
@@ -380,13 +439,86 @@ function build(data) {
   function clearSel() {
     activePhaseId = null;
     updateWheel();
-    document.getElementById('phase-header').innerHTML =
-      '<p class="phase-empty-msg">Select a phase from the diagram to explore.</p>';
-    document.getElementById('phase-desc').style.display = 'none';
-    document.getElementById('phase-desc').textContent = '';
-    document.getElementById('node-grid').innerHTML =
-      '<p class="empty-hint">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>';
-    document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see achievement level descriptors.</p>';
+    document.getElementById('phase-header').innerHTML = `
+        <div class="phase-name">MYP Design Overview</div>
+        `;
+
+        const descEl = document.getElementById('phase-desc');
+        descEl.style.display = '';
+        descEl.innerHTML = `
+        Select a phase from the diagram to explore.
+        `;
+
+        document.getElementById('node-grid').innerHTML = `
+            <div class="overview">
+
+                <div class="overview-section">
+                <div class="overview-title">Programme Model</div>
+                <div class="overview-quote">
+                    The MYP is flexible enough to accommodate the demands of most national or local curriculums.
+                </div>
+                <div class="overview-text">
+                    The programme is structured around concepts, global contexts and approaches to learning (ATL).
+                    Learning is inquiry-based and connected to real-world contexts.
+                </div>
+                </div>
+
+                <div class="overview-section">
+                <div class="overview-title">Nature of Design</div>
+                <div class="overview-quote">
+                    MYP design challenges all students to apply practical and creative thinking skills to solve design problems.
+                </div>
+                <div class="overview-text">
+                    Design involves identifying problems, exploring design ideas, developing solutions and evaluating outcomes.
+                </div>
+                </div>
+
+                <div class="overview-section">
+                <div class="overview-title">Design Cycle</div>
+                <div class="overview-quote">
+                    It is important to note that, while the design cycle includes several successive stages, the design cycle is an iterative and cyclical process.
+                </div>
+                <div class="overview-text">
+                    Students move flexibly within and between phases, revisiting strands as they refine ideas, test solutions and respond to feedback.
+                </div>
+                </div>
+
+                <div class="overview-section">
+                <div class="overview-title">Curriculum Planning</div>
+                <div class="overview-text">
+                    Table 1 shows how the teaching and learning experiences and the students’ expected outcomes in design should progress from the earlier years to the final years of the MYP.
+                </div>
+
+                <div class="myp-table">
+                    <div class="myp-row header">
+                    <div>MYP year 1</div>
+                    <div>MYP year 3</div>
+                    <div>MYP year 5</div>
+                    </div>
+
+                    <div class="myp-row">
+                    <div>Emphasis placed on individual strands of the objectives.</div>
+                    <div>Emphasis placed on addressing individual objectives.</div>
+                    <div>The objectives are fully addressed.</div>
+                    </div>
+
+                    <div class="myp-row">
+                    <div>Students explore contrived, teacher-led design challenges set in familiar contexts.</div>
+                    <div>Students explore identified, real-life problems set in familiar and unfamiliar contexts.</div>
+                    <div>Students independently explore complex real-life problems set in unfamiliar contexts.</div>
+                    </div>
+
+                    <div class="myp-row">
+                    <div>Students design for themselves.</div>
+                    <div>Students design products for familiar groups of people.</div>
+                    <div>Students design products for a client or an identified target audience.</div>
+                    </div>
+                </div>
+
+                </div>
+
+            </div>
+            `;
   }
 
   function updateWheel() {
