@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <style>
   :root {
-    --bg: #1a1a1e; --surface: #242428; --surface2: #2c2c30;
+    --bg: #1a1a1e; --surface: #242428; --surface2: #2e2e32;
     --text: #f0ede8; --muted: #9a9790;
     --border: rgba(255,255,255,0.08);
   }
@@ -41,28 +41,20 @@
   .node-g.phase-active rect { stroke-width: 3.5 !important; filter: brightness(1.18); }
   .centre-g { cursor: pointer; }
 
-  /* ── Right side: two panels ── */
-  .right-side {
-    display: flex; flex: 1; min-width: 0;
-    border-left: 1px solid var(--border);
-  }
-
-  /* Info panel — phase + tasks + detail */
+  /* ── Right panel ── */
   .info-panel {
     flex: 1; min-width: 0;
     display: flex; flex-direction: column;
-    border-right: 1px solid var(--border);
     overflow: hidden;
   }
 
+  /* Phase header */
   .phase-header {
-    padding: 16px 18px 14px;
+    padding: 16px 20px 12px;
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
   }
-  .phase-empty-msg {
-    font-size: 13px; color: var(--muted); line-height: 1.7;
-  }
+  .phase-empty-msg { font-size: 13px; color: var(--muted); line-height: 1.7; }
   .badge {
     display: inline-block; padding: 3px 11px; border-radius: 20px;
     font-size: 10px; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 6px;
@@ -72,40 +64,54 @@
     font-size: 16px; font-weight: 700; line-height: 1.2;
   }
 
-  .tasks-section {
-    flex: 0 0 auto;
-    padding: 12px 18px;
+  /* Phase description */
+  .phase-desc {
+    padding: 12px 20px;
     border-bottom: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); line-height: 1.7;
+    flex-shrink: 0;
   }
-  .section-head {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
-  }
-  .task-list { display: flex; flex-direction: column; gap: 4px; }
-  .task-item {
-    padding: 7px 11px; border-radius: 7px;
-    border: 1px solid var(--border); background: var(--surface);
-    font-size: 12px; cursor: pointer; transition: border-color 0.15s, background 0.15s;
-    line-height: 1.4;
-  }
-  .task-item:hover { border-color: rgba(255,255,255,0.2); }
-  .task-item.selected { background: var(--surface2); }
-  .task-item strong { font-weight: 600; }
-  .task-item em { font-style: italic; color: var(--muted); }
 
-  .detail-section {
+  /* Node grid — 2x2 */
+  .node-grid {
     flex: 1; overflow-y: auto;
-    padding: 14px 18px;
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
   }
-  .detail-section p {
+  .node-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .node-card-label {
+    font-size: 12px; font-weight: 600; line-height: 1.3;
+  }
+  .node-card-detail {
+    font-size: 11px; font-style: italic; color: var(--muted);
+  }
+  .node-card-desc {
+    font-size: 11px; color: var(--muted); line-height: 1.6; margin-top: 3px;
+  }
+  .node-card-divider {
+    height: 1px; background: var(--border); margin: 2px 0;
+  }
+
+  .empty-hint {
+    grid-column: 1 / -1;
     font-size: 13px; color: var(--muted); line-height: 1.7;
+    align-self: center; text-align: center; padding: 20px;
   }
-  .detail-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-  .detail-body  { font-size: 12px; color: var(--muted); line-height: 1.65; }
 
   /* Levels panel */
+  .right-side { display: flex; flex: 1; min-width: 0; border-left: 1px solid var(--border); }
+  .info-panel { border-left: none; border-right: 1px solid var(--border); }
   .levels-panel {
-    flex: 0 0 200px;
+    flex: 0 0 22%;  min-width: 160px; max-width: 260px;
     display: flex; flex-direction: column;
     overflow: hidden;
   }
@@ -118,7 +124,7 @@
   }
   .levels-list {
     flex: 1; overflow-y: auto;
-    padding: 10px 14px;
+    padding: 10px 12px;
     display: flex; flex-direction: column; gap: 8px;
   }
   .level-card {
@@ -130,7 +136,7 @@
     text-transform: uppercase; margin-bottom: 3px;
   }
   .level-text { font-size: 11px; line-height: 1.5; color: var(--muted); }
-  .levels-empty { font-size: 12px; color: var(--muted); padding: 4px 0; line-height: 1.6; }
+  .levels-empty { font-size: 12px; color: var(--muted); line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -145,35 +151,25 @@
   <div class="wheel-wrap"><svg id="wheel"></svg></div>
 
   <div class="right-side">
-
-    <!-- Info panel: phase header + tasks + detail -->
-    <div class="info-panel">
-
-      <div class="phase-header" id="phase-header">
-        <p class="phase-empty-msg">Select a phase from the diagram to explore.</p>
-      </div>
-
-      <div class="tasks-section" id="tasks-section" style="display:none;">
-        <div class="section-head">Phase tasks</div>
-        <div class="task-list" id="task-list"></div>
-      </div>
-
-      <div class="detail-section" id="phase-desc-section">
-        <p style="font-size:12px;color:var(--muted);">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>
-      </div>
-      <div class="detail-section" id="node-desc-section" style="display:none;border-top:1px solid var(--border);"></div>
-
+  <div class="info-panel">
+    <div class="phase-header" id="phase-header">
+      <p class="phase-empty-msg">Select a phase from the diagram to explore.</p>
     </div>
-
-    <!-- Achievement levels panel -->
-    <div class="levels-panel">
-      <div class="levels-header">Achievement levels</div>
-      <div class="levels-list" id="levels-list">
-        <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
-      </div>
+    <div class="phase-desc" id="phase-desc" style="display:none;"></div>
+    <div class="node-grid" id="node-grid">
+      <p class="empty-hint">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>
     </div>
-
   </div>
+
+  <div class="levels-panel">
+    <div class="levels-header">Achievement levels</div>
+    <div class="levels-list" id="levels-list">
+      <p class="levels-empty">Select a phase to see achievement level descriptors.</p>
+    </div>
+  </div>
+
+  </div><!-- end right-side -->
+
 </div>
 
 <script>
@@ -201,10 +197,10 @@ function build(data) {
   const DIST = W*0.345;
 
   const anchors = [
-    { cx:CX,       cy:CY-DIST },
-    { cx:CX+DIST,  cy:CY      },
-    { cx:CX,       cy:CY+DIST },
-    { cx:CX-DIST,  cy:CY      },
+    {cx:CX,       cy:CY-DIST},
+    {cx:CX+DIST,  cy:CY     },
+    {cx:CX,       cy:CY+DIST},
+    {cx:CX-DIST,  cy:CY     },
   ];
   const gridOffsets = [{col:0,row:0},{col:1,row:0},{col:0,row:1},{col:1,row:1}];
 
@@ -233,22 +229,22 @@ function build(data) {
       .attr('y',(i-(tLines.length-1)/2)*tfs*1.3).text(line);
   });
 
-  // Phase labels
+  // Phase labels between centre and blocks
   const labelFs = W*0.021, lh = labelFs*1.3;
   data.phases.forEach((phase, pi) => {
     const lines = phase.label.split('\n');
     const gapMid = CR + (DIST - BH/2 - CR)*0.52;
     let tx,ty,rot;
-    if (pi===0){tx=CX;       ty=CY-gapMid; rot=0;}
-    if (pi===1){tx=CX+gapMid;ty=CY;        rot=90;}
-    if (pi===2){tx=CX;       ty=CY+gapMid; rot=0;}
-    if (pi===3){tx=CX-gapMid;ty=CY;        rot=-90;}
+    if (pi===0){tx=CX;        ty=CY-gapMid; rot=0;  }
+    if (pi===1){tx=CX+gapMid; ty=CY;        rot=90; }
+    if (pi===2){tx=CX;        ty=CY+gapMid; rot=0;  }
+    if (pi===3){tx=CX-gapMid; ty=CY;        rot=-90;}
     const el = svg.append('text')
       .attr('font-family','Libre Baskerville').attr('font-weight','700')
       .attr('font-size',labelFs).attr('fill',phase.color)
       .attr('text-anchor','middle').attr('dominant-baseline','middle')
       .attr('transform',`translate(${tx},${ty}) rotate(${rot})`);
-    lines.forEach((line,li)=>{
+    lines.forEach((line,li) => {
       el.append('tspan').attr('x',0).attr('dy', li===0 ? -(lines.length-1)*lh/2 : lh).text(line);
     });
   });
@@ -256,64 +252,68 @@ function build(data) {
   // Nodes
   const lfs = Math.min(W*0.020,12), dfs = Math.min(W*0.017,10), lh2 = lfs*1.22;
   function wrap(text, maxCh) {
-    const words=text.split(' '),lines=[];let cur='';
-    words.forEach(w=>{const t=cur?cur+' '+w:w;if(t.length>maxCh&&cur){lines.push(cur);cur=w;}else cur=t;});
-    if(cur)lines.push(cur);return lines;
+    const words=text.split(' '), lines=[]; let cur='';
+    words.forEach(w => {
+      const t = cur?cur+' '+w:w;
+      if (t.length>maxCh && cur){lines.push(cur);cur=w;}else cur=t;
+    });
+    if(cur)lines.push(cur); return lines;
   }
 
-  let activePhaseId = null, activeNodeIdx = null;
+  let activePhaseId = null;
 
   const nodeGs = svg.selectAll('.node-g')
     .data(nodes).enter()
     .append('g').attr('class','node-g')
-    .attr('transform',d=>`translate(${d.x},${d.y})`)
-    .on('click',(e,d)=>selectPhase(d.phase.id));
+    .attr('transform', d=>`translate(${d.x},${d.y})`)
+    .on('click', (e,d) => selectPhase(d.phase.id));
 
   nodeGs.append('rect')
     .attr('x',-NW/2).attr('y',-NH/2)
     .attr('width',NW).attr('height',NH)
     .attr('rx',CORNER).attr('ry',CORNER)
-    .attr('fill',d=>d.phase.color)
-    .attr('stroke',d=>d.phase.light)
+    .attr('fill', d=>d.phase.color)
+    .attr('stroke', d=>d.phase.light)
     .attr('stroke-width',2);
 
   nodeGs.each(function(d) {
     const g = d3.select(this);
-    const mc=Math.floor(NW/(lfs*0.52));
-    const ll=wrap(d.node.label,mc), dl=wrap(d.node.detail,mc+2);
-    const th=ll.length*lh2+dl.length*lh2*0.92+lh2*0.25;
-    let y=-th/2+lh2*0.5;
-    ll.forEach(line=>{
+    const mc = Math.floor(NW/(lfs*0.52));
+    const ll = wrap(d.node.label,mc), dl = wrap(d.node.detail,mc+2);
+    const th = ll.length*lh2 + dl.length*lh2*0.92 + lh2*0.25;
+    let y = -th/2 + lh2*0.5;
+    ll.forEach(line => {
       g.append('text').attr('text-anchor','middle').attr('dominant-baseline','middle')
         .attr('y',y).attr('font-size',lfs).attr('font-weight',600)
         .attr('font-family','DM Sans').attr('fill','white').text(line);
-      y+=lh2;
+      y += lh2;
     });
-    y+=lh2*0.12;
-    dl.forEach(line=>{
+    y += lh2*0.12;
+    dl.forEach(line => {
       g.append('text').attr('text-anchor','middle').attr('dominant-baseline','middle')
         .attr('y',y).attr('font-size',dfs).attr('font-style','italic')
         .attr('font-family','DM Sans').attr('fill',d.phase.light).text(line);
-      y+=lh2*0.92;
+      y += lh2*0.92;
     });
   });
 
   // ── Interaction ──
   function selectPhase(phaseId) {
+    if (activePhaseId === phaseId) return;
     activePhaseId = phaseId;
-    activeNodeIdx = null;
     updateWheel();
-    renderPhase(data.phases.find(p=>p.id===phaseId));
+    renderPhase(data.phases.find(p => p.id === phaseId));
   }
 
   function clearSel() {
-    activePhaseId = null; activeNodeIdx = null;
+    activePhaseId = null;
     updateWheel();
-    document.getElementById('phase-header').innerHTML = '<p class="phase-empty-msg">Select a phase from the diagram to explore.</p>';
-    document.getElementById('tasks-section').style.display = 'none';
-    document.getElementById('phase-desc-section').innerHTML = '<p style="font-size:12px;color:var(--muted);">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>';
-    document.getElementById('node-desc-section').style.display = 'none';
-    document.getElementById('node-desc-section').innerHTML = '';
+    document.getElementById('phase-header').innerHTML =
+      '<p class="phase-empty-msg">Select a phase from the diagram to explore.</p>';
+    document.getElementById('phase-desc').style.display = 'none';
+    document.getElementById('phase-desc').textContent = '';
+    document.getElementById('node-grid').innerHTML =
+      '<p class="empty-hint">The Design Cycle is iterative — phases are interdependent and students may move between them at any point.</p>';
     document.getElementById('levels-list').innerHTML = '<p class="levels-empty">Select a phase to see achievement level descriptors.</p>';
   }
 
@@ -324,27 +324,15 @@ function build(data) {
   }
 
   function renderPhase(phase) {
-    // Phase header
-    const header = document.getElementById('phase-header');
-    header.innerHTML = `
+    // Header
+    document.getElementById('phase-header').innerHTML = `
       <span class="badge" style="background:${phase.color}33;color:${phase.light};border:1px solid ${phase.color}66">${phase.criterion}</span>
       <div class="phase-name" style="color:${phase.light};margin-top:4px;">${phase.label.replace(/\n/g,' ')}</div>`;
 
-    // Phase description — always visible, always shows current phase
-    document.getElementById('phase-desc-section').innerHTML =
-      `<p class="detail-body">${phase.description}</p>`;
-
-    // Tasks
-    document.getElementById('tasks-section').style.display = '';
-    const taskList = document.getElementById('task-list');
-    taskList.innerHTML = '';
-    phase.nodes.forEach((node,ni) => {
-      const div = document.createElement('div');
-      div.className = 'task-item';
-      div.innerHTML = `<strong>${node.label}</strong> <em>${node.detail}</em>`;
-      div.addEventListener('click', () => selectNode(phase, ni));
-      taskList.appendChild(div);
-    });
+    // Phase description
+    const descEl = document.getElementById('phase-desc');
+    descEl.style.display = '';
+    descEl.textContent = phase.description;
 
     // Levels
     const levelsList = document.getElementById('levels-list');
@@ -356,22 +344,20 @@ function build(data) {
       levelsList.appendChild(card);
     });
 
-    // Auto-select first node
-    selectNode(phase, 0);
-  }
-
-  function selectNode(phase, ni) {
-    activeNodeIdx = ni;
-    const node = phase.nodes[ni];
-    document.querySelectorAll('.task-item').forEach((el,i) => {
-      el.classList.toggle('selected', i===ni);
-      el.style.borderColor = i===ni ? phase.color : '';
+    // 2×2 node cards
+    const grid = document.getElementById('node-grid');
+    grid.innerHTML = '';
+    phase.nodes.forEach(node => {
+      const card = document.createElement('div');
+      card.className = 'node-card';
+      card.style.borderColor = phase.color + '55';
+      card.innerHTML = `
+        <div class="node-card-label" style="color:${phase.light}">${node.label}</div>
+        <div class="node-card-detail">${node.detail}</div>
+        <div class="node-card-divider"></div>
+        <div class="node-card-desc">${node.description || ''}</div>`;
+      grid.appendChild(card);
     });
-    const nodeDesc = document.getElementById('node-desc-section');
-    nodeDesc.style.display = '';
-    nodeDesc.innerHTML = `
-      <div class="detail-title" style="color:${phase.light}">${node.label} <span style="font-weight:400;font-style:italic;color:var(--muted)">${node.detail}</span></div>
-      <div class="detail-body" style="margin-top:6px;">${node.description || ''}</div>`;
   }
 }
 </script>
