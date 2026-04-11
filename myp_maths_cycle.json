@@ -18,29 +18,29 @@
       {
         "title": "Mathematics as Inquiry",
         "text": "Studying mathematics should be more than simply learning formulae or rules. Students should be active participants in the search for concepts and relationships — mathematics becomes a subject alive with the thrill of exploration and the rewards of discovery. MYP mathematics promotes both inquiry and application, helping students to develop problem-solving techniques that transcend the discipline and are useful in the world outside school.",
-        "progression_table": {
-          "headers": [
+       "progression_table": {
+        "headers": [
             "MYP Year 1",
             "MYP Year 3",
             "MYP Year 5"
-          ],
-          "rows": [
+        ],
+        "rows": [
             [
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER"
+            "Students build foundational knowledge and skills through sequential learning.",
+            "Students connect and extend knowledge through increasingly complex units of work.",
+            "Students integrate multiple objectives and apply mathematics with greater independence and sophistication."
             ],
             [
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER"
+            "Students work with simpler models, representations and relationships in familiar contexts.",
+            "Students use broader mathematical tools and investigate trends, variables and patterns across contexts.",
+            "Students apply more advanced modelling, accuracy, prediction and technology in complex contexts."
             ],
             [
-              "PLACEHOLDER",
-              "PLACEHOLDER",
-              "PLACEHOLDER"
+            "Problem-solving is supported through structured tasks and guided inquiry.",
+            "Problem-solving increasingly involves selecting strategies and making connections across ideas.",
+            "Problem-solving requires independent choice of strategies, justification and reflection on validity and results."
             ]
-          ]
+        ]
         }
       },
       {

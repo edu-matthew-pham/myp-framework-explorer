@@ -26,11 +26,6 @@
           ],
           "rows": [
             [
-              "Emphasis placed on individual strands of the objectives.",
-              "Emphasis placed on addressing individual objectives.",
-              "The objectives are fully addressed."
-            ],
-            [
               "Students outline knowledge and predictions; apply science to familiar problems.",
               "Students describe and analyse; apply science to familiar and unfamiliar problems.",
               "Students explain, evaluate and critically judge; apply and reflect independently."
@@ -39,6 +34,11 @@
               "Command terms: outline, state, identify, describe (basic).",
               "Command terms: describe, discuss, analyse, outline.",
               "Command terms: explain, evaluate, formulate, justify."
+            ],
+            [
+            "Scientific inquiry is guided, with structured methods and support.",
+            "Scientific inquiry develops independence in designing and analysing investigations.",
+            "Scientific inquiry is increasingly independent, reflective and evaluative."
             ]
           ]
         }
