@@ -64,53 +64,71 @@
               "items": [
                 {
                   "name": "Adaptation",
-                  "definition": ""
+                  "definition": "Adaptation involves incorporating ideas found in one product into the development of a new product."
                 },
                 {
                   "name": "Collaboration",
-                  "definition": ""
+                  "definition": "Collaboration involves two or more people sharing expertise and experience, working together to solve a problem and realize shared goals."
                 },
                 {
                   "name": "Ergonomics",
-                  "definition": ""
+                  "definition": "The application of scientific information and understanding of how humans relate to products, systems, interfaces and environments."
                 },
                 {
                   "name": "Evaluation",
-                  "definition": ""
+                  "definition": "In design, evaluation involves the gathering and processing of data to determine an action. Evaluation involves feedback, which can be used to control, revise or modify."
                 },
                 {
                   "name": "Form",
-                  "definition": ""
+                  "definition": "Form concerns the overall shape and configuration of a product. It relates to aspects such as aesthetics, shape, colour and texture."
                 },
                 {
                   "name": "Function",
-                  "definition": ""
+                  "definition": "The function of a solution refers to what it has been designed to do and how effective it is at enabling that action to be performed."
                 },
                 {
                   "name": "Innovation",
-                  "definition": ""
+                  "definition": "Innovation is the successful diffusion of an invention into the marketplace."
                 },
                 {
                   "name": "Invention",
-                  "definition": ""
+                  "definition": "An invention is an entirely novel product or a feature of a product that is unique."
                 },
                 {
                   "name": "Markets and trends",
-                  "definition": ""
+                  "definition": "Markets can be considered as sectors and segments comprised of groups of individuals with similar needs. Trends involve short- and long-term patterns of consumer behaviour."
                 },
                 {
                   "name": "Perspective",
-                  "definition": ""
+                  "definition": "Perspective relates to the point of view of various stakeholders involved in solving a problem — including clients, target audiences, focus groups, consumers, manufacturers and experts."
                 },
                 {
                   "name": "Resources",
-                  "definition": ""
+                  "definition": "Resources relate to the supply of a commodity. In MYP design, these commodities can be classified as information, materials and equipment."
                 },
                 {
                   "name": "Sustainability",
-                  "definition": ""
+                  "definition": "Sustainability is the capacity to endure, with environmental, economic and social dimensions. In design this encompasses green and eco-design, sustainable consumption, design, development, innovation and production."
                 }
               ]
+            }
+          ],
+          "key_definitions": [
+            {
+              "name": "Communication",
+              "definition": "The exchange or transfer of signals, facts, ideas and symbols. In design, students develop awareness of how, why and when clear messages must be given and received throughout the design process — from identifying the need, through developing ideas, to ensuring the final product clearly communicates its intent and how a user interacts with it."
+            },
+            {
+              "name": "Communities",
+              "definition": "Groups that exist in proximity defined by space, time or relationship. In design, students understand that a solution for one community may create problems for another. The community affects the design (as target audience) and is affected by it — both must be considered from brief to evaluation."
+            },
+            {
+              "name": "Development",
+              "definition": "The act or process of growth, progress or evolution, sometimes through iterative improvements. In design, development is not confined to Criterion B — students develop research plans, adapt creation plans, and develop testing methods across all phases of the design cycle."
+            },
+            {
+              "name": "Systems",
+              "definition": "Sets of interacting or interdependent components that provide structure and order. Products and solutions are systems of components combined to carry out a specific function. The design cycle itself is a system. Open loop systems have input, process and output; closed loop systems add a feedback mechanism."
             }
           ]
         }

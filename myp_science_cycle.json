@@ -45,7 +45,7 @@
       },
       {
         "title": "Key and Related Concepts",
-        "text": "The key concepts contributed by the study of sciences are Change, Relationships and Systems. Related concepts vary by discipline — select the relevant set when planning units.",
+        "text": "The key concepts contributed by the study of sciences are Change, Relationships and Systems.",
         "concepts": {
           "key": [
             "Change",
@@ -58,51 +58,51 @@
               "items": [
                 {
                   "name": "Balance",
-                  "definition": ""
+                  "definition": "The dynamic equilibrium that exists among members of a stable natural community; the regulation of the internal environment of an organism."
                 },
                 {
                   "name": "Consequences",
-                  "definition": ""
+                  "definition": "The observable or quantifiable effects, results, or outcomes correlated with an earlier event or events."
                 },
                 {
                   "name": "Energy",
-                  "definition": ""
+                  "definition": "The capacity of an object to do work or transfer heat."
                 },
                 {
                   "name": "Environment",
-                  "definition": ""
+                  "definition": "All of the biotic and abiotic factors that act on an organism, population or community and influence its survival, evolution and development."
                 },
                 {
                   "name": "Evidence",
-                  "definition": ""
+                  "definition": "Support for a proposition derived from observation and interpretation of data."
                 },
                 {
                   "name": "Form",
-                  "definition": ""
+                  "definition": "The features of an object that can be observed, identified, described, classified and categorized."
                 },
                 {
                   "name": "Function",
-                  "definition": ""
+                  "definition": "A purpose, a role or a way of behaving that can be investigated; a mathematical relationship between variables."
                 },
                 {
                   "name": "Interaction",
-                  "definition": ""
+                  "definition": "The effect or effects two or more systems, bodies, substances or organisms have on one another, so that the overall result is not simply the sum of the separate effects."
                 },
                 {
                   "name": "Models",
-                  "definition": ""
+                  "definition": "Representations used for testing scientific theories or proposals that can be accurately repeated and validated; simulations used for explaining or predicting processes."
                 },
                 {
                   "name": "Movement",
-                  "definition": ""
+                  "definition": "The act, process, or result of displacing from one location or position to another within a defined frame of reference."
                 },
                 {
                   "name": "Patterns",
-                  "definition": ""
+                  "definition": "The distribution of variables in time or space; sequences of events or features."
                 },
                 {
                   "name": "Transformation",
-                  "definition": ""
+                  "definition": "Differentiation of a cell; change of energy form including at a molecular level; alteration of molecules and metabolism and/or genetic make-up of an organism or species and consequently a community, relative to external factors."
                 }
               ]
             },
@@ -111,51 +111,51 @@
               "items": [
                 {
                   "name": "Balance",
-                  "definition": ""
+                  "definition": "A state of equilibrium or stable distribution."
                 },
                 {
                   "name": "Conditions",
-                  "definition": ""
+                  "definition": "The environment, both physical and chemical, of a reaction or process; factors which contribute to an interaction including temperature, pressure, concentration, pH and the absence or presence of a catalyst."
                 },
                 {
                   "name": "Consequences",
-                  "definition": ""
+                  "definition": "The observable or quantifiable effects, results, or outcomes correlated with an earlier event or events."
                 },
                 {
                   "name": "Energy",
-                  "definition": ""
+                  "definition": "The capacity of an object to do work or transfer heat."
                 },
                 {
                   "name": "Evidence",
-                  "definition": ""
+                  "definition": "Support for a proposition derived from observation and interpretation of data."
                 },
                 {
                   "name": "Form",
-                  "definition": ""
+                  "definition": "The features of an object that can be observed, identified, described, classified and categorized."
                 },
                 {
                   "name": "Function",
-                  "definition": ""
+                  "definition": "A purpose, a role or a way of behaving that can be investigated; a mathematical relationship between variables."
                 },
                 {
                   "name": "Interaction",
-                  "definition": ""
+                  "definition": "The effect or effects two or more systems, bodies, substances or organisms have on one another, so that the overall result is not simply the sum of the separate effects."
                 },
                 {
                   "name": "Models",
-                  "definition": ""
+                  "definition": "Representations used for testing scientific theories or proposals that can be accurately repeated and validated."
                 },
                 {
                   "name": "Movement",
-                  "definition": ""
+                  "definition": "The act, process, or result of displacing from one location or position to another within a defined frame of reference."
                 },
                 {
                   "name": "Patterns",
-                  "definition": ""
+                  "definition": "The distribution of variables in time or space; sequences of events or features."
                 },
                 {
                   "name": "Transfer",
-                  "definition": ""
+                  "definition": "The net movement of matter or particles from one location to another."
                 }
               ]
             },
@@ -164,51 +164,51 @@
               "items": [
                 {
                   "name": "Consequences",
-                  "definition": ""
+                  "definition": "The observable or quantifiable effects, results, or outcomes correlated with an earlier event or events."
                 },
                 {
                   "name": "Development",
-                  "definition": ""
+                  "definition": "The process of applying theory to data and observations in order to improve, progress, or further scientific understanding."
                 },
                 {
                   "name": "Energy",
-                  "definition": ""
+                  "definition": "The capacity of an object to do work or transfer heat."
                 },
                 {
                   "name": "Environment",
-                  "definition": ""
+                  "definition": "A description of the universe or a closed system through the application of the laws of physics; the complex of physical conditions or climate affecting a habitat or community."
                 },
                 {
                   "name": "Evidence",
-                  "definition": ""
+                  "definition": "Support for a proposition derived from observation and interpretation of data."
                 },
                 {
                   "name": "Form",
-                  "definition": ""
+                  "definition": "The features of an object that can be observed, identified, described, classified and categorized."
                 },
                 {
                   "name": "Function",
-                  "definition": ""
+                  "definition": "A purpose, a role or a way of behaving that can be investigated; a mathematical relationship between variables."
                 },
                 {
                   "name": "Interaction",
-                  "definition": ""
+                  "definition": "The effect or effects two or more systems, bodies, substances or organisms have on one another, so that the overall result is not simply the sum of the separate effects."
                 },
                 {
                   "name": "Models",
-                  "definition": ""
+                  "definition": "Representations used for testing scientific theories or proposals that can be accurately repeated and validated."
                 },
                 {
                   "name": "Movement",
-                  "definition": ""
+                  "definition": "The act, process, or result of displacing from one location or position to another within a defined frame of reference."
                 },
                 {
                   "name": "Patterns",
-                  "definition": ""
+                  "definition": "The distribution of variables in time or space; sequences of events or features."
                 },
                 {
                   "name": "Transformation",
-                  "definition": ""
+                  "definition": "A change from one well-defined state to another well-defined state; an alteration in form or condition, including energy and particle nature."
                 }
               ]
             },
@@ -217,53 +217,67 @@
               "items": [
                 {
                   "name": "Balance",
-                  "definition": ""
+                  "definition": "A state of equilibrium — dynamic (biology) or stable distribution (chemistry)."
                 },
                 {
                   "name": "Consequences",
-                  "definition": ""
+                  "definition": "The observable or quantifiable effects, results, or outcomes correlated with an earlier event or events."
                 },
                 {
                   "name": "Energy",
-                  "definition": ""
+                  "definition": "The capacity of an object to do work or transfer heat."
                 },
                 {
                   "name": "Environment",
-                  "definition": ""
+                  "definition": "All biotic/abiotic factors acting on an organism (biology) or the physical conditions of a system (physics)."
                 },
                 {
                   "name": "Evidence",
-                  "definition": ""
+                  "definition": "Support for a proposition derived from observation and interpretation of data."
                 },
                 {
                   "name": "Form",
-                  "definition": ""
+                  "definition": "The features of an object that can be observed, identified, described, classified and categorized."
                 },
                 {
                   "name": "Function",
-                  "definition": ""
+                  "definition": "A purpose, a role or a way of behaving that can be investigated; a mathematical relationship between variables."
                 },
                 {
                   "name": "Interaction",
-                  "definition": ""
+                  "definition": "The effect or effects two or more systems, bodies, substances or organisms have on one another, so that the overall result is not simply the sum of the separate effects."
                 },
                 {
                   "name": "Models",
-                  "definition": ""
+                  "definition": "Representations used for testing scientific theories or proposals that can be accurately repeated and validated."
                 },
                 {
                   "name": "Movement",
-                  "definition": ""
+                  "definition": "The act, process, or result of displacing from one location or position to another within a defined frame of reference."
                 },
                 {
                   "name": "Patterns",
-                  "definition": ""
+                  "definition": "The distribution of variables in time or space; sequences of events or features."
                 },
                 {
                   "name": "Transformation",
-                  "definition": ""
+                  "definition": "A change from one well-defined state to another; alteration in form, condition, energy, molecular or genetic make-up."
                 }
               ]
+            }
+          ],
+          "key_definitions": [
+            {
+              "name": "Change",
+              "definition": "A conversion, transformation or movement from one form, state or value to another. In sciences, change is the difference in a system's state when observed at different times — qualitative (structure, behaviour, level) or quantitative (numerical variable, rate). Change can be irreversible, reversible or self-perpetuating."
+            },
+            {
+              "name": "Relationships",
+              "definition": "The connections and associations between properties, objects, people and ideas. In sciences, relationships indicate the connections found among variables through observation or experimentation. Scientists often search for connections between form and function; modelling represents relationships where scale, data volume or time make other methods impractical."
+            },
+            {
+              "name": "Systems",
+              "definition": "Sets of interacting or interdependent components that function due to their interdependence or complementary nature. Common systems in science are closed systems (resources not removed or replaced) and open systems (necessary resources renewed regularly). Modelling often uses closed systems to simplify or limit variables."
             }
           ]
         }
