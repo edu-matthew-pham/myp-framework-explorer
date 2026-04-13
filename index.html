@@ -239,12 +239,40 @@
     width: 1px; height: 18px; background: var(--border);
     flex-shrink: 0; margin: 0 6px; align-self: center;
   }
+
+  header {
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.brand-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255,255,255,0.3);
+}
+
+.brand-link:visited { color: var(--text); }
+
+.brand-link:hover {
+  color: white;
+  text-decoration-color: rgba(255,255,255,0.6);
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>MYP Learning Maps</h1>
+  <a href="https://learningwaypoints.com" class="brand-link">Learning Waypoints</a>
+  <span class="header-sep"></span>
+  <span class="tool-label">MYP Learning Maps</span>
 </header>
 <div class="tab-bar" id="tab-bar">
   <button class="tab-btn active" data-json="myp_principles_cycle.json">From Principles into Practice</button>
